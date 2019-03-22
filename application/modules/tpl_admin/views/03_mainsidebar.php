@@ -37,7 +37,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{site_url({base_level}/personal)}"><i class="fa fa-circle-o"></i> Personal</a></li>
-            <li><a href="{site_url({base_level}/coverage)}"><i class="fa fa-circle-o"></i> Lokasi</a></li>
+            <!-- <li><a href="{site_url({base_level}/coverage)}"><i class="fa fa-circle-o"></i> Lokasi</a></li> -->
           </ul>
         </li>
 
@@ -51,7 +51,7 @@
           <ul class="treeview-menu">
             <li><a href="{site_url({base_level}/barang)}"><i class="fa fa-circle-o"></i>Barang</a></li>
             <li><a href="{site_url({base_level}/kategori)}"><i class="fa fa-circle-o"></i> Kategori</a></li>
-            <li><a href="{site_url({base_level}/subkategori)}"><i class="fa fa-circle-o"></i> Subkategori</a></li>
+            <!-- <li><a href="{site_url({base_level}/subkategori)}"><i class="fa fa-circle-o"></i> Subkategori</a></li> -->
           </ul>
         </li>
         <li><a href="{site_url({base_level}/pesan)}"><i class="fa fa-envelope"></i> <span>Pesan</span></a></li>

@@ -9,7 +9,7 @@ class Frontend extends MY_Controller {
 
 	public function index()
 	{
-		$data['title']='UNimaSoft';
+		$data['title']='Home';
 		$this->parser->parse('tpl_frontend/template', $data);
 	}
 
