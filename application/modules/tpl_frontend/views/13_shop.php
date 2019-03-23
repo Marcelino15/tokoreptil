@@ -31,25 +31,35 @@
 
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
-									Women
+									Ular
 								</a>
 							</li>
 
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
-									Men
+									Katak
 								</a>
 							</li>
 
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
-									Kids
+									Kura-kura
 								</a>
 							</li>
-
+							<li class="p-t-4">
+								<a href="#" class="s-text13">
+									Kadal
+								</a>
+							</li>
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
 									Accesories
+								</a>
+							</li>
+
+							<li class="p-t-4">
+								<a href="#" class="s-text13">
+									Serangga
 								</a>
 							</li>
 						</ul>
@@ -82,7 +92,7 @@
 							</div>
 						</div>
 
-						<div class="filter-color p-t-22 p-b-50 bo3">
+					<!-- 	<div class="filter-color p-t-22 p-b-50 bo3">
 							<div class="m-text15 p-b-12">
 								Color
 							</div>
@@ -123,7 +133,7 @@
 									<label class="color-filter color-filter7" for="color-filter7"></label>
 								</li>
 							</ul>
-						</div>
+						</div> -->
 
 						<div class="search-product pos-relative bo4 of-hidden">
 							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
