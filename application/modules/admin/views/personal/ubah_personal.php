@@ -54,8 +54,12 @@
               
             <div class="form_dropdown">
             <label>Level</label>
-             <?php $pilihan3=["admin"=>"admin", "penjual"=>"penjual"]; ?>
-            <?= form_dropdown("level_personal", $pilihan3); ?>
+            <select name="level_personal" class="form-control">
+                <option value="{level_personal}">{kategori_artikel}</option>
+                <option value="">--- Pilih Kategori Artikel --</option>
+                <option value="penjual">Penjual</option>
+                <option value="admin">Admin</option>
+            </select>
             </div>
             <br />
             <label>Password</label>
@@ -64,7 +68,7 @@
             <div class="col-md-4">
             <label>Foto</label>
                 <div class="thumbnail">
-                    <img src="{base_url(assets/foto_personal/{foto_personal})}" alt="GambarBarang3" style="width:100%">
+                    <img src="{base_url(assets/foto_personal/{foto_personal})}" alt="FotoPersonal" style="width:100%">
                 </div>
             </div>
             

@@ -23,7 +23,7 @@ class Barang extends MY_Controller
 		$data 					= self::class_data() + MY_Controller::data_session();
 		$data['base_function']	= 'index';
 		$data['table_view']		= 'barang';
-		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang"];
+		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idkategori_barang", "idpersonal_barang", "status_barang"];
 		$data['title']			= 'Table barang';
 		
 		$data['total']			= $this->mod->fetch_data($data)['total'];
@@ -71,7 +71,7 @@ class Barang extends MY_Controller
 				"gambar1_barang" => $gambar1_barang,
 				"gambar2_barang" => $gambar2_barang,
 				"gambar3_barang" => $gambar3_barang,
-				"idsubkategori_barang"=> $this->input->post('idsubkategori_barang'),
+				"idkategori_barang"=> $this->input->post('idkategori_barang'),
 				"idpersonal_barang"=> $this->input->post('idpersonal_barang'),
 				"status_barang"=> $this->input->post('status_barang'),	
 		];
@@ -92,7 +92,38 @@ class Barang extends MY_Controller
 
 	public function ubah_proses()
 	{
-		$config['upload_path']		= './assets/foto_barang';
+		$aksi 		= $this->input->post('aksi');
+		$data = [
+			'id_barang' => $this->input->post('id_barang'),
+			'nama_barang'=> $this->input->post('nama_barang'),
+			'harga_barang'=> $this->input->post('harga_barang'),
+			'keterangan_barang'=> $this->input->post('keterangan_barang'),
+			'idkategori_barang' => $this->input->post('idkategori_barang'),
+			'idpersonal_barang'	=> $this->input->post('idpersonal_barang'),
+			'status_barang' => $this->input->post('status_barang'),
+		];
+		//print('<pre>'); print_r($data); print($aksi); exit();
+		if ($aksi == 'simpan') {
+			$this->mod->ubah_barang($data);
+			redirect(site_url('penjual/barang'));
+		} else {
+			redirect(site_url('penjual/barang'));
+		}
+	}
+
+	public function upload()
+    {
+        $data					= self::class_data() + MY_Controller::data_session();
+		$data['base_function'] 	= 'upload_foto_barang';
+		$data['title'] 			= 'Upload Foto Barang';
+		$data['result'] 		= $this->mod->detail_barang($this->uri->segment(4));
+        //print('<pre>'); print_r($data); exit();
+        $this->parser->parse('tpl_penjual/template', $data);
+    }
+
+    public function upload_proses()
+    {
+        $config['upload_path']		= './assets/foto_barang';
 		$config['allowed_types']	= 'jpg|png|jpeg';
 		$config['max_size']			= 20000;
 		$config['max_width']		= 5000;
@@ -107,28 +138,21 @@ class Barang extends MY_Controller
 
 		$this->upload->do_upload('gambar3_barang');
 		$gambar3_barang = $this->upload->data('file_name');
-
-		$aksi 		= $this->input->post('aksi');
-		$data = [
-			'id_barang' => $this->input->post('id_barang'),
-			'nama_barang'=> $this->input->post('nama_barang'),
-			'harga_barang'=> $this->input->post('harga_barang'),
-			'keterangan_barang'=> $this->input->post('keterangan_barang'),
+        $aksi = $this->input->post('aksi');
+        $data = [
+            'id_barang' => $this->input->post('id_barang'),
 			'gambar1_barang' => $gambar1_barang,
 			'gambar2_barang' => $gambar2_barang,
 			'gambar3_barang' => $gambar3_barang,
-			'idsubkategori_barang' => $this->input->post('idsubkategori_barang'),
-			'idpersonal_barang'	=> $this->input->post('idpersonal_barang'),
-			'status_barang' => $this->input->post('status_barang'),
-		];
-		//print('<pre>'); print_r($data); print($aksi); exit();
-		if ($aksi == 'simpan') {
-			$this->mod->ubah_barang($data);
-			redirect(site_url('penjual/barang'));
-		} else {
-			redirect(site_url('penjual/barang'));
-		}
-	}
+        ];
+        //print('<pre>'); print_r($data); exit();
+        if ($aksi == 'simpan') {
+            $this->mod->upload($data);
+            redirect(site_url('penjual/barang'));
+        } else {
+            redirect(site_url('penjual/barang'));
+        }
+    }
 
 	public function hapus()
 	{

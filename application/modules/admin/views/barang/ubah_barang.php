@@ -74,6 +74,7 @@
                 </div>
               </div>
             </div>
+            <label>ID USER</label>
             <input type="text" name="idpersonal_barang" value="{idpersonal_barang}" class="form-control">
             <br><br>
             <button type="submit" name="aksi" value="simpan" class="btn btn-success">Simpan</button>

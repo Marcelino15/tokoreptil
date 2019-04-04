@@ -29,25 +29,40 @@
 				<ul>
 					<li class="p-b-9">
 						<a href="#" class="s-text7">
-							Men
+							All
 						</a>
 					</li>
 
 					<li class="p-b-9">
 						<a href="#" class="s-text7">
-							Women
+							Ular
 						</a>
 					</li>
 
 					<li class="p-b-9">
 						<a href="#" class="s-text7">
-							Dresses
+							Katak
 						</a>
 					</li>
 
 					<li class="p-b-9">
 						<a href="#" class="s-text7">
-							Sunglasses
+							Kura-kura
+						</a>
+					</li>
+					<li class="p-b-9">
+						<a href="#" class="s-text7">
+							Kadal
+						</a>
+					</li>
+					<li class="p-b-9">
+						<a href="#" class="s-text7">
+							Accesories
+						</a>
+					</li>
+					<li class="p-b-9">
+						<a href="#" class="s-text7">
+							Serangga
 						</a>
 					</li>
 				</ul>
@@ -61,25 +76,25 @@
 				<ul>
 					<li class="p-b-9">
 						<a href="#" class="s-text7">
-							Search
+							Home
 						</a>
 					</li>
 
 					<li class="p-b-9">
 						<a href="#" class="s-text7">
-							About Us
+							Shop
 						</a>
 					</li>
 
 					<li class="p-b-9">
 						<a href="#" class="s-text7">
-							Contact Us
+							Blog
 						</a>
 					</li>
 
 					<li class="p-b-9">
 						<a href="#" class="s-text7">
-							Returns
+							About
 						</a>
 					</li>
 				</ul>
@@ -93,25 +108,7 @@
 				<ul>
 					<li class="p-b-9">
 						<a href="#" class="s-text7">
-							Track Order
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Returns
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Shipping
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							FAQs
+							Contac Person Admin
 						</a>
 					</li>
 				</ul>
@@ -119,7 +116,7 @@
 
 			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
 				<h4 class="s-text12 p-b-30">
-					Newsletter
+					Powered By :
 				</h4>
 
 				<form>

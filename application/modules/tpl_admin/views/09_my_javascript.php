@@ -34,19 +34,19 @@
       "order": [[0, 'desc']],
       "columnDefs": [
       {
-        "targets": [0,1,2,3,4],
+        "targets": [0,1,2,3],
         "searchable": true,
         "orderable": true,
         "visible": true
       },
       {
-        "targets": [5],
+        "targets": [0],
         "searchable": false,
         "orderable": false,
         "visible": false
       },
       {
-        "targets": [6],
+        "targets": [1],
         "searchable": false,
         "orderable": false,
         "visible": true

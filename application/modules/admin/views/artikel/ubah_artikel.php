@@ -55,17 +55,13 @@
               <div class="thumbnail">
                   <img src="{base_url(assets/foto_artikel/{gambar_artikel})}" alt="GambarArtikel" style="width:100%">
             </div>
-            <input type="file" name="gambar_artikel" class="form-control">
             <br /><br />
+            <a href="{base_url(admin/artikel/upload/{id_artikel})}" class="btn btn-info">Upload Foto</a>
             <button type="submit" name="aksi" value="simpan" class="btn btn-success">Simpan</button>
             <a href="{base_url(admin/artikel/index)}" class="btn btn-primary">Kembali</a>
             <a href="{base_url(admin/artikel/hapus/{id_artikel})}" class="btn btn-danger">Hapus</a>
         </form>
         {/result}
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
         </div>
         <!-- /.box-footer-->
       </div>

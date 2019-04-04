@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
-					<div class="hov-img-zoom pos-relative">
+					<!-- <div class="hov-img-zoom pos-relative">
 						<img src="{base_url(assets/frontend/images/banner-08.jpg)}" alt="IMG-BANNER">
 
 						<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
@@ -19,11 +19,14 @@
 								View Collection
 							</a>
 						</div>
+					</div> -->
+					<div class="embed-responsive embed-responsive-4by3">
+  						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eKetcin_lO8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				</div>
 
 				<div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
-					<div class="bgwhite hov-img-zoom pos-relative p-b-20per-ssm">
+					<!-- <div class="bgwhite hov-img-zoom pos-relative p-b-20per-ssm">
 						<img src="{base_url(assets/frontend/images/shop-item-09.jpg)}" alt="IMG-BANNER">
 
 						<div class="ab-t-l sizefull flex-col-c-b p-l-15 p-r-15 p-b-20">
@@ -83,6 +86,9 @@
 								</div>
 							</div>
 						</div>
+					</div> -->
+					<div class="embed-responsive embed-responsive-4by3">
+  						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5GjEnbrJuZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>

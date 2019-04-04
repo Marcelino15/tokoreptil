@@ -75,6 +75,7 @@ class M_personal extends CI_Model
             ->where("id_personal", $id_personal);
         $query = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($query)->row();
+        print('<pre>'); print_r($query); exit();
         return $data;    
     }
 

@@ -18,6 +18,8 @@
 <!-- DataTables -->
 <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{base_url(assets/tinymce/js/tinymce/tinymce.min.js)}"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
 <?php
 if ($this->uri->segment(2)=='dashboard') {
 	echo "

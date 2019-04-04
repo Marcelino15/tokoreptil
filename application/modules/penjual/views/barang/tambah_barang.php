@@ -41,20 +41,21 @@
             </div>
             <div class="form-group">
             <label>Kategori</label>
-              <select name="idsubkategori_barang" class="form-control">
+              <select name="idkategori_barang" class="form-control">
                   <option value="">---Pilih Kategori---</option>
-                  <option value="1">Acrochordidae</option>
-                  <option value="2">Aniliidae</option>
-                  <option value="3">Anomochilidae</option>
-                  <option value="4">Boidae</option>
-                  <option value="5">Bolyeriidae</option>
+                  <option value="1">Ular</option>
+                  <option value="2">Katak</option>
+                  <option value="3">Kura-Kura</option>
+                  <option value="4">Kadal</option>
+                  <option value="5">Accessories</option>
+                  <option value="6">Serangga</option>
               </select>
             </div>
 
             <div class="form-group">
             <label>Status Barang</label>
               <select name="status_barang" class="form-control">
-                  <option value="PENDING">PENDING</option>
+                  <option value="1">PENDING</option>
               </select>
             </div>
 
@@ -70,6 +71,7 @@
             </div>
 
             <button type="submit" name="aksi" value="simpan" class="btn btn-success">Simpan</button>
+            <a href="{base_url(penjual/barang)}" class="btn btn-primary">Kembali</a>
           </form>
         </div>
         <!-- /.box-body -->

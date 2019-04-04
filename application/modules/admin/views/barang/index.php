@@ -45,7 +45,7 @@
                 <td><img src="{base_url(assets/foto_barang/{gambar2_barang})}" alt="Gambar Barang" width="42" height="42"></td>
                 <td><img src="{base_url(assets/foto_barang/{gambar3_barang})}" alt="Gambar Barang" width="42" height="42"></td>
                 <td>{idpersonal_barang}</td>
-                <td>{idsubkategori_barang}</td>
+                <td>{idkategori_barang}</td>
                 <td>{status_barang}</td>
                 <td>
                   <a href="{base_url({level}/barang/ubah/{id_barang})}"><span><i class="glyphicon glyphicon-resize-full"></i></span></a>

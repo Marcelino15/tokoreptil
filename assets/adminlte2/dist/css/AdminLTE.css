@@ -3246,7 +3246,8 @@ table.text-center th {
 }
 .login-page,
 .register-page {
-  background-image: url('/assets/adminlte2/dist/img/photo3.jpg');
+ background-image:url("/assets/adminlte2/dist/img/background.jpg");
+
 }
 .login-box,
 .register-box {

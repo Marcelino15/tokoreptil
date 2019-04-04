@@ -33,7 +33,7 @@ class M_artikel extends CI_Model
     {
         $this->db->select()
             ->from($table)
-            ->where('id_parsonal', $id);
+            ->where('id_artikel', $id);
         $query = $this->db->get_compiled_delete();
         $this->db->query($query);
         return true;  
@@ -69,4 +69,16 @@ class M_artikel extends CI_Model
         $data['result'] = $this->db->query($query)->row();
         return $data;
     }
+
+    public function upload($data)
+    {
+        $this->db->select()
+            ->from($this->table)
+            ->where("id_artikel", $data['id_artikel']);
+        $query = $this->db->set($data)->get_compiled_update();
+        $this->db->query($query);    
+        return true;
+    }
+
+    
 }
