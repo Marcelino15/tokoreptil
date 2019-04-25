@@ -3,10 +3,10 @@
 	<!-- Title Page -->
 	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url({base_url(assets/frontend/images/shop.jpg)})">
 		<h2 class="l-text2 t-center">
-			Barang Ular
+			Barang aksesoris
 		</h2>
 		<p class="m-text13 t-center">
-			Koleksi Terbaru 2019
+			New Collection 2019
 		</p>
 	</section>
 
@@ -30,7 +30,7 @@
 							</li>
 
 							<li class="p-t-4">
-								<a href="{base_url(frontend/shop_ular)}" class="s-text13 active1">
+								<a href="{base_url(frontend/shop_ular)}" class="s-text13">
 									Ular
 								</a>
 							</li>
@@ -52,7 +52,7 @@
 								</a>
 							</li>
 							<li class="p-t-4">
-								<a href="{base_url(frontend/shop_acc)}" class="s-text13">
+								<a href="{base_url(frontend/shop_acc)}" class="s-text13  active1">
 									Aksesoris
 								</a>
 							</li>
@@ -65,7 +65,6 @@
 						</ul>
 
 						<!--  -->
-						
 						<form action="" method="get">	
 						<div class="search-product pos-relative bo4 of-hidden">
 							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
@@ -83,7 +82,7 @@
 					<div class="flex-sb-m flex-w p-b-35">
 						<div class="flex-w">
 							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<form action="" method="get">
+							<form action="" method="get">
 								<select class="selection-2" name="sorting" onchange="this.form.submit();">
 									<option>Pilih Sorting</option>
 									<option value="0">Termurah ke Termahal</option>
@@ -92,6 +91,8 @@
 								</select>
 								</form>
 							</div>
+
+						
 						</div>
 
 						<span class="s-text8 p-t-5 p-b-5">

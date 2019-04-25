@@ -53,7 +53,6 @@
                 <td>{status_barang}</td>
                 <td>
                   <a href="{base_url({level}/barang/ubah/{id_barang})}"><span><i class="glyphicon glyphicon-resize-full"></i></span></a>
-                  <!--<a href="{base_url({level}/kategori/hapus/{id_kategori})}"><span><i class="fa fa-trash"></i></span></a>-->
                 </td>
               </tr>
             {/result}

@@ -26,8 +26,8 @@ class Barang extends MY_Controller
 		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idkategori_barang", "idpersonal_barang", "status_barang"];
 		$data['title']			= 'Table barang';
 		
-		$data['total']			= $this->mod->fetch_data($data)['total'];
-		$data['result']			= $this->mod->fetch_data($data)['result'];
+		$data['total']			= $this->mod->tampil($data)['total'];
+		$data['result']			= $this->mod->tampil($data)['result'];
 		foreach ($data['result'] as $records) {
 			$records['level']	= $data['base_level'];
 			$temp[]				= $records;

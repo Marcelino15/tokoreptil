@@ -40,6 +40,7 @@
 
 <!--===============================================================================================-->
 	<script src="{base_url(assets/frontend/js/main.js)}"></script>
+	<script src="{base_url(assets/frontend/js/jquery.min.js)}"></script>
 
 </body>
 </html>

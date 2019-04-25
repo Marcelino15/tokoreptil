@@ -19,13 +19,14 @@ class M_artikel extends CI_Model
 
     public function fetch_id($data)
     {
+        //print('<pre>'); print_r($data); exit();
         $this->db->select()
             ->from($data['table_view'])
             ->where('id_artikel', $data['id_detail']);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($sql)->result_array();
-        //print('<pre>'); print_r($data); exit();
+        
         return $data;
     }
 
@@ -80,5 +81,17 @@ class M_artikel extends CI_Model
         return true;
     }
 
+    public function detail_blog($id_artikel)
+    {   
+        $field_select = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel"];
+
+        $this->db->select()
+            ->from($this->table)
+            ->where("id_artikel", $id_artikel);
+        $query = $this->db->get_compiled_select();
+        //print_r('<pre>'); print_r($query); exit();    
+        $data['result'] = $this->db->query($query)->row();
+        return $data;
+    }
     
 }

@@ -40,7 +40,7 @@ class Personal extends MY_Controller
         $data['id_detail']      = $this->uri->segment(4);
         $data                   = $this->mod->fetch_id($data);
        // dump_exit($data);
-       //print('<pre>'); print_r($data); exit();
+        //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_penjual/template', $data);
     }
 

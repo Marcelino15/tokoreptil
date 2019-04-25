@@ -3,7 +3,7 @@
 	<!-- Title Page -->
 	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url({base_url(assets/frontend/images/shop.jpg)})">
 		<h2 class="l-text2 t-center">
-			Barang Ular
+			Barang Kura - Kura
 		</h2>
 		<p class="m-text13 t-center">
 			Koleksi Terbaru 2019
@@ -30,19 +30,19 @@
 							</li>
 
 							<li class="p-t-4">
-								<a href="{base_url(frontend/shop_ular)}" class="s-text13 active1">
+								<a href="{base_url(frontend/shop_ular)}" class="s-text13">
 									Ular
 								</a>
 							</li>
 
 							<li class="p-t-4">
-								<a href="{base_url(frontend/shop_katak)}" class="s-text13">
+								<a href="{base_url(frontend/shop_katak)}" class="s-text13 ">
 									Katak
 								</a>
 							</li>
 
 							<li class="p-t-4">
-								<a href="{base_url(frontend/shop_kura)}" class="s-text13">
+								<a href="{base_url(frontend/shop_kura)}" class="s-text13 active1">
 									Kura-kura
 								</a>
 							</li>
@@ -65,7 +65,6 @@
 						</ul>
 
 						<!--  -->
-						
 						<form action="" method="get">	
 						<div class="search-product pos-relative bo4 of-hidden">
 							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
@@ -93,7 +92,6 @@
 								</form>
 							</div>
 						</div>
-
 						<span class="s-text8 p-t-5 p-b-5">
 							Showing 1–12 of 16 results
 						</span>

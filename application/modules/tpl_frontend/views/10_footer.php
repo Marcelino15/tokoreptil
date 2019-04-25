@@ -3,12 +3,12 @@
 		<div class="flex-w p-b-90">
 			<div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
 				<h4 class="s-text12 p-b-30">
-					GET IN TOUCH
+					Alamat 
 				</h4>
 
 				<div>
 					<p class="s-text7 w-size27">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+					Jl. Janti No.143, Jaranan, Karang Jambe, Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55918
 					</p>
 
 					<div class="flex-m p-t-30">
@@ -23,45 +23,45 @@
 
 			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
 				<h4 class="s-text12 p-b-30">
-					Categories
+					Kategori
 				</h4>
 
 				<ul>
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							All
+						<a href="{base_url(frontend/shop)}" class="s-text7">
+							Semua
 						</a>
 					</li>
 
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
+						<a href="{base_url(frontend/shop_ular)}" class="s-text7">
 							Ular
 						</a>
 					</li>
 
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
+						<a href="{base_url(frontend/shop_katak)}" class="s-text7">
 							Katak
 						</a>
 					</li>
 
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
+						<a href="{base_url(frontend/shop_kura)}" class="s-text7">
 							Kura-kura
 						</a>
 					</li>
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
+						<a href="{base_url(frontend/shop_kadal)}" class="s-text7">
 							Kadal
 						</a>
 					</li>
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Accesories
+						<a href="{base_url(frontend/shop_acc)}" class="s-text7">
+							Aksesoris
 						</a>
 					</li>
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
+						<a href="{base_url(frontend/shop_ser)}" class="s-text7">
 							Serangga
 						</a>
 					</li>
@@ -70,31 +70,31 @@
 
 			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
 				<h4 class="s-text12 p-b-30">
-					Links
+					Link
 				</h4>
 
 				<ul>
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
+						<a href="{base_url(frontend/index)}" class="s-text7">
 							Home
 						</a>
 					</li>
 
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Shop
+						<a href="{base_url(frontend/shop)}" class="s-text7">
+							Barang
 						</a>
 					</li>
 
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
+						<a href="{base_url(frontend/blog)}" class="s-text7">
 							Blog
 						</a>
 					</li>
 
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							About
+						<a href="{base_url(frontend/about)}" class="s-text7">
+							Tentang
 						</a>
 					</li>
 				</ul>
@@ -102,7 +102,7 @@
 
 			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
 				<h4 class="s-text12 p-b-30">
-					Help
+					Bantuan
 				</h4>
 
 				<ul>

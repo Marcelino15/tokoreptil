@@ -21,9 +21,9 @@ class M_barang extends CI_Model
 		return $data;
 	}
 
-	/* public function tampil($data)
+	public function tampil($data)
 	{
-		$id_personal = ;
+		$id_personal = $_SESSION['id_session'];
 		$idpersonal_barang = $id_personal;
 		$this->db->select()
 			->from($this->table)
@@ -33,7 +33,7 @@ class M_barang extends CI_Model
 			$data['result']	= $this->db->query($sql)->result_array();
 
 			return $data;	
-	} */
+	} 
 
 	public function detail_barang($id_barang)
 	{

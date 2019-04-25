@@ -25,7 +25,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{site_url({base_level}/personal)}"><i class="fa fa-circle-o"></i> Detail</a></li>
-            <li><a href="{site_url({base_level}/personal/detail)}"><i class="fa fa-circle-o"></i>Edit Profil</a></li>
+            <li><a href="{site_url({base_level}/personal/detail/{id_session})}"><i class="fa fa-circle-o"></i>Edit Profil</a></li>
           </ul>
         </li>
         <li><a href="{site_url({base_level}/barang)}"><i class="fa fa-suitcase"></i> <span>Barang</span></a></li>

@@ -73,8 +73,9 @@ class Personal extends MY_Controller
         $data['table_view']    = 'personal';
         $data['title']         = 'Detail Data Personal';
         $data['id_detail']      = $this->uri->segment(4);
-        $data = $this->mod->fetch_id($data);
+        $data                   = $this->mod->fetch_id($data);
         //dump_exit($data);
+        //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_admin/template', $data);
     }
 

@@ -76,7 +76,7 @@ class Barang extends MY_Controller
 			"status_barang" => $this->input->post('status_barang'),
 		];
 		//print('<pre>'); print_r($data); exit();
-		$thjis->mod->tambah_barang($data);
+		$this->mod->tambah_barang($data);
 		redirect(site_url('admin/barang'));
 	}
 
@@ -102,7 +102,7 @@ class Barang extends MY_Controller
 			'idpersonal_barang' => $this->input->post('idpersonal_barang'),
 			'status_barang' => $this->input->post('status_barang'),
 		];
-		//print('<pre>'); print_r($data), exit();
+		//print('<pre>'); print_r($data); exit();
 		if ($aksi == 'simpan') {
 			$this->mod->ubah_barang($data);
 			// echo "berhasil";

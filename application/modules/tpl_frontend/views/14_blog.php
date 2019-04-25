@@ -1,4 +1,5 @@
 <!-- Title Page -->
+
 	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url({base_url(assets/frontend/images/blog.jpg)})">
 		<h2 class="l-text2 t-center">
 			Blog
@@ -10,46 +11,54 @@
 			<div class="row">
 				<div class="col-md-8 col-lg-9 p-b-75">
 					<div class="p-r-50 p-r-0-lg">
-				{result}
+				<?php
+					foreach($result as $re){
+				?>						
 						<!-- item blog -->
 						<div class="item-blog p-b-80">
-							<a href="blog-detail.html" class="item-blog-img pos-relative dis-block hov-img-zoom">
-								<img src="{base_url(assets/foto_artikel/{gambar_artikel})}" alt="IMG-ARTIKEL">
+							<div class="item-blog-img pos-relative dis-block hov-img-zoom">
+								<img src="<?php echo base_url('assets/foto_artikel/'.$re['gambar_artikel']); ?>" alt="IMG-ARTIKEL">
 
 								<span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
-									{tanggal_artikel}
+									<?php echo ($re['tanggal_artikel']); ?>
+									<!-- {tanggal_artikel} -->
 								</span>
-							</a>
+							</div>
 
 							<div class="item-blog-txt p-t-33">
 								<h4 class="p-b-11">
-									<a href="{base_url(frontend/blog_detail/{id_artikel})}" class="m-text24">
-										{judul_artikel}
+									<a href="<?php echo base_url('frontend/blog_detail/'.$re['id_artikel']); ?>" class="m-text24">
+										<?php echo ($re['judul_artikel']); ?>
+										<!-- {judul_artikel} -->
 									</a>
 								</h4>
 
 								<div class="s-text8 flex-w flex-m p-b-21">
 									<span>
-										{penulis_artikel}
+										<?php echo ($re['penulis_artikel']); ?>
+										<!-- {penulis_artikel} -->
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
 									<span>
-										{kategori_artikel}
+										<?php echo ($re['kategori_artikel']); ?>
+										<!-- {kategori_artikel} -->
 									</span>
 								</div>
-
+	
 								<p class="p-b-12">
-									{isi_artikel}
+								<?php echo substr($re['isi_artikel'], 0, 100); ?> 
+									<!-- {isi_artikel} -->
 								</p>
-
-								<a href="{base_url(frontend/blog_detail/{id_artikel})}" class="s-text20">
+								<a href="<?php echo base_url('frontend/blog_detail/'.$re['id_artikel']); ?>" class="s-text20">
 									Continue Reading
 									<i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
 								</a>
 							</div>
 						</div>
-				{/result}
+						<?php
+							}
+						?>	
 					</div>
 
 					<!-- Pagination -->

@@ -12,7 +12,7 @@
 				</div>
 
 				<span class="topbar-child1">
-					Search your pets here
+					Cari Reptil Peliharaan Terbaik Disini
 				</span>
 
 				<div class="topbar-child2">
@@ -38,7 +38,7 @@
 							</li>
 
 							<li>
-								<a href="{base_url(frontend/shop)}">Shop</a>
+								<a href="{base_url(frontend/shop)}">Barang</a>
 							</li>
 
 							<li>
@@ -46,7 +46,7 @@
 							</li>
 
 							<li>
-								<a href="{base_url(frontend/about)}">About</a>
+								<a href="{base_url(frontend/about)}">Tentang</a>
 							</li>
 						</ul>
 					</nav>
@@ -127,7 +127,7 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="{base_url(frontend/shop)}">Shop</a>
+						<a href="{base_url(frontend/shop)}">Barang</a>
 					</li>
 
 					<li class="item-menu-mobile">
@@ -135,7 +135,7 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="{base_url(frontend/about)}">About</a>
+						<a href="{base_url(frontend/about)}">Tentang</a>
 					</li>
 				</ul>
 			</nav>

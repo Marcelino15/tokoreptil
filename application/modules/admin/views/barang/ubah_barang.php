@@ -40,14 +40,15 @@
             <label>Keterangan</label>
             <textarea name="keterangan_barang" cols="30" rows="10" class="form-control">{keterangan_barang}</textarea>
             <label>Kategori</label>
-              <select name="idsubkategori_barang" class="form-control">
-                  <option value="{idsubkategori_barang}">{idsubkategori_barang}</option>
+              <select name="idkategori_barang" class="form-control">
+                  <option value="{idkategori_barang}">{idkategori_barang}</option>
                   <option value="">---Pilih Kategori---</option>
-                  <option value="1">Acrochordidae</option>
-                  <option value="2">Aniliidae</option>
-                  <option value="3">Anomochilidae</option>
-                  <option value="4">Boidae</option>
-                  <option value="5">Bolyeriidae</option>
+                  <option value="1">Ular</option>
+                  <option value="2">Katak</option>
+                  <option value="3">Kura-Kura</option>
+                  <option value="4">Kadal</option>
+                  <option value="5">Accessories</option>
+                  <option value="6">Serangga</option>
               </select>
               <label>Status Barang</label>
               <select name="status_barang" class="form-control">

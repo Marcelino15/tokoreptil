@@ -22,17 +22,17 @@ class M_barang extends CI_Model
 			return $data;	
 	}
 
-	public function tampil($data)
+	/* public function tampil($data)
 	{
 		$status_barang = 'ok';
 		$this->db->select()
 			->from($this->table)
 			->where("status_barang", $status_barang);
-			$data['total']	= $this->db->count_all_results(null, false);
-			$sql			= $this->db->get_compiled_select();
-			$data['result']	= $this->db->query($sql)->result_array();
-
-			return $data;	
+		$data['total']	= $this->db->count_all_results(null, false);
+		$sql			= $this->db->get_compiled_select();
+		$data['result']	= $this->db->query($sql)->result_array();
+		//print('<pre>'); print_r($sql); exit(); 
+		return $data;	
 	}
 
 	public function tampil_ular($data)
@@ -44,11 +44,11 @@ class M_barang extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);		
 
-			$data['total']	= $this->db->count_all_results(null, false);
-			$sql			= $this->db->get_compiled_select();
-			$data['result']	= $this->db->query($sql)->result_array();
+		$data['total']	= $this->db->count_all_results(null, false);
+		$sql			= $this->db->get_compiled_select();
+		$data['result']	= $this->db->query($sql)->result_array();
 
-			return $data;	
+		return $data;	
 	}
 
 	public function tampil_katak($data)
@@ -60,11 +60,11 @@ class M_barang extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);		
 
-			$data['total']	= $this->db->count_all_results(null, false);
-			$sql			= $this->db->get_compiled_select();
-			$data['result']	= $this->db->query($sql)->result_array();
-
-			return $data;	
+		$data['total']	= $this->db->count_all_results(null, false);
+		$sql			= $this->db->get_compiled_select();
+		$data['result']	= $this->db->query($sql)->result_array();
+		//print('<pre>'); print_r($sql); exit();
+		return $data;	
 	}
 
 	public function tampil_kura($data)
@@ -76,11 +76,11 @@ class M_barang extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);		
 
-			$data['total']	= $this->db->count_all_results(null, false);
-			$sql			= $this->db->get_compiled_select();
-			$data['result']	= $this->db->query($sql)->result_array();
+		$data['total']	= $this->db->count_all_results(null, false);
+		$sql			= $this->db->get_compiled_select();
+		$data['result']	= $this->db->query($sql)->result_array();
 
-			return $data;	
+		return $data;	
 	}
 
 	public function tampil_kadal($data)
@@ -92,11 +92,11 @@ class M_barang extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);		
 
-			$data['total']	= $this->db->count_all_results(null, false);
-			$sql			= $this->db->get_compiled_select();
-			$data['result']	= $this->db->query($sql)->result_array();
+		$data['total']	= $this->db->count_all_results(null, false);
+		$sql			= $this->db->get_compiled_select();
+		$data['result']	= $this->db->query($sql)->result_array();
 
-			return $data;	
+		return $data;	
 	}
 
 	public function tampil_acc($data)
@@ -108,14 +108,14 @@ class M_barang extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);		
 
-			$data['total']	= $this->db->count_all_results(null, false);
-			$sql			= $this->db->get_compiled_select();
-			$data['result']	= $this->db->query($sql)->result_array();
+		$data['total']	= $this->db->count_all_results(null, false);
+		$sql			= $this->db->get_compiled_select();
+		$data['result']	= $this->db->query($sql)->result_array();
 
-			return $data;	
+		return $data;	
 	}
 
-	public function tampil_katak($data)
+	public function tampil_ser($data)
 	{
 		$status_barang = 'ok';
 		$idkategori_barang = '6';
@@ -124,12 +124,12 @@ class M_barang extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);		
 
-			$data['total']	= $this->db->count_all_results(null, false);
-			$sql			= $this->db->get_compiled_select();
-			$data['result']	= $this->db->query($sql)->result_array();
+		$data['total']	= $this->db->count_all_results(null, false);
+		$sql			= $this->db->get_compiled_select();
+		$data['result']	= $this->db->query($sql)->result_array();
 
-			return $data;	
-	}
+		return $data;	
+	} */
 
 	public function detail_barang($id_barang)
 	{
