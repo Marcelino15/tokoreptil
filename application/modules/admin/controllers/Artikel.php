@@ -7,6 +7,7 @@ class Artikel extends MY_Controller
     public function __construct()
     {
         parent::__construct();
+         
         $this->load->model('M_artikel', 'mod');
     }
 
@@ -46,16 +47,16 @@ class Artikel extends MY_Controller
 
     public function tambah_proses()
     {
+        
         $data                       = self::class_data() + MY_Controller::data_session();
         $config['upload_path']      = './assets/foto_artikel';
         $config['allowed_types']    = 'jpg|png|jpeg';
         $config['max_size']         = 20000;
         $config['max_width']        = 5000;
         $config['max_height']       = 1000;
-
         $this->load->library('upload', $config);
-        $this->upload->do_upload('gambar_artikel');
-        $gambar_artikel = $this->upload->data('file_name');
+		$this->upload->do_upload('gambar_artikel');
+		$gambar_artikel = $this->upload->data('file_name');
 
         $data   = [
             "id_artikel" => $this->input->post('id_artikel'),
@@ -105,17 +106,18 @@ class Artikel extends MY_Controller
 
     public function hapus()
     {
-        $id     = $this->input->post('id');
-        $data   = $this->mod->get_subkategori($id);
-        echo json_encode($data);
+        $id = $this->uri->segment(4);
+        $this->mod->hapus('artikel', $id);
+		//print('<pre>'); print_r($id); exit();
+		redirect(base_url('admin/artikel'));
     }
 
     public function upload()
     {
         $data                   = self::class_data() + MY_Controller::data_session();
         $data['base_function']  = 'upload_foto_artikel';
-        $data['title'] = 'Upload Foto Artikel';
-        $data['result'] = $this->mod->detail_artikel($this->uri->segment(4));
+        $data['title']          = 'Upload Foto Artikel';
+        $data['result']         = $this->mod->detail_artikel($this->uri->segment(4));
         //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_admin/template', $data);
     }

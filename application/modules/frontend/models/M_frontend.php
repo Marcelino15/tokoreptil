@@ -321,21 +321,4 @@ class M_frontend extends CI_Model
 		return true;
 	}
 
-	public function tampil_search_shop($keyword)
-	{
-		// $status_barang = 'ok';
-		// $this->db->select()
-		// 	->from($this->table)
-		// 	->like('nama', $keyword);
-		// $data['total']	= $this->db->count_all_results(null, false);
-		// $sql			= $this->db->get_compiled_select();
-		// $data['result']	= $this->db->query($sql)->result_array();
-		// /* print('<pre>'); print_r($sql); exit(); */
-		// return $data;	
-		$this->db->select('*');
-		$this->db->from('barang');
-		$this->db->like('nama_barang', 'aa');
-		// $this->db->or_like('harga', $keyword);
-		return $this->db->get()->result();
-	}
 }

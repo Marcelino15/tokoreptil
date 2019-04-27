@@ -195,12 +195,15 @@ class Frontend extends MY_Controller {
 	}
 
 	public function blog()
-	{
+	{	
+		$temp = null;
 		$this->load->helper(array('string', 'text'));
 		$this->load->model('admin/M_artikel', 'mod');
 		$data['title']			='Blog';
 		$data['table_view']     = 'artikel';
-        $data['fields']         = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel", "tanggal_artikel","insert_on"];
+		$data['search'] 		= $this->input->get('search-product');
+		$data['sorting']		= $this->input->get('sorting');
+        $data['fields']         = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel", "insert_on"];
         $data['total']          = $this->mod->fetch_data($data)['total'];
         $data['result']         = $this->mod->fetch_data($data)['result'];
 
@@ -209,8 +212,14 @@ class Frontend extends MY_Controller {
         }
         //print('<pre>'); print_r($data); exit();
 		$data['result']         = $temp;
-        //print('<pre>'); print_r($data); exit();
-		$this->parser->parse('tpl_frontend/blog', $data);
+		//print('<pre>'); print_r($data); exit();
+		if ($temp != null)
+		{
+			$this->parser->parse('tpl_frontend/blog', $data);
+		} else {
+			$this->parser->parse('tpl_frontend/barang_kosong', $data);
+		}
+	
 		
 	}
 	public function about()

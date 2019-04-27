@@ -18,11 +18,6 @@
 						<div class="item-blog p-b-80">
 							<div class="item-blog-img pos-relative dis-block hov-img-zoom">
 								<img src="<?php echo base_url('assets/foto_artikel/'.$re['gambar_artikel']); ?>" alt="IMG-ARTIKEL">
-
-								<span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
-									<?php echo ($re['tanggal_artikel']); ?>
-									<!-- {tanggal_artikel} -->
-								</span>
 							</div>
 
 							<div class="item-blog-txt p-t-33">
@@ -44,12 +39,15 @@
 										<?php echo ($re['kategori_artikel']); ?>
 										<!-- {kategori_artikel} -->
 									</span>
+									
+									
 								</div>
 	
 								<p class="p-b-12">
-								<?php echo substr($re['isi_artikel'], 0, 100); ?> 
+								<?php echo substr($re['isi_artikel'], 0, 250); ?> 
 									<!-- {isi_artikel} -->
-								</p>
+								</p><br />
+									posting :<h6><?php echo ($re['insert_on']); ?></h6><br><br>
 								<a href="<?php echo base_url('frontend/blog_detail/'.$re['id_artikel']); ?>" class="s-text20">
 									Continue Reading
 									<i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
@@ -72,13 +70,15 @@
 				<div class="col-md-4 col-lg-3 p-b-75">
 					<div class="rightbar">
 						<!-- Search -->
-						<div class="pos-relative bo11 of-hidden">
-							<input class="s-text7 size16 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search">
+						<form action="" method="get">	
+						<div class="search-product pos-relative bo4 of-hidden">
+							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
 
-							<button class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4">
-								<i class="fs-13 fa fa-search" aria-hidden="true"></i>
+							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+								<i class="fs-12 fa fa-search" aria-hidden="true"></i>
 							</button>
 						</div>
+						</form>
 
 						<!-- Categories -->
 						<h4 class="m-text23 p-t-56 p-b-34">
@@ -117,119 +117,6 @@
 							</li>
 						</ul>
 
-						<!-- Archive -->
-						<h4 class="m-text23 p-t-50 p-b-16">
-							Archive
-						</h4>
-
-						<ul>
-							<li class="flex-sb-m">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									July 2018
-								</a>
-
-								<span class="s-text13">
-									(9)
-								</span>
-							</li>
-
-							<li class="flex-sb-m">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									June 2018
-								</a>
-
-								<span class="s-text13">
-									(39)
-								</span>
-							</li>
-
-							<li class="flex-sb-m">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									May 2018
-								</a>
-
-								<span class="s-text13">
-									(29)
-								</span>
-							</li>
-
-							<li class="flex-sb-m">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									April  2018
-								</a>
-
-								<span class="s-text13">
-									(35)
-								</span>
-							</li>
-
-							<li class="flex-sb-m">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									March 2018
-								</a>
-
-								<span class="s-text13">
-									(22)
-								</span>
-							</li>
-
-							<li class="flex-sb-m">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									February 2018
-								</a>
-
-								<span class="s-text13">
-									(32)
-								</span>
-							</li>
-
-							<li class="flex-sb-m">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									January 2018
-								</a>
-
-								<span class="s-text13">
-									(21)
-								</span>
-							</li>
-
-							<li class="flex-sb-m">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									December 2017
-								</a>
-
-								<span class="s-text13">
-									(26)
-								</span>
-							</li>
-						</ul>
-
-						<!-- Tags -->
-						<h4 class="m-text23 p-t-50 p-b-25">
-							Tags
-						</h4>
-
-						<div class="wrap-tags flex-w">
-							<a href="#" class="tag-item">
-								Fashion
-							</a>
-
-							<a href="#" class="tag-item">
-								Lifestyle
-							</a>
-
-							<a href="#" class="tag-item">
-								Denim
-							</a>
-
-							<a href="#" class="tag-item">
-								Streetstyle
-							</a>
-
-							<a href="#" class="tag-item">
-								Crafts
-							</a>
-						</div>
 					</div>
 				</div>
 			</div>

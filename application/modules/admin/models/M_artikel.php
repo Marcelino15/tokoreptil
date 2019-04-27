@@ -7,14 +7,19 @@ class M_artikel extends CI_Model
     public $table           = 'artikel';
     public $field_select    = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel"];
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+    
     public function fetch_data($data)
     {
         $this->db->select($data['fields'])
             ->from($data['table_view']);
-            $data['total']  = $this->db->count_all_results(null, false);
-            $sql            = $this->db->get_compiled_select();
-            $data['result'] = $this->db->query($sql)->result_array();
-            return $data;
+        $data['total']  = $this->db->count_all_results(null, false);
+        $sql            = $this->db->get_compiled_select();
+        $data['result'] = $this->db->query($sql)->result_array();
+        return $data;
     }
 
     public function fetch_id($data)
@@ -93,5 +98,6 @@ class M_artikel extends CI_Model
         $data['result'] = $this->db->query($query)->row();
         return $data;
     }
+
     
 }
