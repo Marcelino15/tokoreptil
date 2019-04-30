@@ -4,7 +4,6 @@
     <section class="content-header">
       <h1>
         {title}
-        <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="{base_url({base_level}/dashboard)}"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -32,22 +31,26 @@
           <table id="tabel_personal" class="display" style="width: 100%">
             <thead>
               <tr>
+                <th>ID</th>
                 <th>Nama (searchable)</th>
                 <th>HP</th>
                 <th>Email (searchable)</th>
                 <th>Level (searchable)</th>
-                <th>ID</th>
+                <th>Provinsi</th>
+                <th>Kabupaten</th>
                 <th><a href="{base_url({base_level}/personal/tambah)}"><span><i class="glyphicon glyphicon-plus"></i></span></a></th>
               </tr>
             </thead>
             <tbody>
             {result}
               <tr>
+                <td>{id_personal}</td>
                 <td>{nama_personal}</td>
                 <td>{hp_personal}</td>
                 <td>{email_personal}</td>
                 <td>{level_personal}</td>
-                <td>{id_personal}</td>
+                <td>{nama_provinsi}</td>
+                <td>{nama_kabupaten}</td>
                 <td>
                   <a href="{base_url({level}/personal/detail/{id_personal})}"><span><i class="glyphicon glyphicon-resize-full"></i></span></a>
                 </td>

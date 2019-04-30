@@ -102,3 +102,6 @@
   });
 
 </script>
+<script>
+     $("#kabupaten").chained("#provinsi"); // disini kita hubungkan kota dengan provinsi
+</script>

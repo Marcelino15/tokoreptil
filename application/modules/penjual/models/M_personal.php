@@ -88,4 +88,18 @@ class M_personal extends CI_Model
         $this->db->query($query);    
         return true;
     }
+
+    public function get_provinsi()
+    {
+        $this->db->order_by('nama_provinsi', 'asc');
+        return $this->db->get('provinsi')->result();
+    }
+    
+    public function get_kabupaten()
+    {
+        // kita joinkan tabel kota dengan provinsi
+        $this->db->order_by('nama_kabupaten', 'asc');
+        $this->db->join('provinsi', 'kabupaten.idprovinsi_kabupaten = provinsi.id_provinsi');
+        return $this->db->get('kabupaten')->result();
+    }
 }

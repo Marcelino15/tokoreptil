@@ -26,6 +26,7 @@ if ($this->uri->segment(2)=='dashboard') {
 <script src=\"{base_url(assets/adminlte2/dist/js/pages/dashboard2.js)}\"></script>";
 }
 ?>
+<script src="{base_url(assets/adminlte2/dist/js/jquery.chained.min.js)}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{base_url(assets/adminlte2/dist/js/demo.js)}"></script>
 </body>

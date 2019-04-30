@@ -21,8 +21,9 @@ class M_personal extends CI_Model
     
     public function fetch_data($data)
     {
-        $this->db->select($data['fields'])
-            ->from($data['table_view']);
+        $table = 'v_personal_lokasi';
+        $this->db->select()
+            ->from($table);
         // unset($data);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
@@ -32,7 +33,7 @@ class M_personal extends CI_Model
     }
 
     public function fetch_id($data)
-    {
+    {   
         $this->db->select()
             ->from($data['table_view'])
             ->where('id_personal',$data['id_detail']);
@@ -96,6 +97,20 @@ class M_personal extends CI_Model
         $query = $this->db->set($data)->get_compiled_update();
         $this->db->query($query);    
         return true;
+    }
+
+    public function get_provinsi()
+    {
+        $this->db->order_by('nama_provinsi', 'asc');
+        return $this->db->get('provinsi')->result();
+    }
+    
+    public function get_kabupaten()
+    {
+        // kita joinkan tabel kota dengan provinsi
+        $this->db->order_by('nama_kabupaten', 'asc');
+        $this->db->join('provinsi', 'kabupaten.idprovinsi_kabupaten = provinsi.id_provinsi');
+        return $this->db->get('kabupaten')->result();
     }
 }
 

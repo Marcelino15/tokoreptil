@@ -42,13 +42,15 @@
             <div class="form-group">
             <label>Kategori</label>
               <select name="idkategori_barang" class="form-control">
-                  <option value="">---Pilih Kategori---</option>
-                  <option value="1">Ular</option>
-                  <option value="2">Katak</option>
-                  <option value="3">Kura-Kura</option>
-                  <option value="4">Kadal</option>
-                  <option value="5">Accessories</option>
-                  <option value="6">Serangga</option>
+                <option value="">---Pilih Kategori---</option>
+                  <?php
+                  foreach ($kategori['kategori'] as $kat) {
+                      ?>
+                  <option <?php echo $kategori['kategori_selected'] == $kat->id_kategori ? 'selected="selected"' : '' ?>
+                          value="<?php echo $kat->id_kategori ?>"><?php echo $kat->nama_kategori ?></option>
+                      <?php
+                  }
+                  ?>
               </select>
             </div>
 

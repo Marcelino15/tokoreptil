@@ -43,19 +43,39 @@
             <input type="email" name="email_personal" value="{email_personal}" class="form-control">
             
             <label>Lokasi</label>
-              <select name="lokasi_personal" class="form-control">
-                <option value="">---Pilih Lokasi Anda---</option>
-                <option value="Bantul">Bantul</option>
-                <option value="Gunung Kidul">Gunung Kidul</option>
-                <option value="Kulon Progo">Kulon Progo</option>
-                <option value="Sleman">Sleman</option>
-                <option value="Wates">Wates</option>
-              </select>
-              
+            <div class="form-group">
+            <label>Provinsi</label>
+                <select name="provinsi_personal" class="form-control" id="provinsi">
+                <option>---Masukkan Provinsi---</option>
+                <?php
+                foreach ($lokasi['provinsi'] as $prov) {
+                    ?>
+                    <option <?php echo $lokasi['provinsi_selected'] == $prov->id_provinsi ? 'selected="selected"' : '' ?>
+                        value="<?php echo $prov->id_provinsi ?>"><?php echo $prov->nama_provinsi ?></option>
+                    <?php
+                }
+                ?>
+                </select>
+            </div>
+            <div class="form-group">
+            <label>Kecamatan</label>
+                <select class="form-control" name="kabupaten_personal" id="kabupaten">
+                    <option value="">---Masukkan Kecamatan---</option>
+                    <?php
+                        foreach ($lokasi['kabupaten'] as $kab) {
+                            ?>
+                            <!--di sini kita tambahkan class berisi id provinsi-->
+                            <option <?php echo $lokasi['kabupaten_selected'] == $kab->idprovinsi_kabupaten ? 'selected="selected"' : '' ?>
+                                class="<?php echo $kab->idprovinsi_kabupaten ?>" value="<?php echo $kab->id_kabupaten ?>"><?php echo $kab->nama_kabupaten ?></option>
+                            <?php
+                        }
+                    ?>
+                </select>
+            </div>    
             <div class="form_dropdown">
             <label>Level</label>
             <select name="level_personal" class="form-control">
-                <option value="{level_personal}">{kategori_artikel}</option>
+                <option value="{level_personal}">{level_personal}</option>
                 <option value="">--- Pilih Kategori Artikel --</option>
                 <option value="penjual">Penjual</option>
                 <option value="admin">Admin</option>

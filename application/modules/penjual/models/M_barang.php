@@ -85,34 +85,10 @@ class M_barang extends CI_Model
         $this->db->query($query);    
         return true;
     }
-/* 
-	function get_kategori()
-	{
-        $hasil=$this->db->query("SELECT * FROM kategori");
-        return $hasil;
-    }
- 
-	function get_subkategori($id)
-	{
-        $hasil=$this->db->query("SELECT * FROM subkategori WHERE idkategori_subkategori='$id'");
-        return $hasil->result();
-	} */
-	function dd_provinsi()
+
+	public function get_kategori()
     {
-        // ambil data dari db
-        $this->db->order_by('provinsi', 'asc');
-        $result = $this->db->get('provinsi');
-        
-        // bikin array
-        // please select berikut ini merupakan tambahan saja agar saat pertama
-        // diload akan ditampilkan text please select.
-        $dd[''] = 'Please Select';
-        if ($result->num_rows() > 0) {
-            foreach ($result->result() as $row) {
-            // tentukan value (sebelah kiri) dan labelnya (sebelah kanan)
-                $dd[$row->id_provinsi] = $row->provinsi;
-            }
-        }
-        return $dd;
+        $this->db->order_by('nama_kategori', 'asc');
+        return $this->db->get('kategori')->result();
     }
 }

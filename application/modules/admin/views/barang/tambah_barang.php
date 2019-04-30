@@ -41,13 +41,16 @@
             </div>
             <div class="form-group">
             <label>Kategori</label>
-              <select name="idsubkategori_barang" class="form-control">
-                  <option value="">---Pilih Kategori---</option>
-                  <option value="1">Acrochordidae</option>
-                  <option value="2">Aniliidae</option>
-                  <option value="3">Anomochilidae</option>
-                  <option value="4">Boidae</option>
-                  <option value="5">Bolyeriidae</option>
+              <select name="idkategori_barang" class="form-control">
+                <option value="">---Pilih Kategori---</option>
+                <?php
+                foreach ($kategori['kategori'] as $kat) {
+                    ?>
+                <option <?php echo $kategori['kategori_selected'] == $kat->id_kategori ? 'selected="selected"' : '' ?>
+                        value="<?php echo $kat->id_kategori ?>"><?php echo $kat->nama_kategori ?></option>
+                    <?php
+                }
+                ?>
               </select>
             </div>
 

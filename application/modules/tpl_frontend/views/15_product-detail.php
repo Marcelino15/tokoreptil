@@ -38,7 +38,7 @@
 				</span>
 
 				<p class="s-text8 p-t-10">
-					{nama_personal}
+					Penjual : {nama_personal}
 				</p>
 
 				<!--  -->
@@ -59,20 +59,20 @@
 						</div>
 
 						<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
-							{lokasi_personal}
+							{nama_kabupaten}
 						</div>
 					</div>
 				</div>
 
 				<div class="p-b-45">
-					<span class="s-text8 m-r-35">{id_barang}</span>
-					<span class="s-text8">Categories: {nama_kategori}</span>
+					<span class="s-text8 m-r-35">Id Barang: {id_barang}</span>
+					<span class="s-text8">Kategori Barang: {nama_kategori}</span>
 				</div>
 
 				<!--  -->
 				<div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
 					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
-						Description
+						Deskripsi
 						<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
 						<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
 					</h5>

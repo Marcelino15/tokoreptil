@@ -20,17 +20,26 @@ class Daftar extends MY_Controller
             'foto_personal',
 			'hp_personal',
 			'email_personal',
-            'lokasi_personal',
+			'provinsi_personal',
+			'kabupaten_personal',
 			'level_personal',
 			'password_personal',
 			'insert_on'
-    	];
+		];
+		
     	return $data;
 	}
-	
+
 	public function index()
 	{	
-		$data=$this->classdata();
+		$data = array(
+			'classdata' => $this->classdata(),
+			'provinsi' => $this->mod->get_provinsi(),
+			'kabupaten' => $this->mod->get_kabupaten(),
+			'provinsi_selected' => '',
+			'kabupaten_selected' => '',
+		);
+		$data['title']	= 'Halaman Pendaftaran';
 		$this->parser->parse('global/daftar/index', $data);
 	}
 
@@ -51,7 +60,8 @@ class Daftar extends MY_Controller
 			"foto_personal"=>$foto_personal,
 			"hp_personal"=>$this->input->post('hp_personal'),
 			"email_personal"=>$this->input->post('email_personal'),
-			"lokasi_personal"=>$this->input->post('lokasi_personal'),
+			"provinsi_personal"=>$this->input->post('provinsi_personal'),
+			"kecamatan_personal" => $this->input->post('kecamatan_personal'),
 			"level_personal"=>$this->input->post('level_personal'),
 			"password_personal"=>$this->input->post('password_personal')
 		];

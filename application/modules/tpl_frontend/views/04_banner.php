@@ -9,8 +9,8 @@
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Ular / Snake
+							<a href="{base_url(frontend/shop_ular)}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								Ular 
 							</a>
 						</div>
 					</div>
@@ -21,8 +21,8 @@
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Kadal / Lizard
+							<a href="{base_url(frontend/shop_kadal)}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								Kadal
 							</a>
 						</div>
 					</div>
@@ -35,8 +35,8 @@
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Katak / Frog
+							<a href="{base_url(frontend/shop_katak)}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								Katak
 							</a>
 						</div>
 					</div>
@@ -47,8 +47,8 @@
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Accessories
+							<a href="{base_url(frontend/shop_acc)}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								Aksesoris
 							</a>
 						</div>
 					</div>
@@ -61,8 +61,8 @@
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Kura-Kura / Turtle
+							<a href="{base_url(frontend/shop_kura)}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								Kura-Kura
 							</a>
 						</div>
 					</div>
@@ -73,8 +73,8 @@
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Serangga / Insect
+							<a href="{base_url(frontend/shop_ser)}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								Serangga
 							</a>
 						</div>
 					</div>

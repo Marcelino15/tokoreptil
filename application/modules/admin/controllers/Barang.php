@@ -40,6 +40,10 @@ class Barang extends MY_Controller
 		$data					= self::class_data() + MY_Controller::data_session();
 		$data['base_function']	= 'tambah_barang';
 		$data['title']			= 'Input Barang';
+		$data['kategori']		   = array(
+            'kategori' => $this->mod->get_kategori(),
+            'kategori_selected' => '',
+            );
 		//print('<pre>'); print_r($data); exit();
 		$this->parser->parse('tpl_admin/template', $data);
 	}
@@ -85,6 +89,10 @@ class Barang extends MY_Controller
 		$data					= self::class_data() + MY_Controller::data_session();
 		$data['base_function']	= 'ubah_barang';
 		$data['title']			= 'Ubah barang';
+		$data['kategori']		   = array(
+            'kategori' => $this->mod->get_kategori(),
+            'kategori_selected' => '',
+            );
 		$data['result']			= $this->mod->detail_barang($this->uri->segment(4));
 		//print('<pre>'); print_r($data); exit();
 		$this->parser->parse('tpl_admin/template', $data);

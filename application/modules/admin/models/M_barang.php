@@ -12,124 +12,16 @@ class M_barang extends CI_Model
 		parent::__construct();
 	}
 	public function fetch_data($data)
-	{
-		$this->db->select($data['fields'])
-			->from($data['table_view']);
+	{	
+		$table = 'v_barang_personal_kategori';
+		$this->db->select()
+			->from($table);
 			$data['total']	= $this->db->count_all_results(null, false);
 			$sql			= $this->db->get_compiled_select();
 			$data['result']	= $this->db->query($sql)->result_array();
 
 			return $data;	
 	}
-
-	/* public function tampil($data)
-	{
-		$status_barang = 'ok';
-		$this->db->select()
-			->from($this->table)
-			->where("status_barang", $status_barang);
-		$data['total']	= $this->db->count_all_results(null, false);
-		$sql			= $this->db->get_compiled_select();
-		$data['result']	= $this->db->query($sql)->result_array();
-		//print('<pre>'); print_r($sql); exit(); 
-		return $data;	
-	}
-
-	public function tampil_ular($data)
-	{
-		$status_barang = 'ok';
-		$idkategori_barang = '1';
-		$this->db->select()
-			->from($this->table)
-			->where("status_barang", $status_barang)
-			->where("idkategori_barang", $idkategori_barang);		
-
-		$data['total']	= $this->db->count_all_results(null, false);
-		$sql			= $this->db->get_compiled_select();
-		$data['result']	= $this->db->query($sql)->result_array();
-
-		return $data;	
-	}
-
-	public function tampil_katak($data)
-	{
-		$status_barang = 'ok';
-		$idkategori_barang = '2';
-		$this->db->select()
-			->from($this->table)
-			->where("status_barang", $status_barang)
-			->where("idkategori_barang", $idkategori_barang);		
-
-		$data['total']	= $this->db->count_all_results(null, false);
-		$sql			= $this->db->get_compiled_select();
-		$data['result']	= $this->db->query($sql)->result_array();
-		//print('<pre>'); print_r($sql); exit();
-		return $data;	
-	}
-
-	public function tampil_kura($data)
-	{
-		$status_barang = 'ok';
-		$idkategori_barang = '3';
-		$this->db->select()
-			->from($this->table)
-			->where("status_barang", $status_barang)
-			->where("idkategori_barang", $idkategori_barang);		
-
-		$data['total']	= $this->db->count_all_results(null, false);
-		$sql			= $this->db->get_compiled_select();
-		$data['result']	= $this->db->query($sql)->result_array();
-
-		return $data;	
-	}
-
-	public function tampil_kadal($data)
-	{
-		$status_barang = 'ok';
-		$idkategori_barang = '4';
-		$this->db->select()
-			->from($this->table)
-			->where("status_barang", $status_barang)
-			->where("idkategori_barang", $idkategori_barang);		
-
-		$data['total']	= $this->db->count_all_results(null, false);
-		$sql			= $this->db->get_compiled_select();
-		$data['result']	= $this->db->query($sql)->result_array();
-
-		return $data;	
-	}
-
-	public function tampil_acc($data)
-	{
-		$status_barang = 'ok';
-		$idkategori_barang = '5';
-		$this->db->select()
-			->from($this->table)
-			->where("status_barang", $status_barang)
-			->where("idkategori_barang", $idkategori_barang);		
-
-		$data['total']	= $this->db->count_all_results(null, false);
-		$sql			= $this->db->get_compiled_select();
-		$data['result']	= $this->db->query($sql)->result_array();
-
-		return $data;	
-	}
-
-	public function tampil_ser($data)
-	{
-		$status_barang = 'ok';
-		$idkategori_barang = '6';
-		$this->db->select()
-			->from($this->table)
-			->where("status_barang", $status_barang)
-			->where("idkategori_barang", $idkategori_barang);		
-
-		$data['total']	= $this->db->count_all_results(null, false);
-		$sql			= $this->db->get_compiled_select();
-		$data['result']	= $this->db->query($sql)->result_array();
-
-		return $data;	
-	} */
 
 	public function detail_barang($id_barang)
 	{
@@ -171,4 +63,10 @@ class M_barang extends CI_Model
 		$query = $this->db->get_compiled_delete();
 		return true;
 	}
+
+	public function get_kategori()
+    {
+        $this->db->order_by('nama_kategori', 'asc');
+        return $this->db->get('kategori')->result();
+    }
 }

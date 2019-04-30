@@ -38,6 +38,12 @@ class Personal extends MY_Controller
         $data['table_view']    = 'personal';
         $data['title']         = 'Detail Data Personal';
         $data['id_detail']      = $this->uri->segment(4);
+        $data['lokasi']		   = array(
+            'provinsi' => $this->mod->get_provinsi(),
+            'kabupaten' => $this->mod->get_kabupaten(),
+            'provinsi_selected' => '',
+            'kabupaten_selected' => '',
+            );
         $data                   = $this->mod->fetch_id($data);
        // dump_exit($data);
         //print('<pre>'); print_r($data); exit();
@@ -60,6 +66,8 @@ class Personal extends MY_Controller
         'nama_personal' => $this->input->post('nama_personal'),
         'hp_personal' => $this->input->post('hp_personal'),
         'email_personal' => $this->input->post('email_personal'),
+        'provinsi_personal' => $this->input->post('provinsi_personal'),
+        'kabupaten_personal' => $this->input->post('kabupaten_personal'),
         'level_personal' => $this->input->post('level_personal'),
     ];
     //print('<pre>'); print_r($data); print_r($aksi); exit();

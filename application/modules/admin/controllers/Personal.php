@@ -26,13 +26,12 @@ class Personal extends MY_Controller
 
     public function index()
     {
-        $data = self::class_data() + MY_Controller::data_session();
+        $data                   = self::class_data() + MY_Controller::data_session();
 
         $data['base_function'] = 'index';
-        $data['table_view']    = 'personal';
+        $data['table_view']    = 'v_personal_lokasi';
         $data['fields']        = ['nama_personal', 'hp_personal', 'email_personal', 'level_personal', 'id_personal'];
         $data['title']         = 'Tabel Personal';
-
         $data['total']  = $this->mod->fetch_data($data)['total'];
         $data['result'] = $this->mod->fetch_data($data)['result'];
         foreach ($data['result'] as $records) {
@@ -40,6 +39,7 @@ class Personal extends MY_Controller
             $temp[]           = $records;
         }
         $data['result'] = $temp;
+        //print('<pre>'); print_r($data); exit();
         // dump_exit($data['result']);
         $this->parser->parse('tpl_admin/template', $data);
     }
@@ -49,6 +49,12 @@ class Personal extends MY_Controller
         $data                  = self::class_data() + MY_Controller::data_session();
         $data['base_function'] = 'tambah';
         $data['title']         = 'tambah data personal';
+        $data['lokasi']		   = array(
+            'provinsi' => $this->mod->get_provinsi(),
+            'kabupaten' => $this->mod->get_kabupaten(),
+            'provinsi_selected' => '',
+            'kabupaten_selected' => '',
+            );
        
         $this->parser->parse('tpl_admin/template', $data);
     }
@@ -73,6 +79,12 @@ class Personal extends MY_Controller
         $data['table_view']    = 'personal';
         $data['title']         = 'Detail Data Personal';
         $data['id_detail']      = $this->uri->segment(4);
+        $data['lokasi']		   = array(
+            'provinsi' => $this->mod->get_provinsi(),
+            'kabupaten' => $this->mod->get_kabupaten(),
+            'provinsi_selected' => '',
+            'kabupaten_selected' => '',
+            );
         $data                   = $this->mod->fetch_id($data);
         //dump_exit($data);
         //print('<pre>'); print_r($data); exit();
@@ -95,6 +107,8 @@ class Personal extends MY_Controller
         'nama_personal' => $this->input->post('nama_personal'),
         'hp_personal' => $this->input->post('hp_personal'),
         'email_personal' => $this->input->post('email_personal'),
+        'provinsi_personal' => $this->input->post('provinsi_personal'),
+        'kabupaten_personal' => $this->input->post('kabupaten_personal'),
         'level_personal' => $this->input->post('level_personal'),
     ];
     //print('<pre>'); print_r($data); print_r($aksi); exit();

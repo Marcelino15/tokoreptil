@@ -44,12 +44,14 @@
               <select name="idkategori_barang" class="form-control">
                   <option value="{idkategori_barang}">{idkategori_barang}</option>
                   <option value="">---Pilih Kategori---</option>
-                  <option value="1">Ular</option>
-                  <option value="2">Katak</option>
-                  <option value="3">Kura-Kura</option>
-                  <option value="4">Kadal</option>
-                  <option value="5">Accessories</option>
-                  <option value="6">Serangga</option>
+                <?php
+                foreach ($kategori['kategori'] as $kat) {
+                    ?>
+                <option <?php echo $kategori['kategori_selected'] == $kat->id_kategori ? 'selected="selected"' : '' ?>
+                        value="<?php echo $kat->id_kategori ?>"><?php echo $kat->nama_kategori ?></option>
+                    <?php
+                }
+                ?>
               </select>
               <label>Status Barang</label>
               <select name="status_barang" class="form-control">

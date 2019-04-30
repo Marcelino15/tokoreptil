@@ -28,5 +28,8 @@ if ($this->uri->segment(2)=='dashboard') {
 ?>
 <!-- AdminLTE for demo purposes -->
 <script src="{base_url(assets/adminlte2/dist/js/demo.js)}"></script>
+<!-- Javascript Chained Drop Down -->
+<script src="{base_url(assets/adminlte2/dist/js/jquery.chained.min.js)}"></script>
+
 </body>
 </html>
