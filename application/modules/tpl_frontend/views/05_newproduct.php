@@ -20,7 +20,7 @@
 						
 							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
 							
-								<img src="{base_url(assets/frontend/images/item-02.jpg)}" alt="IMG-PRODUCT">
+								<img src="<?php echo base_url('assets/foto_barang/'.$row['gambar1_barang']); ?>" alt="IMG-PRODUCT" width="150" height="300">
 
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -30,9 +30,9 @@
 
 									<div class="block2-btn-addcart w-size1 trans-0-4">
 										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-											Add to Cart
-										</button>
+										<a href="<?php echo base_url('frontend/product_detail/'.$row['id_barang']); ?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+											Lihat
+										</a>
 									</div>
 								</div>
 							</div>

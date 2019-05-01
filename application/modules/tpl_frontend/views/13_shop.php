@@ -104,7 +104,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-									<img src="{base_url(assets/foto_barang/{gambar1_barang})}" alt="IMG-PRODUCT">
+									<img src="{base_url(assets/foto_barang/{gambar1_barang})}" alt="IMG-PRODUCT" width="150" height="200">
 								</div>
 
 								<div class="block2-txt p-t-20">
