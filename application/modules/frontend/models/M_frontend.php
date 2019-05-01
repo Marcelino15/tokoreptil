@@ -321,4 +321,9 @@ class M_frontend extends CI_Model
 		return true;
 	}
 
+	function get_barang_list($limit, $start){
+        $query = $this->db->get('barang', $limit, $start);
+        return $query;
+    }
+
 }

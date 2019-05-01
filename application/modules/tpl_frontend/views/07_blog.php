@@ -15,7 +15,7 @@
 					<!-- Block3 -->
 				<div class="block2">
 					<a href="<?php echo base_url('frontend/blog_detail/'.$row['id_artikel']); ?>" class="block3-img dis-block hov-img-zoom">
-						<img src="{base_url(assets/frontend/images/blog-01.jpg)}" alt="IMG-BLOG">
+						<img src="<?php echo base_url('assets/foto_artikel/'.$row['gambar_artikel']); ?>" alt="IMG-BLOG" width="300" height="250">
 						<!-- <img src="<?php echo base_url('assets/foto_artikel/'.$row['gambar_artikel']); ?>" alt="IMG-BLOG" width="720px" height="auto" > -->
 					</a>
 
