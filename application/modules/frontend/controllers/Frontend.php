@@ -32,8 +32,8 @@ class Frontend extends MY_Controller {
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
 		$data['title']			= 'Shop';
-		$data['table_view'] 	= 'barang';
-		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang"];
+		$data['table_view'] 	= 'v_barang_personal_kategori';
+		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang", "nama_provinsi"];
 		$data['total']			= $this->mod->tampil($data)['total'];
 		$data['result']			= $this->mod->tampil($data)['result'];
 		foreach ($data['result'] as $records) {
@@ -44,7 +44,7 @@ class Frontend extends MY_Controller {
 		//print('<pre>'); print_r($data); exit();
 		
 		$config['base_url'] = site_url('frontend/shop'); //site url
-        $config['total_rows'] = $this->mod->get_count(); //total row
+        $config['total_rows'] = $this->db->count_all('barang'); //total row
         $config['per_page'] = 6;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
 		$choice = $config["total_rows"] / $config["per_page"];

@@ -114,6 +114,9 @@
 
 									<span class="block2-price m-text6 p-r-5">
 										Rp.&nbsp;{harga_barang},00
+									</span> <br/>
+									<span class="block2-price m-text6 p-r-5">
+										Lokasi : {nama_provinsi}
 									</span>
 								</div>
 							</div>
@@ -122,9 +125,12 @@
 					</div>
 
 					<!-- Pagination -->
-					<div class="pagination flex-m flex-w p-t-26">
-					<?php echo $this->pagination->create_links(); ?>
-					</div>
+					<div class="row">
+        				<div class="col">
+						<?php echo $this->pagination->create_links(); ?>
+						</div>
+					</div>	
+
 				</div>
 			</div>
 		</div>

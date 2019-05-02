@@ -39,14 +39,16 @@ class M_frontend extends CI_Model
     }
     public function tampil($data)
 	{
+		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
 		if($data['search'] != null){
-			$this->db->select('*');
-			$this->db->from('barang');
+			$this->db->select();
+			$this->db->from($table);
 			$this->db->like('nama_barang', $data['search']);
+			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
             ->where("status_barang", $status_barang)
             ->order_by('harga_barang', 'ASC');
          }else if($data['sorting'] == 1){
@@ -56,11 +58,11 @@ class M_frontend extends CI_Model
             ->order_by('harga_barang', 'DESC');
 		}else{
 			$this->db->select()
-			->from($this->table)
+			->from($table)
 			->where("status_barang", $status_barang);
 		} 
 		
-
+		//$this->db->limit(6);
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
@@ -70,28 +72,30 @@ class M_frontend extends CI_Model
 
 	public function tampil_ular($data)
 	{
+		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
 		$idkategori_barang = '1';
 		if($data['search'] != null){
-			$this->db->select('*');
-			$this->db->from('barang');
+			$this->db->select();
+			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
 			$this->db->like('nama_barang', $data['search']);
+			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'ASC');
          }else if($data['sorting'] == 1){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
 		}else{
 			$this->db->select()
-			->from($this->table)
+			->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);	
 		} 
@@ -105,28 +109,30 @@ class M_frontend extends CI_Model
 
 	public function tampil_katak($data)
 	{
+		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
 		$idkategori_barang = '2';
 		if($data['search'] != null){
-			$this->db->select('*');
-			$this->db->from('barang');
+			$this->db->select();
+			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
 			$this->db->like('nama_barang', $data['search']);
+			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'ASC');
          }else if($data['sorting'] == 1){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
 		}else{
 			$this->db->select()
-			->from($this->table)
+			->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);	
 		} 
@@ -140,28 +146,30 @@ class M_frontend extends CI_Model
 
 	public function tampil_kura($data)
 	{
+		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
 		$idkategori_barang = '3';
 		if($data['search'] != null){
-			$this->db->select('*');
-			$this->db->from('barang');
+			$this->db->select();
+			$this->db->from('$table');
 			$this->db->where("idkategori_barang", $idkategori_barang);
 			$this->db->like('nama_barang', $data['search']);
+			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'ASC');
          }else if($data['sorting'] == 1){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
 		}else{
 			$this->db->select()
-			->from($this->table)
+			->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);	
 		} 		
@@ -175,28 +183,30 @@ class M_frontend extends CI_Model
 
 	public function tampil_kadal($data)
 	{
+		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
 		$idkategori_barang = '4';
 		if($data['search'] != null){
-			$this->db->select('*');
-			$this->db->from('barang');
+			$this->db->select();
+			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
 			$this->db->like('nama_barang', $data['search']);
+			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'ASC');
          }else if($data['sorting'] == 1){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
 		}else{
 			$this->db->select()
-			->from($this->table)
+			->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);	
 		} 				
@@ -210,28 +220,30 @@ class M_frontend extends CI_Model
 
 	public function tampil_acc($data)
 	{
+		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
 		$idkategori_barang = '5';
 		if($data['search'] != null){
-			$this->db->select('*');
-			$this->db->from('barang');
+			$this->db->select();
+			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
 			$this->db->like('nama_barang', $data['search']);
+			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'ASC');
          }else if($data['sorting'] == 1){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
 		}else{
 			$this->db->select()
-			->from($this->table)
+			->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);	
 		} 					
@@ -245,28 +257,30 @@ class M_frontend extends CI_Model
 
 	public function tampil_ser($data)
 	{
+		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
 		$idkategori_barang = '6';
 		if($data['search'] != null){
-			$this->db->select('*');
-			$this->db->from('barang');
+			$this->db->select();
+			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
 			$this->db->like('nama_barang', $data['search']);
+			$this->db->like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'ASC');
          }else if($data['sorting'] == 1){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
 		}else{
 			$this->db->select()
-			->from($this->table)
+			->from($table)
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang);	
 		} 					
