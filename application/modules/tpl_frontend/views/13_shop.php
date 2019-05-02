@@ -123,7 +123,7 @@
 
 					<!-- Pagination -->
 					<div class="pagination flex-m flex-w p-t-26">
-						<?php echo $pagination; ?>
+					<?php echo $this->pagination->create_links(); ?>
 					</div>
 				</div>
 			</div>

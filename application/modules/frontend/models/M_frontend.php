@@ -321,7 +321,12 @@ class M_frontend extends CI_Model
 		return true;
 	}
 
+	public function get_count() {
+        return $this->db->get('barang')->num_rows();
+	}
+	
 	function get_barang_list($limit, $start){
+		$this->db->limit($limit, $start);
         $query = $this->db->get('barang', $limit, $start);
         return $query;
     }
