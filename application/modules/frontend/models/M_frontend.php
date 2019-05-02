@@ -39,6 +39,7 @@ class M_frontend extends CI_Model
     }
     public function tampil($data)
 	{
+		//$this->db->limit(6);
 		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
 		if($data['search'] != null){
@@ -53,7 +54,7 @@ class M_frontend extends CI_Model
             ->order_by('harga_barang', 'ASC');
          }else if($data['sorting'] == 1){
 			$this->db->select()
-            ->from($this->table)
+            ->from($table)
             ->where("status_barang", $status_barang)
             ->order_by('harga_barang', 'DESC');
 		}else{
@@ -151,7 +152,7 @@ class M_frontend extends CI_Model
 		$idkategori_barang = '3';
 		if($data['search'] != null){
 			$this->db->select();
-			$this->db->from('$table');
+			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
 			$this->db->like('nama_barang', $data['search']);
 			$this->db->or_like('nama_provinsi', $data['search']);
@@ -340,7 +341,7 @@ class M_frontend extends CI_Model
 	}
 	
 	function get_barang_list($limit, $start){
-		$this->db->limit($limit, $start);
+		$this->db->limit(6, $start);
         $query = $this->db->get('barang', $limit, $start);
         return $query;
     }

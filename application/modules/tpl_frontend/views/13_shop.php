@@ -86,7 +86,6 @@
 									<option>Pilih Sorting</option>
 									<option value="0">Termurah ke Termahal</option>
 									<option value="1">Termahal ke Termurah</option>
-									<option value="2">Barang Terbaru</option>
 								</select>
 								</form>
 							</div>
