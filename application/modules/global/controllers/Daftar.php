@@ -61,7 +61,7 @@ class Daftar extends MY_Controller
 			"hp_personal"=>$this->input->post('hp_personal'),
 			"email_personal"=>$this->input->post('email_personal'),
 			"provinsi_personal"=>$this->input->post('provinsi_personal'),
-			"kecamatan_personal" => $this->input->post('kecamatan_personal'),
+			"kabupaten_personal" => $this->input->post('kabupaten_personal'),
 			"level_personal"=>$this->input->post('level_personal'),
 			"password_personal"=>$this->input->post('password_personal')
 		];

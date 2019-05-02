@@ -57,6 +57,11 @@ class M_frontend extends CI_Model
             ->from($table)
             ->where("status_barang", $status_barang)
             ->order_by('harga_barang', 'DESC');
+		}else if($data['sorting'] == 2){
+			$this->db->select()
+				->from($table)
+				->where("status_barang", $status_barang)
+				->order_by('insert_on', 'DESC');
 		}else{
 			$this->db->select()
 			->from($table)
@@ -94,6 +99,12 @@ class M_frontend extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
+		}else if($data['sorting'] == 2){
+			$this->db->select()
+				->from($table)
+				->where("status_barang", $status_barang)
+				->where("idkategori_barang", $idkategori_barang)
+				->order_by('insert_on', 'DESC');
 		}else{
 			$this->db->select()
 			->from($table)
@@ -131,6 +142,12 @@ class M_frontend extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
+		}else if($data['sorting'] == 2){
+			$this->db->select()
+				->from($table)
+				->where("status_barang", $status_barang)
+				->where("idkategori_barang", $idkategori_barang)
+				->order_by('insert_on', 'DESC');
 		}else{
 			$this->db->select()
 			->from($table)
@@ -168,6 +185,12 @@ class M_frontend extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
+		}else if($data['sorting'] == 2){
+			$this->db->select()
+				->from($table)
+				->where("status_barang", $status_barang)
+				->where("idkategori_barang", $idkategori_barang)
+				->order_by('insert_on', 'DESC');
 		}else{
 			$this->db->select()
 			->from($table)
@@ -205,6 +228,12 @@ class M_frontend extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
+		}else if($data['sorting'] == 2){
+			$this->db->select()
+				->from($table)
+				->where("status_barang", $status_barang)
+				->where("idkategori_barang", $idkategori_barang)
+				->order_by('insert_on', 'DESC');
 		}else{
 			$this->db->select()
 			->from($table)
@@ -242,6 +271,12 @@ class M_frontend extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
+		}else if($data['sorting'] == 2){
+			$this->db->select()
+				->from($table)
+				->where("status_barang", $status_barang)
+				->where("idkategori_barang", $idkategori_barang)
+				->order_by('insert_on', 'DESC');
 		}else{
 			$this->db->select()
 			->from($table)
@@ -279,6 +314,12 @@ class M_frontend extends CI_Model
 			->where("status_barang", $status_barang)
 			->where("idkategori_barang", $idkategori_barang)	
             ->order_by('harga_barang', 'DESC');
+		}else if($data['sorting'] == 2){
+			$this->db->select()
+				->from($table)
+				->where("status_barang", $status_barang)
+				->where("idkategori_barang", $idkategori_barang)
+				->order_by('insert_on', 'DESC');
 		}else{
 			$this->db->select()
 			->from($table)
@@ -341,7 +382,7 @@ class M_frontend extends CI_Model
 	}
 	
 	function get_barang_list($limit, $start){
-		$this->db->limit(6, $start);
+	
         $query = $this->db->get('barang', $limit, $start);
         return $query;
     }

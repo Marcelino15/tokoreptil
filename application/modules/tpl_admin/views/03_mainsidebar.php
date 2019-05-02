@@ -28,18 +28,8 @@
             <li><a href="{site_url({base_level}/profil/password)}"><i class="fa fa-circle-o"></i> Ganti Password</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i> <span>Personal</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{site_url({base_level}/personal)}"><i class="fa fa-circle-o"></i> Personal</a></li>
-            <!-- <li><a href="{site_url({base_level}/coverage)}"><i class="fa fa-circle-o"></i> Lokasi</a></li> -->
-          </ul>
-        </li>
+
+        <li><a href="{site_url({base_level}/personal)}"><i class="fa fa-user"></i><span>Personal</span></a></li>
 
         <li class="treeview">
           <a href="#">

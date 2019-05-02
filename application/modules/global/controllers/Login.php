@@ -31,8 +31,9 @@ class Login extends MY_Controller
 			'nama_personal',
             'foto_personal',
 			'hp_personal',
-			'email_personal',
-            'lokasi_personal',
+            'email_personal',
+            'provinsi_personal',
+            'kabupaten_personal',
 			'level_personal',
 			'insert_on'
     	];
@@ -70,7 +71,8 @@ class Login extends MY_Controller
                     'foto_session' => $data['result']->foto_personal,
                     'hp_session' => $data['result']->hp_personal,
                     'email_session' => $data['result']->email_personal,
-                    'lokasi_session' => $data['resut']->lokasi_personal,
+                    'provinsi_session' => $data['resut']->provinsi_personal,
+                    'kabupaten_session' => $data['resut']->kabupaten_personal,
                     'level_session' => $data['result']->level_personal,
                     'insert_on_session' => $data['result']->insert_on,
                     'logged_in' => true

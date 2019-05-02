@@ -20,6 +20,7 @@ class Barang extends MY_Controller
 	
 	public function index()
 	{
+		$temp = null;
 		$data 					= self::class_data() + MY_Controller::data_session();
 		$data['base_function']	= 'index';
 		$data['table_view']		= 'barang';
@@ -33,7 +34,13 @@ class Barang extends MY_Controller
 			$temp[]				= $records;
 		}
 		$data['result'] 		= $temp;
-		$this->parser->parse('tpl_penjual/template', $data);
+		if ($temp != null)
+		{
+			$this->parser->parse('tpl_penjual/template', $data);
+		} else {
+			$this->parser->parse('tpl_penjual/template_kosong', $data);
+		}
+		
 	}
 
 	public function tambah()

@@ -36,21 +36,23 @@ class Frontend extends MY_Controller {
 		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang", "nama_provinsi"];
 		$data['total']			= $this->mod->tampil($data)['total'];
 		$data['result']			= $this->mod->tampil($data)['result'];
+		//print('<pre>'); print_r($data); exit();
 		foreach ($data['result'] as $records) {
 			$records['level']	= $data['base_level'];
 			$temp[]				= $records;
 		}
 		$data['result']			= $temp;
-		//print('<pre>'); print_r($data); exit();
 		
-		$config['base_url'] = site_url('frontend/shop'); //site url
+		
+		//konfigurasi pagination
+        $config['base_url'] = site_url('frontend/shop'); //site url
         $config['total_rows'] = $this->db->count_all('barang'); //total row
         $config['per_page'] = 6;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
-		$choice = $config["total_rows"] / $config["per_page"];
-		$config["num_links"] = floor($choice);
-
-		$config['first_link']       = 'First';
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+        // Membuat Style pagination untuk BootStrap v4
+        $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
         $config['prev_link']        = 'Prev';
@@ -67,17 +69,14 @@ class Frontend extends MY_Controller {
         $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
         $config['first_tagl_close'] = '</span></li>';
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
-		$config['last_tagl_close']  = '</span></li>';
-		
-		$this->pagination->initialize($config);
-		
-		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
- 
-    
+        $config['last_tagl_close']  = '</span></li>';
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
         $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
- 
         $data['pagination'] = $this->pagination->create_links();
- 
+		//load view mahasiswa view
+		
         
 		if ($temp != null)
 		{

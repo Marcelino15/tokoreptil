@@ -33,8 +33,9 @@
                 <li class="list-group-item">
                   <b>Email</b> <a class="pull-right">{email_session}</a>
                 </li>
+                
                 <li class="list-group-item">
-                  <b>Friends</b> <a class="pull-right">13,287</a>
+                  <b>Lokasi</b> <a class="pull-right">{provinsi_session}</a>
                 </li>
               </ul>
             </div>
