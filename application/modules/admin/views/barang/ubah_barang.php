@@ -82,6 +82,7 @@
             <br><br>
             <button type="submit" name="aksi" value="simpan" class="btn btn-success">Simpan</button>
             <button type="submit" value="Go Back" onclick="history.back(-1)" class="btn btn-primary">Batal</button>
+            <a href="{base_url(admin/barang/hapus/{id_barang})}" class="btn btn-danger">Hapus</a>
           </form>
           {/result}
         </div>

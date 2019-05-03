@@ -174,7 +174,8 @@ class Barang extends MY_Controller
 		$id = $this->uri->segment(4);
 		$this->mod->hapus('barang', $id);
 		//print('<pre>'); print_r($id); exit();
-		redirect(base_url('penjual/barang'));
+		redirect(base_url($data['base_level'] . 'penjual/barang'));
+		//redirect(base_url('penjual/barang'));
 	}
 	
 	function get_subkategori()

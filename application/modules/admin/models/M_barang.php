@@ -61,6 +61,7 @@ class M_barang extends CI_Model
 			->from($this->table)
 			->where('id_barang', $id);
 		$query = $this->db->get_compiled_delete();
+		$this->db->query($query);
 		return true;
 	}
 
