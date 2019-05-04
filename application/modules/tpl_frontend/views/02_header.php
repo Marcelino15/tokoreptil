@@ -38,7 +38,7 @@
 							</li>
 
 							<li>
-								<a href="{base_url(frontend/shop)}">Barang</a>
+								<a href="{base_url(frontend/shop)}">Reptil</a>
 							</li>
 
 							<li>
@@ -127,7 +127,7 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="{base_url(frontend/shop)}">Barang</a>
+						<a href="{base_url(frontend/shop)}">Reptil</a>
 					</li>
 
 					<li class="item-menu-mobile">

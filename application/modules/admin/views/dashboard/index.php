@@ -297,7 +297,7 @@
                   <tr>
                     <td><a href="pages/examples/invoice.html"><?php echo $row['id_barang'];?></a></td>
                     <td><?php echo $row['nama_barang'];?></td>
-                    <td><span class="label label-success"><?php echo $row['status_barang'];?></span></td>
+                    <td><span class="label <?php echo $row['status_barang'] == 'OK' ? 'label-success' : 'label-danger'; ?>"><?php echo $row['status_barang'];?></span></td>
                     <td>
                       <div class="sparkbar" data-color="#00a65a" data-height="20">Rp.<?php echo $row['harga_barang'];?>,00</div>
                     </td>

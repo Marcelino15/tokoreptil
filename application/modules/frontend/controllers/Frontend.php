@@ -34,20 +34,21 @@ class Frontend extends MY_Controller {
 		$data['title']			= 'Shop';
 		$data['table_view'] 	= 'v_barang_personal_kategori';
 		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang", "nama_provinsi"];
-		$data['total']			= $this->mod->tampil($data)['total'];
-		$data['result']			= $this->mod->tampil($data)['result'];
-		//print('<pre>'); print_r($data); exit();
-		foreach ($data['result'] as $records) {
-			$records['level']	= $data['base_level'];
-			$temp[]				= $records;
-		}
-		$data['result']			= $temp;
+		// $data['total']			= $this->mod->tampil($data)['total'];
+		// $data['result']			= $this->mod->tampil($data)['result'];
+		// //print('<pre>'); print_r($data); exit();
+		// foreach ($data['result'] as $records) {
+		// 	$records['level']	= $data['base_level'];
+		// 	$temp[]				= $records;
+		// }
+		// $data['result']			= $temp;
 		
 		
 		//konfigurasi pagination
+		$this->load->library('pagination');
         $config['base_url'] = site_url('frontend/shop'); //site url
-        $config['total_rows'] = $this->db->count_all('barang'); //total row
-        $config['per_page'] = 6;  //show record per halaman
+		$config['total_rows'] =$this->db->count_all('barang');
+		$config['per_page']= 6;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
@@ -72,11 +73,20 @@ class Frontend extends MY_Controller {
         $config['last_tagl_close']  = '</span></li>';
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['per_page'] = $config["per_page"];
         //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
         $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
         $data['pagination'] = $this->pagination->create_links();
 		//load view mahasiswa view
-		
+
+        $limit = 1;
+		$data['result']			= $this->mod->tampil($data)['result'];
+		//print('<pre>'); print_r($data); exit();
+		foreach ($data['result'] as $records) {
+			$records['level']	= $data['base_level'];
+			$temp[]				= $records;
+		}
+		$data['result']			= $temp;
         
 		if ($temp != null)
 		{

@@ -3,7 +3,7 @@
 	<!-- Title Page -->
 	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url({base_url(assets/frontend/images/shop.jpg)})">
 		<h2 class="l-text2 t-center">
-			Barang aksesoris
+			 Aksesoris
 		</h2>
 		<p class="m-text13 t-center">
 			New Collection 2019

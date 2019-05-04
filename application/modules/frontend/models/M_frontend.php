@@ -37,7 +37,7 @@ class M_frontend extends CI_Model
         //print('<pre>'); print_r($sql); exit();
         return $data;
     }
-    public function tampil($data)
+    public function tampil($data, $limit = null, $offset= null)
 	{
 		//$this->db->limit(6);
 		$table = 'v_barang_personal_kategori';
@@ -67,8 +67,9 @@ class M_frontend extends CI_Model
 			->from($table)
 			->where("status_barang", $status_barang);
 		} 
+
 		
-		//$this->db->limit(6);
+		$this->db->limit($data['per_page'], $data['page']);
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
@@ -383,7 +384,7 @@ class M_frontend extends CI_Model
 	
 	function get_barang_list($limit, $start){
 	
-        $query = $this->db->get('barang', $limit, $start);
+        $query = $this->db->get('barang', $limit, $start)->result();
         return $query;
     }
 
