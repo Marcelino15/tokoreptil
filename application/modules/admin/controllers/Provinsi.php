@@ -10,7 +10,7 @@ class Provinsi extends MY_Controller
 
     public function index()
     {
-        $data = MY_Constroller::data_session();
+        $data = MY_Controller::data_session();
 
         $data['base_level']     = $this->uri->segment(1);
         $data['base_class']     = 'provinsi'  ;
@@ -43,6 +43,7 @@ class Provinsi extends MY_Controller
     public function tambah_proses()
     {
         $data = [
+            "id_provinsi"   => $this->input->post('id_provinsi'),
             "nama_provinsi" => $this->input->post('nama_provinsi'),
         ];
         //print('<pre>'); print_r($data); exit();
@@ -82,7 +83,7 @@ class Provinsi extends MY_Controller
         $id = $this->uri->segment(4);
         $this->mod->hapus('provinsi', $id);
         //print('<pre>'); print_r($id); exit();
-        redirect(base_ur('admin/template', $data));
+        redirect(base_url('admin/template', $data));
     }
 
 }

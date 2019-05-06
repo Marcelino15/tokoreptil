@@ -44,6 +44,21 @@
             <!-- <li><a href="{site_url({base_level}/subkategori)}"><i class="fa fa-circle-o"></i> Subkategori</a></li> -->
           </ul>
         </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-map"></i> <span>Lokasi</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{site_url({base_level}/provinsi)}"><i class="fa fa-circle-o"></i>Provinsi</a></li>
+            <li><a href="{site_url({base_level}/kategori)}"><i class="fa fa-circle-o"></i>Kabupaten</a></li>
+            <!-- <li><a href="{site_url({base_level}/subkategori)}"><i class="fa fa-circle-o"></i> Subkategori</a></li> -->
+          </ul>
+        </li>
+
         <li><a href="{site_url({base_level}/pesan)}"><i class="fa fa-envelope"></i> <span>Pesan</span></a></li>
         <li><a href="{site_url({base_level}/artikel)}"><i class="fa fa-book"></i> <span>Artikel</span></a></li>
       </ul>
