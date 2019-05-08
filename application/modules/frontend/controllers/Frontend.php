@@ -96,18 +96,60 @@ class Frontend extends MY_Controller {
 		}
 	}
 
-	public function shop_ular()
+	public function shop_ular($keyword = null)
 	{
 		$temp = null;
 		$this->load->model('M_frontend', 'mod');
+		$data 					= self::class_data();
 		$data['title']			='Shop';
 		$data['table_view'] 	= 'barang';
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
 		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang"];
-		$data['total']			= $this->mod->tampil_ular($data)['total'];
+		/*$data['total']			= $this->mod->tampil_ular($data)['total'];
 		$data['result']			= $this->mod->tampil_ular($data)['result'];
 		foreach ($data['result'] as $records) {
+			$temp[]				= $records;
+		}*/
+		$this->load->library('pagination');
+        $config['base_url'] = site_url('frontend/shop_ular'); //site url
+		$config['total_rows'] =$this->db->count_all('barang');
+		$config['per_page']= 6;  //show record per halaman
+        $config["uri_segment"] = 3;  // uri parameter
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+        // Membuat Style pagination untuk BootStrap v4
+        $config['first_link']       = 'First';
+        $config['last_link']        = 'Last';
+        $config['next_link']        = 'Next';
+        $config['prev_link']        = 'Prev';
+        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']   = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['per_page'] = $config["per_page"];
+        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
+        $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
+        $data['pagination'] = $this->pagination->create_links();
+		//load view mahasiswa view
+
+        $limit = 1;
+		$data['result']			= $this->mod->tampil_ular($data)['result'];
+		//print('<pre>'); print_r($data); exit();
+		foreach ($data['result'] as $records) {
+			$records['level']	= $data['base_level'];
 			$temp[]				= $records;
 		}
 		$data['result']			= $temp;
@@ -120,18 +162,60 @@ class Frontend extends MY_Controller {
 	
 	}
 
-	public function shop_katak()
+	public function shop_katak($keyword = null)
 	{
 		$temp = null;
 		$this->load->model('M_frontend', 'mod');
+		$data 					= self::class_data();
 		$data['title']			='Shop';
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
 		$data['table_view'] 	= 'barang';
 		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang"];
-		$data['total']			= $this->mod->tampil_katak($data)['total'];
+		/*$data['total']			= $this->mod->tampil_katak($data)['total'];
 		$data['result']			= $this->mod->tampil_katak($data)['result'];
 		foreach ($data['result'] as $records) {
+			$temp[]				= $records;
+		}*/
+		$this->load->library('pagination');
+        $config['base_url'] = site_url('frontend/shop_katak'); //site url
+		$config['total_rows'] =$this->db->count_all('barang');
+		$config['per_page']= 6;  //show record per halaman
+        $config["uri_segment"] = 3;  // uri parameter
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+        // Membuat Style pagination untuk BootStrap v4
+        $config['first_link']       = 'First';
+        $config['last_link']        = 'Last';
+        $config['next_link']        = 'Next';
+        $config['prev_link']        = 'Prev';
+        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']   = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['per_page'] = $config["per_page"];
+        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
+        $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
+        $data['pagination'] = $this->pagination->create_links();
+		//load view mahasiswa view
+
+        $limit = 1;
+		$data['result']			= $this->mod->tampil_katak($data)['result'];
+		//print('<pre>'); print_r($data); exit();
+		foreach ($data['result'] as $records) {
+			$records['level']	= $data['base_level'];
 			$temp[]				= $records;
 		}
 		$data['result']			= $temp;
@@ -145,18 +229,60 @@ class Frontend extends MY_Controller {
 	
 		
 
-	public function shop_kura()
+	public function shop_kura($keyword = null)
 	{
 		$temp = null;
 		$this->load->model('M_frontend', 'mod');
+		$data 					= self::class_data();
 		$data['title']			='Shop';
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
 		$data['table_view'] 	= 'barang';
 		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang"];
-		$data['total']			= $this->mod->tampil_kura($data)['total'];
+		/*$data['total']			= $this->mod->tampil_kura($data)['total'];
 		$data['result']			= $this->mod->tampil_kura($data)['result'];
 		foreach ($data['result'] as $records) {
+			$temp[]				= $records;
+		}*/
+		$this->load->library('pagination');
+        $config['base_url'] = site_url('frontend/shop_kura'); //site url
+		$config['total_rows'] =$this->db->count_all('barang');
+		$config['per_page']= 6;  //show record per halaman
+        $config["uri_segment"] = 3;  // uri parameter
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+        // Membuat Style pagination untuk BootStrap v4
+        $config['first_link']       = 'First';
+        $config['last_link']        = 'Last';
+        $config['next_link']        = 'Next';
+        $config['prev_link']        = 'Prev';
+        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']   = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['per_page'] = $config["per_page"];
+        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
+        $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
+        $data['pagination'] = $this->pagination->create_links();
+		//load view mahasiswa view
+
+        $limit = 1;
+		$data['result']			= $this->mod->tampil_kura($data)['result'];
+		//print('<pre>'); print_r($data); exit();
+		foreach ($data['result'] as $records) {
+			$records['level']	= $data['base_level'];
 			$temp[]				= $records;
 		}
 		$data['result']			= $temp;
@@ -169,18 +295,60 @@ class Frontend extends MY_Controller {
 		
 	}
 
-	public function shop_kadal()
+	public function shop_kadal($keyword = null)
 	{
 		$temp = null;
 		$this->load->model('M_frontend', 'mod');
+		$data 					= self::class_data();
 		$data['title']			='Shop';
 		$data['table_view'] 	= 'barang';
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
 		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang"];
-		$data['total']			= $this->mod->tampil_kadal($data)['total'];
+		/*$data['total']			= $this->mod->tampil_kadal($data)['total'];
 		$data['result']			= $this->mod->tampil_kadal($data)['result'];
 		foreach ($data['result'] as $records) {
+			$temp[]				= $records;
+		}*/
+		$this->load->library('pagination');
+        $config['base_url'] = site_url('frontend/shop_kadal'); //site url
+		$config['total_rows'] =$this->db->count_all('barang');
+		$config['per_page']= 6;  //show record per halaman
+        $config["uri_segment"] = 3;  // uri parameter
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+        // Membuat Style pagination untuk BootStrap v4
+        $config['first_link']       = 'First';
+        $config['last_link']        = 'Last';
+        $config['next_link']        = 'Next';
+        $config['prev_link']        = 'Prev';
+        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']   = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['per_page'] = $config["per_page"];
+        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
+        $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
+        $data['pagination'] = $this->pagination->create_links();
+		//load view mahasiswa view
+
+        $limit = 1;
+		$data['result']			= $this->mod->tampil_kadal($data)['result'];
+		//print('<pre>'); print_r($data); exit();
+		foreach ($data['result'] as $records) {
+			$records['level']	= $data['base_level'];
 			$temp[]				= $records;
 		}
 		$data['result']			= $temp;
@@ -193,18 +361,60 @@ class Frontend extends MY_Controller {
 		
 	}
 
-	public function shop_acc()
+	public function shop_acc($keyword = null)
 	{
 		$temp = null;
 		$this->load->model('M_frontend', 'mod');
+		$data 					= self::class_data();
 		$data['title']			='Shop';
 		$data['table_view'] 	= 'barang';
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
 		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang"];
-		$data['total']			= $this->mod->tampil_acc($data)['total'];
+		/*$data['total']			= $this->mod->tampil_acc($data)['total'];
 		$data['result']			= $this->mod->tampil_acc($data)['result'];
 		foreach ($data['result'] as $records) {
+			$temp[]				= $records;
+		}*/
+		$this->load->library('pagination');
+        $config['base_url'] = site_url('frontend/shop_acc'); //site url
+		$config['total_rows'] =$this->db->count_all('barang');
+		$config['per_page']= 6;  //show record per halaman
+        $config["uri_segment"] = 3;  // uri parameter
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+        // Membuat Style pagination untuk BootStrap v4
+        $config['first_link']       = 'First';
+        $config['last_link']        = 'Last';
+        $config['next_link']        = 'Next';
+        $config['prev_link']        = 'Prev';
+        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']   = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['per_page'] = $config["per_page"];
+        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
+        $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
+        $data['pagination'] = $this->pagination->create_links();
+		//load view mahasiswa view
+
+        $limit = 1;
+		$data['result']			= $this->mod->tampil_acc($data)['result'];
+		//print('<pre>'); print_r($data); exit();
+		foreach ($data['result'] as $records) {
+			$records['level']	= $data['base_level'];
 			$temp[]				= $records;
 		}
 		$data['result']			= $temp;
@@ -217,18 +427,60 @@ class Frontend extends MY_Controller {
 		
 	}
 
-	public function shop_ser()
+	public function shop_ser($keyword = null)
 	{
 		$temp = null;
 		$this->load->model('M_frontend', 'mod');
+		$data 					= self::class_data();
 		$data['title']			='Shop';
 		$data['table_view'] 	= 'barang';
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
 		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang"];
-		$data['total']			= $this->mod->tampil_ser($data)['total'];
+		/*$data['total']			= $this->mod->tampil_ser($data)['total'];
 		$data['result']			= $this->mod->tampil_ser($data)['result'];
 		foreach ($data['result'] as $records) {
+			$temp[]				= $records;
+		}*/
+		$this->load->library('pagination');
+        $config['base_url'] = site_url('frontend/shop_ser'); //site url
+		$config['total_rows'] =$this->db->count_all('barang');
+		$config['per_page']= 6;  //show record per halaman
+        $config["uri_segment"] = 3;  // uri parameter
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+        // Membuat Style pagination untuk BootStrap v4
+        $config['first_link']       = 'First';
+        $config['last_link']        = 'Last';
+        $config['next_link']        = 'Next';
+        $config['prev_link']        = 'Prev';
+        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']   = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['per_page'] = $config["per_page"];
+        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
+        $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
+        $data['pagination'] = $this->pagination->create_links();
+		//load view mahasiswa view
+
+        $limit = 1;
+		$data['result']			= $this->mod->tampil_ser($data)['result'];
+		//print('<pre>'); print_r($data); exit();
+		foreach ($data['result'] as $records) {
+			$records['level']	= $data['base_level'];
 			$temp[]				= $records;
 		}
 		$data['result']			= $temp;

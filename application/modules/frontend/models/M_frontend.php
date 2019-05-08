@@ -77,7 +77,7 @@ class M_frontend extends CI_Model
 		return $data;	
 	}
 
-	public function tampil_ular($data)
+	public function tampil_ular($data, $limit = null, $offset= null)
 	{
 		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
@@ -113,6 +113,7 @@ class M_frontend extends CI_Model
 			->where("idkategori_barang", $idkategori_barang);	
 		} 
 		
+		$this->db->limit($data['per_page'], $data['page']);
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
@@ -120,7 +121,7 @@ class M_frontend extends CI_Model
 		return $data;	
 	}
 
-	public function tampil_katak($data)
+	public function tampil_katak($data, $limit = null, $offset= null)
 	{
 		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
@@ -156,6 +157,7 @@ class M_frontend extends CI_Model
 			->where("idkategori_barang", $idkategori_barang);	
 		} 
 
+		$this->db->limit($data['per_page'], $data['page']);
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
@@ -163,7 +165,7 @@ class M_frontend extends CI_Model
 		return $data;	
 	}
 
-	public function tampil_kura($data)
+	public function tampil_kura($data, $limit = null, $offset= null)
 	{
 		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
@@ -199,6 +201,7 @@ class M_frontend extends CI_Model
 			->where("idkategori_barang", $idkategori_barang);	
 		} 		
 
+		$this->db->limit($data['per_page'], $data['page']);
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
@@ -206,7 +209,7 @@ class M_frontend extends CI_Model
 		return $data;	
 	}
 
-	public function tampil_kadal($data)
+	public function tampil_kadal($data, $limit = null, $offset= null)
 	{
 		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
@@ -242,6 +245,7 @@ class M_frontend extends CI_Model
 			->where("idkategori_barang", $idkategori_barang);	
 		} 				
 
+		$this->db->limit($data['per_page'], $data['page']);
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
@@ -249,7 +253,7 @@ class M_frontend extends CI_Model
 		return $data;	
 	}
 
-	public function tampil_acc($data)
+	public function tampil_acc($data, $limit = null, $offset= null)
 	{
 		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
@@ -285,6 +289,7 @@ class M_frontend extends CI_Model
 			->where("idkategori_barang", $idkategori_barang);	
 		} 					
 
+		$this->db->limit($data['per_page'], $data['page']);
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
@@ -292,7 +297,7 @@ class M_frontend extends CI_Model
 		return $data;	
 	}
 
-	public function tampil_ser($data)
+	public function tampil_ser($data, $limit = null, $offset= null)
 	{
 		$table = 'v_barang_personal_kategori';
 		$status_barang = 'ok';
@@ -328,6 +333,7 @@ class M_frontend extends CI_Model
 			->where("idkategori_barang", $idkategori_barang);	
 		} 					
 
+		$this->db->limit($data['per_page'], $data['page']);
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
