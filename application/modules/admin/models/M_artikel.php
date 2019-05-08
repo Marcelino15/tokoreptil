@@ -14,8 +14,18 @@ class M_artikel extends CI_Model
     
     public function fetch_data($data)
     {
-        $this->db->select($data['fields'])
-            ->from($data['table_view']);
+       /*  $this->db->select($data['fields'])
+            ->from($data['table_view']); */
+        if($data['search'] != null){
+            $this->db->select($data['fields']);
+            $this->db->from($data['table_view']);
+            $this->db->like('judul_artikel', $data['search']);
+            $this->db->or_like('kategori_artikel', $data['search']);
+        } else {
+            $this->db->select($data['fields']);
+            $this->db->from($data['table_view']);
+        }
+
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($sql)->result_array();

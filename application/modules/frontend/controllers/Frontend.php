@@ -493,7 +493,7 @@ class Frontend extends MY_Controller {
 		
 	}
 
-	public function blog()
+	public function blog($keyword = null)
 	{	
 		$temp = null;
 		$this->load->helper(array('string', 'text'));
@@ -516,7 +516,7 @@ class Frontend extends MY_Controller {
 		{
 			$this->parser->parse('tpl_frontend/blog', $data);
 		} else {
-			$this->parser->parse('tpl_frontend/barang_kosong', $data);
+			$this->parser->parse('tpl_frontend/blog_kosong', $data);
 		}
 	
 		
