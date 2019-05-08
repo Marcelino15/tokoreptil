@@ -7,7 +7,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{base_url({base_level}/dashboard)}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Provinsi</li>
+        <li class="active">Kabupaten</li>
       </ol>
     </section>
 
@@ -17,7 +17,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Input Provinsi Baru</h3>
+          <h3 class="box-title">Input Kabupaten Baru</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -29,17 +29,30 @@
         </div>
         <div class="box-body">
 
-        <form action="<?php echo site_url('admin/provinsi/tambah_proses'); ?>" method="post">
+        <form action="<?php echo site_url('admin/kabupaten/tambah_proses'); ?>" method="post">
           <div class="form-group">
-          <label>ID Provinsi</label>
-          <input type="text" name="id_provinsi" class="form-control" require>
+          <label>ID Kabupaten</label>
+          <input type="text" name="id_kabupaten" class="form-control" require>
+          </div>
+          <label>Provinsi</label>
+                <select name="idprovinsi_kabupaten" class="form-control" id="provinsi">
+                <option>---Masukkan Provinsi---</option>
+                <?php
+                foreach ($lokasi['provinsi'] as $prov) {
+                    ?>
+                    <option <?php echo $lokasi['provinsi_selected'] == $prov->id_provinsi ? 'selected="selected"' : '' ?>
+                        value="<?php echo $prov->id_provinsi ?>"><?php echo $prov->nama_provinsi ?></option>
+                    <?php
+                }
+                ?>
+                </select>
           </div>
           <div class="form-group">
-          <label>Nama Provinsi</label>
-          <input type="text" name="nama_provinsi" class="form-control">
+          <label>Nama Kabupaten</label>
+          <input type="text" name="nama_kabupaten" class="form-control">
           </div>
           <button type="submit" class="btn btn-success">Simpan</button>
-          <button type="batal" value="Go Back" onclick="history.back(-1)" class="btn btn-primary">Batal</button>
+          <a href={base_url(admin/kabupaten)} class="btn btn-primary">Batal</a>
         </form>
 
         </div>

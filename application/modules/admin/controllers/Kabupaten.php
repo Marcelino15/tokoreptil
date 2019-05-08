@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) { exit('No direct script access allowed');}
 
-class Kabupaten extends MY_Conroller
+class Kabupaten extends MY_Controller
 {
     public function __construct()
     {
@@ -15,7 +15,7 @@ class Kabupaten extends MY_Conroller
         $data['base_level']     = $this->uri->segment(1);
         $data['base_class']     = 'kabupaten';
         $data['base_function']  = 'index';
-        $data['table_view']     = 'kabupaten'
+        $data['table_view']     = 'kabupaten';
         $data['fields']         = ['id_kabupaten', 'idprovinsi_kabupaten', 'nama_kabupaten'];
         $data['title']          = 'Table Kabupaten';
 
@@ -32,10 +32,15 @@ class Kabupaten extends MY_Conroller
 
     public function tambah()
     {
+        $data                   = MY_Controller::data_session();
         $data['base_level']     = $this->uri->segment(1);
         $data['base_class']     = 'kabupaten';
         $data['base_function']  = 'tambah_kabupaten';
         $data['title']          = 'Tambah Kabupaten';
+        $data['lokasi'] = array(
+			'provinsi' => $this->mod->get_provinsi(),
+			'provinsi_selected' => ''	
+		);
         //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_admin/template', $data);
     }
@@ -54,10 +59,15 @@ class Kabupaten extends MY_Conroller
 
     public function ubah()
     {
+        $data                   = MY_Controller::data_session();
         $data['base_level']     = '';
         $data['base_class']     = 'kabupaten';
         $data['base_function']  = 'ubah_kabupaten';
         $data['title']          = 'Ubah Kabupaten';
+        $data['lokasi'] = array(
+			'provinsi' => $this->mod->get_provinsi(),
+			'provinsi_selected' => ''	
+		);
         $data['result']         = $this->mod->detail_kabupaten($this->uri->segment(4));
         //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_admin/template', $data);

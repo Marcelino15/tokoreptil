@@ -7,7 +7,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{base_url({base_level}/dashboard)}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Provinsi</li>
+        <li class="active">Kabupaten</li>
       </ol>
     </section>
 
@@ -17,7 +17,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Input Provinsi Baru</h3>
+          <h3 class="box-title">Daftar Kabupaten</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -28,20 +28,27 @@
           </div>
         </div>
         <div class="box-body">
-
-        <form action="<?php echo site_url('admin/provinsi/tambah_proses'); ?>" method="post">
-          <div class="form-group">
-          <label>ID Provinsi</label>
-          <input type="text" name="id_provinsi" class="form-control" require>
-          </div>
-          <div class="form-group">
-          <label>Nama Provinsi</label>
-          <input type="text" name="nama_provinsi" class="form-control">
-          </div>
-          <button type="submit" class="btn btn-success">Simpan</button>
-          <button type="batal" value="Go Back" onclick="history.back(-1)" class="btn btn-primary">Batal</button>
-        </form>
-
+          <table id="tabel_kategori" class="display" style="width: 100%">
+            <thead>
+              <tr>
+                <th>ID (searchable)</th>
+                <th>Nama Kabupaten (searchable)</th>
+                <th><a href="{base_url({base_level}/kabupaten/tambah)}"><span><i class="glyphicon glyphicon-plus"></i></span></a></th>
+              </tr>
+            </thead>
+            <tbody>
+            {result}
+              <tr>
+                <td>{id_kabupaten}</td>
+                <td>{nama_kabupaten}</td>
+                <td>
+                  <a href="{base_url({level}/kabupaten/ubah/{id_kabupaten})}"><span><i class="glyphicon glyphicon-resize-full"></i></span></a>
+                 
+                </td>
+              </tr>
+            {/result}
+            </tbody>
+          </table>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">

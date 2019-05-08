@@ -32,6 +32,7 @@ class Provinsi extends MY_Controller
 
     public function tambah()
     {
+        $data                   = MY_Controller::data_session();
         $data['base_level']     = $this->uri->segment(1);
         $data['base_class']     = 'provinsi';
         $data['base_function']  = 'tambah_provinsi';
@@ -53,6 +54,7 @@ class Provinsi extends MY_Controller
 
     public function ubah()
     {
+        $data                   = MY_Controller::data_session();
         $data['base_level']     = '';
         $data['base_class']     = 'provinsi';
         $data['base_function']  = 'ubah_provinsi';
