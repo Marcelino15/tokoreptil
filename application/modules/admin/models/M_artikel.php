@@ -12,13 +12,54 @@ class M_artikel extends CI_Model
         parent::__construct();
     }
     
-    public function fetch_data($data)
+    public function fetch_data($data, $limit = null, $offset= null)
     {
        /*  $this->db->select($data['fields'])
             ->from($data['table_view']); */
         if($data['search'] != null){
             $this->db->select($data['fields']);
             $this->db->from($data['table_view']);
+            $this->db->like('judul_artikel', $data['search']);
+            $this->db->or_like('kategori_artikel', $data['search']);
+        } else {
+            $this->db->select($data['fields']);
+            $this->db->from($data['table_view']);
+        }
+
+        $this->db->limit($data['per_page'], $data['page']);
+        $data['total']  = $this->db->count_all_results(null, false);
+        $sql            = $this->db->get_compiled_select();
+        $data['result'] = $this->db->query($sql)->result_array();
+        return $data;
+    }
+
+    public function kat_peng($data, $limit = null, $offset= null)
+    {
+        $kategori_artikel = 1;
+        if($data['search'] != null){
+            $this->db->select($data['fields']);
+            $this->db->from($data['table_view']);
+            $this->db->where("kategori_artikel", $kategori_artikel);
+            $this->db->like('judul_artikel', $data['search']);
+            $this->db->or_like('kategori_artikel', $data['search']);
+        } else {
+            $this->db->select($data['fields']);
+            $this->db->from($data['table_view']);
+        }
+
+        $data['total']  = $this->db->count_all_results(null, false);
+        $sql            = $this->db->get_compiled_select();
+        $data['result'] = $this->db->query($sql)->result_array();
+        return $data;
+    }
+
+    public function kat_per($data, $limit = null, $offset= null)
+    {
+        $kategori_artikel = 2;
+        if($data['search'] != null){
+            $this->db->select($data['fields']);
+            $this->db->from($data['table_view']);
+            $this->db->where("kategori_artikel", $kategori_artikel);
             $this->db->like('judul_artikel', $data['search']);
             $this->db->or_like('kategori_artikel', $data['search']);
         } else {
@@ -109,5 +150,16 @@ class M_artikel extends CI_Model
         return $data;
     }
 
+    public function get_count() 
+	{
+        return $this->db->get('artikel')->num_rows();
+	}
+	
+	function get_artikel_list($limit, $start)
+	{
+	
+        $query = $this->db->get('artikel', $limit, $start)->result();
+        return $query;
+    }
     
 }
