@@ -10,7 +10,7 @@ class Katar extends MY_Controller
 
     public function index()
     {
-        $data = MYController::data_session();
+        $data = MY_Controller::data_session();
 
         $data['base_level']     = $this->uri->segment(1);
         $data['base_class']     = 'katar';
@@ -33,7 +33,7 @@ class Katar extends MY_Controller
     public function tambah()
     {
         $data                   = MY_Controller::data_session();
-        $data['base_level']     = $this->uri->segmenet(1);
+        $data['base_level']     = $this->uri->segment(1);
         $data['base_class']     = 'katar';
         $data['base_function']  = 'tambah_katar';
         $data['title']          = 'Tambah Kategori Artikel';
@@ -86,6 +86,6 @@ class Katar extends MY_Controller
         $id = $this->uri->segment(4);
         $this->mod->hapus('katar', $id);
         //print('<pre>'); print_r($id); exit();
-        redirect(base_url('admin/template', $data));
+        redirect(base_url('admin/katar', $data));
     }
 }

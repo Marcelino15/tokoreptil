@@ -85,7 +85,7 @@ class Provinsi extends MY_Controller
         $id = $this->uri->segment(4);
         $this->mod->hapus('provinsi', $id);
         //print('<pre>'); print_r($id); exit();
-        redirect(base_url('admin/template', $data));
+        redirect(base_url('admin/provinsi', $data));
     }
 
 }

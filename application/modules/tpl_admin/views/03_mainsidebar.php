@@ -18,7 +18,7 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Profil</span>
+            <i class="fa fa-user"></i> <span>Profil</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -29,7 +29,7 @@
           </ul>
         </li>
 
-        <li><a href="{site_url({base_level}/personal)}"><i class="fa fa-user"></i><span>Personal</span></a></li>
+        <li><a href="{site_url({base_level}/personal)}"><i class="fa fa-group"></i><span>Personal</span></a></li>
 
         <li class="treeview">
           <a href="#">
@@ -59,8 +59,21 @@
           </ul>
         </li>
 
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"></i><span>Artikel</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{site_url({base_level}/artikel)}"><i class="fa fa-circle-o"></i>Artikel</a></li>
+            <li><a href="{site_url({base_level}/katar)}"><i class="fa fa-circle-o"></i>Kategori Artikel</a></li>
+          </ul>
+        </li>
+
         <li><a href="{site_url({base_level}/pesan)}"><i class="fa fa-envelope"></i> <span>Pesan</span></a></li>
-        <li><a href="{site_url({base_level}/artikel)}"><i class="fa fa-book"></i> <span>Artikel</span></a></li>
+        <!-- <li><a href="{site_url({base_level}/artikel)}"><i class="fa fa-book"></i> <span>Artikel</span></a></li> -->
       </ul>
     </section>
     <!-- /.sidebar -->
