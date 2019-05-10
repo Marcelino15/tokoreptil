@@ -504,17 +504,11 @@ class Frontend extends MY_Controller {
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
         $data['fields']         = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel", "insert_on"];
-       /*  $data['total']          = $this->mod->fetch_data($data)['total'];
-        $data['result']         = $this->mod->fetch_data($data)['result'];
-
-        foreach ($data['result'] as $records) {
-            $temp[]             = $records;
-        } */
-		//print('<pre>'); print_r($data); exit();
+       
 		$this->load->library('pagination');
         $config['base_url'] = site_url('frontend/blog'); //site url
 		$config['total_rows'] =$this->db->count_all('artikel');
-		$config['per_page']= 6;  //show record per halaman
+		$config['per_page']= 3;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
@@ -580,7 +574,7 @@ class Frontend extends MY_Controller {
 		$this->load->library('pagination');
         $config['base_url'] = site_url('frontend/blog_peng'); //site url
 		$config['total_rows'] =$this->db->count_all('artikel');
-		$config['per_page']= 6;  //show record per halaman
+		$config['per_page']= 3;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
@@ -642,7 +636,7 @@ class Frontend extends MY_Controller {
 		$this->load->library('pagination');
         $config['base_url'] = site_url('frontend/blog_per'); //site url
 		$config['total_rows'] =$this->db->count_all('artikel');
-		$config['per_page']= 6;  //show record per halaman
+		$config['per_page']= 3;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
@@ -680,13 +674,7 @@ class Frontend extends MY_Controller {
 			$records['level']	= $data['base_level'];
 			$temp[]				= $records;
 		}
-		/* $data['total']          = $this->mod->fetch_data($data)['total'];
-        $data['result']         = $this->mod->fetch_data($data)['result'];
-
-        foreach ($data['result'] as $records) {
-            $temp[]             = $records;
-        } */
-        //print('<pre>'); print_r($data); exit();
+	
 		$data['result']         = $temp;
 		//print('<pre>'); print_r($data); exit();
 		if ($temp != null)

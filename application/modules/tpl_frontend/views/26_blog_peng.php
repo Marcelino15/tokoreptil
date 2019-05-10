@@ -36,7 +36,7 @@
 									</span>
 
 									<span>
-										<?php echo ($re['kategori_artikel']); ?>
+										<?php echo ($re['nama_katar']); ?>
 										<!-- {kategori_artikel} -->
 									</span>
 									
