@@ -708,7 +708,7 @@ class Frontend extends MY_Controller {
 		
 		$this->load->model('admin/M_artikel', 'mod');
 		$data['title'] 			= 'Blog Detail';
-		$data['table_view'] 	= 'artikel';
+		$data['table_view'] 	= 'v_artikel_katar';
 		$data['result']			= $this->mod->detail_blog($id_artikel);
 		//print('<pre>'); print_r($data); exit();
 		$this->parser->parse('tpl_frontend/blog-detail', $data);

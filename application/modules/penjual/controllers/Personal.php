@@ -23,10 +23,10 @@ class Personal extends MY_Controller
     {
         $data                   = self::class_data() + MY_Controller::data_session();
         $data['base_function']  = 'detail_profil';
-        $data['table_view']     = 'v_personal_lokasi';
+        $data['table_view']     = 'personal';
         $data['title']          = 'Detail Data Personal';
-        $data['id_detail']      = $this->uri->segment(4);
-        $data                   = $this->mod->fetch_id($data);
+        $data['result'] 		= $this->mod->detail_personal($this->uri->segment(4));
+        //$data                   = $this->mod->detail_personal($data);
         //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_penjual/template', $data);
     }

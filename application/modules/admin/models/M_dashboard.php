@@ -10,6 +10,11 @@ class Dashboard extends CI_Model {
 		
 	}
 
+	public function get_count_barang()
+	{
+		return $this->db->get('barang')->num_rows();
+	}
+
 }
 
 /* End of file M_dashboard.php */

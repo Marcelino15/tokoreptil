@@ -23,15 +23,18 @@ class M_personal extends CI_Model
 
     public function fetch_id($data)
     {
-        $table = 'v_personal_lokasi';
+        //$table = 'v_personal_lokasi';
+
         $this->db->select()
-            ->from($table)
+            ->from($data['table_view'])
             ->where('id_personal',$data['id_detail']);
+
         //unset($data);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($sql)->result_array();
         //dump_exit($data);
+        //print('<pre>'); print_r($sql); exit();
         return $data;
     }
 
@@ -71,12 +74,14 @@ class M_personal extends CI_Model
 
     public function detail_personal($id_personal)
     {
+        $id_personal = $_SESSION['id_session'];
         $this->db->select()
             ->from($this->table)
-            ->where("id_personal", $id_personal);
+            ->where("id_personal", $id_personal)
+            ->join('provinsi', 'provinsi.id_provinsi = personal.provinsi_personal');
         $query = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($query)->row();
-        print('<pre>'); print_r($query); exit();
+        //print('<pre>'); print_r($query); exit();
         return $data;    
     }
 

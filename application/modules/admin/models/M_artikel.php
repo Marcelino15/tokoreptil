@@ -147,11 +147,12 @@ class M_artikel extends CI_Model
 
     public function detail_blog($id_artikel)
     {   
-        $field_select = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel"];
-
+        //$field_select = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel"];
+       
         $this->db->select()
             ->from($this->table)
-            ->where("id_artikel", $id_artikel);
+            ->where("id_artikel", $id_artikel)
+            ->join('kategori_artikel', 'kategori_artikel.id_katar = artikel.kategori_artikel');
         $query = $this->db->get_compiled_select();
         //print_r('<pre>'); print_r($query); exit();    
         $data['result'] = $this->db->query($query)->row();
