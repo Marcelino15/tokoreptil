@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 08, 2019 at 04:04 AM
+-- Generation Time: May 10, 2019 at 08:48 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -43,8 +43,8 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id_artikel`, `judul_artikel`, `isi_artikel`, `penulis_artikel`, `kategori_artikel`, `gambar_artikel`, `sumber_artikel`, `insert_on`, `update_on`) VALUES
-(2, 'Tarantula', '<p><strong>Tarantula</strong> adalah nama yang diberikan untuk salah satu jenis laba-laba dengan ukuran sangat besar yang umumnya berbulu. Laba-laba ini masuk pada famili Theraphosidae dan paling tidak ada sekitar 800 spesies yang telah berhasil diidentifikasi. Sebagian besar spesies tarantula tidak berbahaya untuk manusia, dan beberapa jenis spesies lainnya menjadi terkenal karena diperdagangkan sebagai hewan peliharaaan eksotik.&nbsp; Tarantula dapat menggigit, karena seperti laba-laba pada umumnya tarantula memiliki taring dan gigitannya dikenal menyakitkan untuk manusia, namun racun dalam gigitannya lebih lemah daripada racun yang terdapat pada lebah madu pada umumnya dan gigitannya diketahui lebih sakit dari sengatan tawon.Nama tarantula berasal dari satu kota di Italia yaitu Taranto</p>', 'coba', 'Pengetahuan', 'Penguins.jpg', 'https://id.wikipedia.org/wiki/Tarantula', '2019-04-03 04:14:46', '2019-03-15 03:20:46'),
-(3, 'Iguana', '<p><strong>Tarantula</strong> adalah nama yang diberikan untuk salah satu jenis laba-laba dengan ukuran sangat besar yang umumnya berbulu. Laba-laba ini masuk pada famili Theraphosidae dan paling tidak ada sekitar 800 spesies yang telah berhasil diidentifikasi. Sebagian besar spesies tarantula tidak berbahaya untuk manusia, dan beberapa jenis spesies lainnya menjadi terkenal karena diperdagangkan sebagai hewan peliharaaan eksotik.&nbsp; Tarantula dapat menggigit, karena seperti laba-laba pada umumnya tarantula memiliki taring dan gigitannya dikenal menyakitkan untuk manusia, namun racun dalam gigitannya lebih lemah daripada racun yang terdapat pada lebah madu pada umumnya dan gigitannya diketahui lebih sakit dari sengatan tawon.Nama tarantula berasal dari satu kota di Italia yaitu Taranto</p>', 'admin', 'Pengetahuan', 'Desert.jpg', 'https://id.wikipedia.org/wiki/Iguana', '2019-04-26 12:41:23', '2019-04-26 04:20:07');
+(2, 'Tarantula', '<p><strong>Tarantula</strong> adalah nama yang diberikan untuk salah satu jenis laba-laba dengan ukuran sangat besar yang umumnya berbulu. Laba-laba ini masuk pada famili Theraphosidae dan paling tidak ada sekitar 800 spesies yang telah berhasil diidentifikasi. Sebagian besar spesies tarantula tidak berbahaya untuk manusia, dan beberapa jenis spesies lainnya menjadi terkenal karena diperdagangkan sebagai hewan peliharaaan eksotik.&nbsp; Tarantula dapat menggigit, karena seperti laba-laba pada umumnya tarantula memiliki taring dan gigitannya dikenal menyakitkan untuk manusia, namun racun dalam gigitannya lebih lemah daripada racun yang terdapat pada lebah madu pada umumnya dan gigitannya diketahui lebih sakit dari sengatan tawon.Nama tarantula berasal dari satu kota di Italia yaitu Taranto</p>', 'coba', '1', 'Penguins.jpg', 'https://id.wikipedia.org/wiki/Tarantula', '2019-05-10 07:27:03', '2019-03-15 03:20:46'),
+(3, 'Iguana', '<p><strong>Tarantula</strong> adalah nama yang diberikan untuk salah satu jenis laba-laba dengan ukuran sangat besar yang umumnya berbulu. Laba-laba ini masuk pada famili Theraphosidae dan paling tidak ada sekitar 800 spesies yang telah berhasil diidentifikasi. Sebagian besar spesies tarantula tidak berbahaya untuk manusia, dan beberapa jenis spesies lainnya menjadi terkenal karena diperdagangkan sebagai hewan peliharaaan eksotik.&nbsp; Tarantula dapat menggigit, karena seperti laba-laba pada umumnya tarantula memiliki taring dan gigitannya dikenal menyakitkan untuk manusia, namun racun dalam gigitannya lebih lemah daripada racun yang terdapat pada lebah madu pada umumnya dan gigitannya diketahui lebih sakit dari sengatan tawon.Nama tarantula berasal dari satu kota di Italia yaitu Taranto</p>', 'admin', '2', 'Desert.jpg', 'https://id.wikipedia.org/wiki/Iguana', '2019-05-10 07:27:03', '2019-04-26 04:20:07');
 
 -- --------------------------------------------------------
 
@@ -342,7 +342,22 @@ INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('kfg5eiegi5aur7t67165ptllkcd7vq8a', '::1', 1557287466, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373238373436363b69645f73657373696f6e7c733a313a2232223b6e616d615f73657373696f6e7c733a353a2261646d696e223b666f746f5f73657373696f6e7c733a31383a224368727973616e7468656d756d342e6a7067223b68705f73657373696f6e7c733a343a2231313233223b656d61696c5f73657373696f6e7c733a31353a2261646d696e40676d61696c2e636f6d223b70726f76696e73695f73657373696f6e7c4e3b6b616275706174656e5f73657373696f6e7c4e3b6c6576656c5f73657373696f6e7c733a353a2261646d696e223b696e736572745f6f6e5f73657373696f6e7c733a31393a22323031392d30322d30382031323a31373a3236223b6c6f676765645f696e7c623a313b),
 ('87laiqbnhgmibs5rb2rmok8j96qeh36k', '::1', 1557287833, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373238373833333b69645f73657373696f6e7c733a313a2232223b6e616d615f73657373696f6e7c733a353a2261646d696e223b666f746f5f73657373696f6e7c733a31383a224368727973616e7468656d756d342e6a7067223b68705f73657373696f6e7c733a343a2231313233223b656d61696c5f73657373696f6e7c733a31353a2261646d696e40676d61696c2e636f6d223b70726f76696e73695f73657373696f6e7c4e3b6b616275706174656e5f73657373696f6e7c4e3b6c6576656c5f73657373696f6e7c733a353a2261646d696e223b696e736572745f6f6e5f73657373696f6e7c733a31393a22323031392d30322d30382031323a31373a3236223b6c6f676765645f696e7c623a313b),
 ('mnd3d5a9a639eqfidsnf177k0a723276', '::1', 1557288213, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373238383231333b69645f73657373696f6e7c733a313a2232223b6e616d615f73657373696f6e7c733a353a2261646d696e223b666f746f5f73657373696f6e7c733a31383a224368727973616e7468656d756d342e6a7067223b68705f73657373696f6e7c733a343a2231313233223b656d61696c5f73657373696f6e7c733a31353a2261646d696e40676d61696c2e636f6d223b70726f76696e73695f73657373696f6e7c4e3b6b616275706174656e5f73657373696f6e7c4e3b6c6576656c5f73657373696f6e7c733a353a2261646d696e223b696e736572745f6f6e5f73657373696f6e7c733a31393a22323031392d30322d30382031323a31373a3236223b6c6f676765645f696e7c623a313b),
-('4tqntai8o7d2a7jpene8a312psaj61p5', '::1', 1557288241, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373238383231333b69645f73657373696f6e7c733a313a2232223b6e616d615f73657373696f6e7c733a353a2261646d696e223b666f746f5f73657373696f6e7c733a31383a224368727973616e7468656d756d342e6a7067223b68705f73657373696f6e7c733a343a2231313233223b656d61696c5f73657373696f6e7c733a31353a2261646d696e40676d61696c2e636f6d223b70726f76696e73695f73657373696f6e7c4e3b6b616275706174656e5f73657373696f6e7c4e3b6c6576656c5f73657373696f6e7c733a353a2261646d696e223b696e736572745f6f6e5f73657373696f6e7c733a31393a22323031392d30322d30382031323a31373a3236223b6c6f676765645f696e7c623a313b);
+('4tqntai8o7d2a7jpene8a312psaj61p5', '::1', 1557288668, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373238383636383b69645f73657373696f6e7c733a313a2232223b6e616d615f73657373696f6e7c733a353a2261646d696e223b666f746f5f73657373696f6e7c733a31383a224368727973616e7468656d756d342e6a7067223b68705f73657373696f6e7c733a343a2231313233223b656d61696c5f73657373696f6e7c733a31353a2261646d696e40676d61696c2e636f6d223b70726f76696e73695f73657373696f6e7c4e3b6b616275706174656e5f73657373696f6e7c4e3b6c6576656c5f73657373696f6e7c733a353a2261646d696e223b696e736572745f6f6e5f73657373696f6e7c733a31393a22323031392d30322d30382031323a31373a3236223b6c6f676765645f696e7c623a313b),
+('e4aj7jbc7fvdsq1ua001rpaimohc1ndl', '::1', 1557289010, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373238393031303b),
+('hjaj34ota4egjb43a34i4hjgolad9vrp', '::1', 1557290433, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373239303433333b),
+('lo7adbgklammnk871qp50tr1lq3j85aa', '::1', 1557290621, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373239303433333b),
+('i79ffpvn9d9fj6lrt7rtqkduq63tufji', '::1', 1557298906, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373239383930303b),
+('e4tu0c1gcrrjuo846p2op32kbbjvfu4q', '::1', 1557306568, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373330363536383b),
+('ph68pi49827gc5qgiqoe9carnq5hldbe', '::1', 1557306839, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373330363536383b),
+('0u0c280iucmau2k1i00fh4bavr33sl51', '::1', 1557329761, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373332393736313b),
+('52ujb86rv84lkd7i5v8pjohm14is77g1', '::1', 1557330195, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373333303139353b),
+('n1s5r0albd65g3njo9k8e6nqes2lvvok', '::1', 1557330520, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373333303532303b69645f73657373696f6e7c733a313a2232223b6e616d615f73657373696f6e7c733a353a2261646d696e223b666f746f5f73657373696f6e7c733a31383a224368727973616e7468656d756d342e6a7067223b68705f73657373696f6e7c733a343a2231313233223b656d61696c5f73657373696f6e7c733a31353a2261646d696e40676d61696c2e636f6d223b70726f76696e73695f73657373696f6e7c4e3b6b616275706174656e5f73657373696f6e7c4e3b6c6576656c5f73657373696f6e7c733a353a2261646d696e223b696e736572745f6f6e5f73657373696f6e7c733a31393a22323031392d30322d30382031323a31373a3236223b6c6f676765645f696e7c623a313b),
+('a23vqpq9hak1nsadhpaqhb4su5mq07fe', '::1', 1557331228, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373333313232383b69645f73657373696f6e7c733a313a2232223b6e616d615f73657373696f6e7c733a353a2261646d696e223b666f746f5f73657373696f6e7c733a31383a224368727973616e7468656d756d342e6a7067223b68705f73657373696f6e7c733a343a2231313233223b656d61696c5f73657373696f6e7c733a31353a2261646d696e40676d61696c2e636f6d223b70726f76696e73695f73657373696f6e7c4e3b6b616275706174656e5f73657373696f6e7c4e3b6c6576656c5f73657373696f6e7c733a353a2261646d696e223b696e736572745f6f6e5f73657373696f6e7c733a31393a22323031392d30322d30382031323a31373a3236223b6c6f676765645f696e7c623a313b),
+('nr5c5f9la1oe6kbc2817ut2b1d6q3g19', '::1', 1557332941, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373333323934313b),
+('dmnmq30sefvugb313osrpipo5kpd311l', '::1', 1557333113, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373333323934313b),
+('64j7h5i4hvbqm1ghn1hsovpm0liiod26', '::1', 1557473875, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373437333837353b),
+('skjs62nk9d9utah76pq3jc9gsse4745f', '::1', 1557477606, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373437373630353b),
+('kvbio7phcmcpo0mmo225bn1dvqhh3afc', '::1', 1557477810, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535373437373630353b);
 
 -- --------------------------------------------------------
 
@@ -383,7 +398,6 @@ CREATE TABLE `kabupaten` (
 --
 
 INSERT INTO `kabupaten` (`id_kabupaten`, `idprovinsi_kabupaten`, `nama_kabupaten`) VALUES
-(1, 1, 'Loki Island'),
 (1101, 11, 'KABUPATEN SIMEULUE'),
 (1102, 11, 'KABUPATEN ACEH SINGKIL'),
 (1103, 11, 'KABUPATEN ACEH SELATAN'),
@@ -925,6 +939,26 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kategori_artikel`
+--
+
+CREATE TABLE `kategori_artikel` (
+  `id_katar` int(11) NOT NULL,
+  `nama_katar` varchar(255) NOT NULL,
+  `insert_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategori_artikel`
+--
+
+INSERT INTO `kategori_artikel` (`id_katar`, `nama_katar`, `insert_on`) VALUES
+(1, 'Pengetahuan', '2019-05-08 15:46:50'),
+(2, 'Perawatan', '2019-05-08 15:47:10');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `personal`
 --
 
@@ -1009,7 +1043,6 @@ CREATE TABLE `provinsi` (
 --
 
 INSERT INTO `provinsi` (`id_provinsi`, `nama_provinsi`) VALUES
-(1, 'Asgard'),
 (11, 'ACEH'),
 (12, 'SUMATERA UTARA'),
 (13, 'SUMATERA BARAT'),
@@ -1044,6 +1077,23 @@ INSERT INTO `provinsi` (`id_provinsi`, `nama_provinsi`) VALUES
 (82, 'MALUKU UTARA'),
 (91, 'PAPUA BARAT'),
 (94, 'PAPUA');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `v_artikel_katar`
+--
+CREATE TABLE `v_artikel_katar` (
+`id_artikel` int(11)
+,`judul_artikel` varchar(255)
+,`isi_artikel` text
+,`penulis_artikel` varchar(255)
+,`kategori_artikel` varchar(255)
+,`gambar_artikel` varchar(255)
+,`sumber_artikel` varchar(255)
+,`insert_on` timestamp
+,`nama_katar` varchar(255)
+);
 
 -- --------------------------------------------------------
 
@@ -1105,6 +1155,15 @@ CREATE TABLE `v_provinsi_kabupaten` (
 -- --------------------------------------------------------
 
 --
+-- Structure for view `v_artikel_katar`
+--
+DROP TABLE IF EXISTS `v_artikel_katar`;
+
+CREATE ALGORITHM=TEMPTABLE DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_artikel_katar`  AS  select `artikel`.`id_artikel` AS `id_artikel`,`artikel`.`judul_artikel` AS `judul_artikel`,`artikel`.`isi_artikel` AS `isi_artikel`,`artikel`.`penulis_artikel` AS `penulis_artikel`,`artikel`.`kategori_artikel` AS `kategori_artikel`,`artikel`.`gambar_artikel` AS `gambar_artikel`,`artikel`.`sumber_artikel` AS `sumber_artikel`,`artikel`.`insert_on` AS `insert_on`,`kategori_artikel`.`nama_katar` AS `nama_katar` from (`artikel` join `kategori_artikel` on((`artikel`.`kategori_artikel` = `kategori_artikel`.`id_katar`))) ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `v_barang_personal_kategori`
 --
 DROP TABLE IF EXISTS `v_barang_personal_kategori`;
@@ -1158,6 +1217,12 @@ ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
+-- Indexes for table `kategori_artikel`
+--
+ALTER TABLE `kategori_artikel`
+  ADD PRIMARY KEY (`id_katar`);
+
+--
 -- Indexes for table `personal`
 --
 ALTER TABLE `personal`
@@ -1194,6 +1259,11 @@ ALTER TABLE `barang`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `kategori_artikel`
+--
+ALTER TABLE `kategori_artikel`
+  MODIFY `id_katar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `personal`
 --
