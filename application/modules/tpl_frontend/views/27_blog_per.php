@@ -1,8 +1,8 @@
 <!-- Title Page -->
 
-	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url({base_url(assets/frontend/images/blog.jpg)})">
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url({base_url(assets/frontend/images/blog.jpg)})">
 		<h2 class="l-text2 t-center">
-			Blog
+			Blog Perawatan
 		</h2>
 	</section>
 	<!-- content page -->
@@ -86,7 +86,7 @@
 
 						<ul>
 							<li class="p-t-6 p-b-8 bo6">
-								<a href="{base_url(frontend/blog)}" class="s-text13 p-t-5 p-b-5 active1">
+								<a href="{base_url(frontend/blog)}" class="s-text13 p-t-5 p-b-5">
 									Semua
 								</a>
 							</li>
@@ -98,7 +98,7 @@
 							</li>
 
 							<li class="p-t-6 p-b-8 bo7">
-								<a href="{base_url(frontend/blog_per)}" class="s-text13 p-t-5 p-b-5">
+								<a href="{base_url(frontend/blog_per)}" class="s-text13 p-t-5 p-b-5 active1">
 									Perawatan
 								</a>
 							</li>

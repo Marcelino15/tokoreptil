@@ -47,6 +47,7 @@ class M_artikel extends CI_Model
             $this->db->from($data['table_view']);
         }
 
+        $this->db->limit($data['per_page'], $data['page']);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($sql)->result_array();
@@ -67,6 +68,7 @@ class M_artikel extends CI_Model
             $this->db->from($data['table_view']);
         }
 
+        $this->db->limit($data['per_page'], $data['page']);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($sql)->result_array();
