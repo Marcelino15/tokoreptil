@@ -337,7 +337,7 @@ class M_frontend extends CI_Model
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
-
+		//print('<pre>'); print_r($sql); exit();
 		return $data;	
     }
     

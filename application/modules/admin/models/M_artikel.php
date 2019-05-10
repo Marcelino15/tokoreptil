@@ -16,14 +16,15 @@ class M_artikel extends CI_Model
     {
        /*  $this->db->select($data['fields'])
             ->from($data['table_view']); */
+        $table = 'v_artikel_katar';
         if($data['search'] != null){
-            $this->db->select($data['fields']);
-            $this->db->from($data['table_view']);
+            $this->db->select();
+            $this->db->from($table);
             $this->db->like('judul_artikel', $data['search']);
             $this->db->or_like('kategori_artikel', $data['search']);
         } else {
-            $this->db->select($data['fields']);
-            $this->db->from($data['table_view']);
+            $this->db->select();
+            $this->db->from($table);
         }
 
         $this->db->limit($data['per_page'], $data['page']);
@@ -34,38 +35,43 @@ class M_artikel extends CI_Model
     }
 
     public function kat_peng($data, $limit = null, $offset= null)
-    {
-        $kategori_artikel = 1;
+    {   
+        $table = 'v_artikel_katar';
+        $kategori_artikel = '1';
         if($data['search'] != null){
-            $this->db->select($data['fields']);
-            $this->db->from($data['table_view']);
+            $this->db->select();
+            $this->db->from($table);
             $this->db->where("kategori_artikel", $kategori_artikel);
             $this->db->like('judul_artikel', $data['search']);
             $this->db->or_like('kategori_artikel', $data['search']);
         } else {
-            $this->db->select($data['fields']);
-            $this->db->from($data['table_view']);
+            $this->db->select();
+            $this->db->from($table);
+            $this->db->where("kategori_artikel", $kategori_artikel);
         }
 
         $this->db->limit($data['per_page'], $data['page']);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($sql)->result_array();
+        //print('<pre>'); print_r($sql); exit();
         return $data;
     }
 
     public function kat_per($data, $limit = null, $offset= null)
-    {
-        $kategori_artikel = 2;
+    {   
+        $table = 'v_artikel_katar';
+        $kategori_artikel = '2';
         if($data['search'] != null){
-            $this->db->select($data['fields']);
-            $this->db->from($data['table_view']);
+            $this->db->select();
+            $this->db->from($table);
             $this->db->where("kategori_artikel", $kategori_artikel);
             $this->db->like('judul_artikel', $data['search']);
             $this->db->or_like('kategori_artikel', $data['search']);
         } else {
-            $this->db->select($data['fields']);
-            $this->db->from($data['table_view']);
+            $this->db->select();
+            $this->db->from($table);
+            $this->db->where("kategori_artikel", $kategori_artikel);
         }
 
         $this->db->limit($data['per_page'], $data['page']);

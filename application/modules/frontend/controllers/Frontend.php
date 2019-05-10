@@ -500,7 +500,7 @@ class Frontend extends MY_Controller {
 		$this->load->model('admin/M_artikel', 'mod');
 		$data 					= self::class_data();
 		$data['title']			='Blog';
-		$data['table_view']     = 'artikel';
+		$data['table_view']     = 'v_artikel_katar';
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
         $data['fields']         = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel", "insert_on"];
@@ -575,12 +575,7 @@ class Frontend extends MY_Controller {
 		$data['search'] 		= $this->input->get('search-product');
 		$data['sorting']		= $this->input->get('sorting');
         $data['fields']         = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel", "insert_on"];
-        /* $data['total']          = $this->mod->fetch_data($data)['total'];
-        $data['result']         = $this->mod->fetch_data($data)['result'];
-
-        foreach ($data['result'] as $records) {
-            $temp[]             = $records;
-        } */
+        
 		//print('<pre>'); print_r($data); exit();
 		$this->load->library('pagination');
         $config['base_url'] = site_url('frontend/blog_peng'); //site url
