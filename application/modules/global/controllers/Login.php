@@ -95,7 +95,10 @@ class Login extends MY_Controller
                         redirect('global/login');
                         break;
 	           }
-	        }
+	        } else {
+                $this->session->set_flashdata('error', 'email / password salah');
+                redirect('global/login');
+            }
         }
     }
  }

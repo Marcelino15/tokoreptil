@@ -33,7 +33,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Kabupaten</span>
-              <span class="info-box-number"><?php echo $this->db->count_all('Kabupaten'); ?></span>
+              <span class="info-box-number"><?php echo $this->db->count_all('kabupaten'); ?></span>
             </div>
             
           </div>
@@ -98,7 +98,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Barang</span>
-              <span class="info-box-number"><?php echo $this->db->count_all('artikel'); ?></span>
+              <span class="info-box-number"><?php echo $this->db->count_all('barang'); ?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -123,22 +123,9 @@
         </div>
         <!-- /.col -->
       </div>
-      <!-- /.row -->
-
-      <!-- /.row -->
-
-      <!-- Main row -->
-      
-        <!-- Left col -->
-       
-          <!-- MAP & BOX PANE -->
-        
-          <!-- /.box -->
-          <div class="row">
-      
-            <!-- /.col -->
-
-            <div class="col-md-12 ">
+     
+      <div class="row">
+          <div class="col-md-12 ">
               <!-- USERS LIST -->
               <div class="box box-danger">
                 <div class="box-header with-border">
@@ -177,11 +164,9 @@
                 <!-- /.box-footer -->
               </div>
               <!--/.box -->
-            </div>
-            <!-- /.col -->
           </div>
-          <!-- /.row -->
-
+            <!-- /.col -->
+      </div>
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
             <div class="box-header with-border">
@@ -231,31 +216,6 @@
             </div>
             <!-- /.box-footer -->
           </div>
-          <!-- /.box -->
-      
-        <!-- /.col -->
-
-        <div class="col-md-4">
-          <!-- Info Boxes Style 2 -->
-          
-          <!-- /.info-box -->
-          
-          <!-- /.info-box -->
-         
-          <!-- /.info-box -->
-      
-          <!-- /.info-box -->
-
-       
-          <!-- /.box -->
-
-          <!-- PRODUCT LIST -->
-         
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      
-      <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>

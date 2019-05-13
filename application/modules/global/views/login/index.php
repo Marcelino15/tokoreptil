@@ -45,12 +45,12 @@
 
     <form action="{base_url(global/login/login_cek)}" method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" name="email_personal" placeholder="Email">
+        <input type="email" class="form-control" name="email_personal" placeholder="Email" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         <p>{form_error(email_personal)}</p>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" name="password_personal" placeholder="Password">
+        <input type="password" class="form-control" name="password_personal" placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         <p>{form_error(password_personal)}</p>
       </div>
@@ -80,7 +80,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">I forgot my password</a><br>
-    <a href="{base_url(global/daftar)}" class="text-center">Register a new membership</a>
+    <a href="{base_url(global/daftar)}" class="text-center">Daftar</a>
 
   </div>
   <!-- /.login-box-body -->
