@@ -26,6 +26,38 @@ class M_pesan extends CI_Model
 		return $data;
     }
 
+    public function detail_pesan($id_pesan)
+    {
+        $this->db->select()
+            ->from($this->table)
+            ->where("id_pesan", $id_pesan);
+        $query = $this->db->get_compiled_select();
+        //print('<pre>'); print_r($query); exit();
+        $data['result'] = $this->db->query($query)->row();
+        return $data;
+    }
+
+    public function tambah_pesan($data)
+    {
+        $this->db->select()
+            ->from($this->table);
+        $query = $this->db->set($data)->get_compiled_insert();
+        //print('<pre>'); print_r($query); exit();
+        $this->db->query($query);
+        return true;
+    }
+
+    public function ubah_pesan($data)
+    {
+        $this->db->select()
+            ->from($this->table)
+            ->where("id_pesan", $data['id_pesan']);
+        $query = $this->db->set($data)->get_compiled_update();
+        //print('<pre>'); print_r($query); exit();
+        $this->db->query($query);
+        return true;
+    }
+
     public function hapus($table, $id)
     {
         $this->db->select()

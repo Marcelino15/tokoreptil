@@ -51,7 +51,6 @@
             <?php
                 foreach ($kabupaten as $kab) {
                     ?>
-                    <!--di sini kita tambahkan class berisi id provinsi-->
                     <option <?php echo $kabupaten_selected == $kab->idprovinsi_kabupaten ? 'selected="selected"' : '' ?>
                         class="<?php echo $kab->idprovinsi_kabupaten ?>" value="<?php echo $kab->id_kabupaten ?>"><?php echo $kab->nama_kabupaten ?></option>
                     <?php
