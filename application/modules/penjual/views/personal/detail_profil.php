@@ -35,7 +35,7 @@
                 </li>
                 
                 <li class="list-group-item">
-                  <b>Lokasi</b> <a class="pull-right">{nama_provinsi}</a>
+                  <b>Lokasi</b> <a class="pull-right">{id_provinsi}</a>
                 </li>
               </ul>
             </div>

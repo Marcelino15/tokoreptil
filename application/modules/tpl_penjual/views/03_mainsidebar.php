@@ -16,6 +16,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu</li>
+        <li><a href="{site_url({base_level}/dashboard)}"><i class="fa fa-dashboard "></i> <span>Dashboard</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-user"></i> <span>Profil</span>

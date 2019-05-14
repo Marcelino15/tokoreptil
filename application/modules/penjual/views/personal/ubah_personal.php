@@ -45,6 +45,7 @@
             <div class="form-group">
             <label>Provinsi</label>
                 <select name="provinsi_personal" class="form-control" id="provinsi">
+                <option value="{id_provinsi}">{nama_provinsi}</option>
                 <option>---Masukkan Provinsi---</option>
                 <?php
                 foreach ($lokasi['provinsi'] as $prov) {
@@ -59,6 +60,7 @@
             <div class="form-group">
             <label>Kabupaten</label>
                 <select class="form-control" name="kabupaten_personal" id="kabupaten">
+                    <option value="{id_kabupaten}">{nama_kabupaten}</option>
                     <option value="">---Masukkan Kabupaten---</option>
                     <?php
                         foreach ($lokasi['kabupaten'] as $kab) {

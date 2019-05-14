@@ -16,6 +16,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
+        <li><a href="{site_url({base_level}/dashboard)}"><i class="fa fa-dashboard "></i> <span>Dashboard</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-user"></i> <span>Profil</span>
@@ -25,7 +26,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{site_url({base_level}/profil)}"><i class="fa fa-circle-o"></i> Detail</a></li>
-            <li><a href="{site_url({base_level}/profil/password)}"><i class="fa fa-circle-o"></i> Ganti Password</a></li>
+            <li><a href="{site_url({base_level}/profil/detail/{id_session})}"><i class="fa fa-circle-o"></i>Ganti Profil</a></li>
           </ul>
         </li>
 

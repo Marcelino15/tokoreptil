@@ -34,8 +34,9 @@ class M_personal extends CI_Model
 
     public function fetch_id($data)
     {   
+        $table = 'v_personal_lokasi';
         $this->db->select()
-            ->from($data['table_view'])
+            ->from($table)
             ->where('id_personal',$data['id_detail']);
         //unset($data);
         $data['total']  = $this->db->count_all_results(null, false);

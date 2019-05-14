@@ -2,33 +2,42 @@
     exit('No direct script access allowed');
 }
 
+#----------------------------------------------------------------
+# nama file     : M_personal.php
+# lokasi file   : ./application/admin/model/M_personal.php
+# dibuat oleh   : Zamah Sari
+#----------------------------------------------------------------
 
-class M_personal extends CI_Model
+class M_profil extends CI_Model
 {
+    #-----------------------------------------------------------
+    # nama metode   : fetch_data
+    # @parameter    :
+    # catatan       :
+    #-----------------------------------------------------------
 
     public $table = 'personal';
-    public $field_select =["id_personal", "nama_personal", "foto_personal", "hp_personal", "email_personal", "lokasi_personal", "level_personal", "password_personal", "nama_provinsi"] ;
+    public $field_select =["id_personal", "nama_personal", "foto_personal", "hp_personal", "email_personal", "lokasi_personal", "level_personal", "password_personal"] ;
     
     public function fetch_data($data)
     {
-        $this->db->select($data['fields'])
-            ->from($data['table_view']);
+        $table = 'v_personal_lokasi';
+        $this->db->select()
+            ->from($table);
         // unset($data);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($sql)->result_array();
-        
+
         return $data;
     }
 
     public function fetch_id($data)
-    {
+    {   
         $table = 'v_personal_lokasi';
-
         $this->db->select()
             ->from($table)
             ->where('id_personal',$data['id_detail']);
-
         //unset($data);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
@@ -72,17 +81,13 @@ class M_personal extends CI_Model
         return true;
     }
 
-    public function detail_personal($data)
+    public function detail_personal($id_personal)
     {
-        $id_personal = $_SESSION['id_session'];
-        $table = 'v_personal_lokasi';
         $this->db->select()
             ->from($this->table)
             ->where("id_personal", $id_personal);
-            
         $query = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($query)->row();
-        //print('<pre>'); print_r($query); exit();
         return $data;    
     }
 
@@ -110,3 +115,7 @@ class M_personal extends CI_Model
         return $this->db->get('kabupaten')->result();
     }
 }
+
+
+# Akhir dari file M_personal.php
+# lokasi file   : ./application/admin/model/M_personal.php

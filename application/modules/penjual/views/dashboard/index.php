@@ -45,7 +45,10 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Barang</span>
-              <span class="info-box-number"><?php echo $this->db->count_all('barang'); ?></span>
+              <span class="info-box-number"><?php 
+              $query = $this->db->get('barang');
+              $query = $this->db->get_where('barang', array('idpersonal_barang' => $_SESSION['id_session']));
+              echo $this->db->count_all('barang'); ?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -59,6 +62,7 @@
             <div class="info-box-content">
             <?php 
               $this->db->select_sum('nama_barang');
+              $query = $this->db->get_where('barang', array('idpersonal_barang' => $_SESSION['id_session']));
               $query = $this->db->get('barang');
             ?>
               <span class="info-box-text">User</span>
@@ -96,6 +100,7 @@
                   <tbody>
                   <?php
                   $query = $this->db->query("SELECT * FROM barang;");
+                  $query = $this->db->get_where('barang', array('idpersonal_barang' => $_SESSION['id_session']));
                   foreach ($query->result_array() as $row){
                   ?>  
                   <tr>
