@@ -69,17 +69,56 @@
         <!-- /.col -->
       </div>
     </form>
+    <!-- Modal -->
+    <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Form Lupa Password</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         <form action="<?php echo site_url('global/pesan/tambah_proses'); ?>" method="post">
+            <div class="form-group">
+            <label for="judul_pesan">Judul Pesan :</label>
+            <input type="email" name="judul_pesan"  class="form-control" value="Lupa Password" required>
+            </div>
+            <div class="form-group">
+            <label for="email">Alamat Email :</label>
+            <input type="email" name="email_pesan" placeholder="masukkan alamat email anda" class="form-control" required>
+            </div>
+            <div class="form-group">
+            <label for="hp">Nomor Telfon :</label>
+            <input type="number" name="hp_pesan" placeholder="masukkan nomor telfon" class="form-control" required>
+            </div>
+            <div class="form-group">
+            <label for="isi_pesan">Isi Pesan :</label>
+            <textarea class="form-control" rows="5" class="form-control" placeholder="Masukkan pesan Anda" name="isi_pesan" required></textarea>
+            </div>
+            <div class="form-group">
+            <select name="levelpengirim_pesan" class="form-control" required>
+              <option value="penjual">Penjual</option>
+              <option value="admin">Admin</option>
+            </select>
+            </div>
+         </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" value="simpan" class="btn btn-success" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
-    <!-- <div class="social-auth-links text-center"> -->
-      <!-- <p>- OR -</p> -->
-      <!-- <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using -->
-        <!-- Facebook</a> -->
-      <!-- <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using -->
-        <!-- Google+</a> -->
-    <!-- </div> -->
-    <!-- /.social-auth-links -->
-
-    <a href="#">I forgot my password</a><br>
+    <a href="#" data-toggle="modal" data-target="#myModal">Lupa Password</a><br>
     <a href="{base_url(global/daftar)}" class="text-center">Daftar</a>
 
   </div>

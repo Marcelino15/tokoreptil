@@ -32,10 +32,10 @@ class Personal extends MY_Controller
             'provinsi_selected' => '',
             'kabupaten_selected' => '',
             );
-        $data                   = $this->mod->detail_personal($data);
+        $data['personal']                   = $this->mod->detail_personal($data);
         //$data['result'] 		= $this->mod->detail_personal($this->uri->segment(4));
         //$data                   = $this->mod->detail_personal($data);
-        //print('<pre>'); print_r($data); exit();
+        // print('<pre>'); print_r($data['personal']); exit();
         $this->parser->parse('tpl_penjual/template', $data);
     }
 

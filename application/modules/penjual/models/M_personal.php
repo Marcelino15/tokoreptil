@@ -77,12 +77,12 @@ class M_personal extends CI_Model
         $id_personal = $_SESSION['id_session'];
         $table = 'v_personal_lokasi';
         $this->db->select()
-            ->from($this->table)
+            ->from($table)
             ->where("id_personal", $id_personal);
             
         $query = $this->db->get_compiled_select();
-        $data['result'] = $this->db->query($query)->row();
-        //print('<pre>'); print_r($query); exit();
+        $data = $this->db->query($query)->row();
+             
         return $data;    
     }
 

@@ -36,7 +36,7 @@
             <input type="text" name="nama_personal" value="{nama_personal}" class="form-control">     
             
             <label>Nomor Handphone</label>
-            <input type="text" name="hp_personal" value="{hp_personal}" class="form-control">
+            <input type="number" name="hp_personal" value="{hp_personal}" class="form-control">
     
             <label>Email</label>
             <input type="email" name="email_personal" value="{email_personal}" class="form-control">

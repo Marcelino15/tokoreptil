@@ -35,7 +35,7 @@
                 </li>
                 
                 <li class="list-group-item">
-                  <b>Lokasi</b> <a class="pull-right">{id_provinsi}</a>
+                  <b>Lokasi</b> <a class="pull-right"><?php echo $personal->nama_provinsi; ?></a>
                 </li>
               </ul>
             </div>

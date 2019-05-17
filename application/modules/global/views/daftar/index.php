@@ -19,20 +19,20 @@
     <input type="hidden" name="id_personal">
     <div class="form-group">
     <label>Nama</label>
-    <input type="text" name="nama_personal" class="form-control" >
+    <input type="text" name="nama_personal" class="form-control" required>
     </div>
     <div class="form-group">
     <label>Nomor Handphone</label>
-    <input type="text" name="hp_personal" class="form-control" >
+    <input type="number" name="hp_personal" class="form-control" required>
     </div>
     <div class="form-group">
     <label>Email</label>
-    <input type="email" name="email_personal" class="form-control" >
+    <input type="email" name="email_personal" class="form-control" required>
     </div>
     <div class="form-group">
     <label>Lokasi :</label><br>
     <label>Provinsi</label>
-        <select name="provinsi_personal" class="form-control" id="provinsi">
+        <select name="provinsi_personal" class="form-control" id="provinsi" required>
         <option>---Masukkan Provinsi---</option>
         <?php
         foreach ($provinsi as $prov) {
@@ -46,7 +46,7 @@
     </div>
     <div class="form-group">
     <label>Kabupaten</label>
-         <select class="form-control" name="kabupaten_personal" id="kabupaten">
+         <select class="form-control" name="kabupaten_personal" id="kabupaten" required>
             <option value="">---Masukkan Kecamatan---</option>
             <?php
                 foreach ($kabupaten as $kab) {
@@ -60,17 +60,17 @@
     </div>    
     <div class="form-group">
     <label>Level</label>
-        <select name="level_personal" class="form-control">
+        <select name="level_personal" class="form-control" required>
             <option value="penjual" type="readonly">Penjual</option>
         </select>
     </div>
     <div class="form-group">
     <label>Password</label>
-    <input type="password" name="password_personal" class="form-control" >
+    <input type="password" name="password_personal" class="form-control" required>
     </div>  
     <div class="form-group">
     <label>Foto</label>
-    <input type="file" name="foto_personal"  class="form-control">
+    <input type="file" name="foto_personal"  class="form-control" required>
     </div>
     <button type="submit" name="aksi" value="simpan" class="btn btn-success">Simpan</button>
     <a href="{base_url(global/login)}" class="btn btn-primary">Kembali</a>
