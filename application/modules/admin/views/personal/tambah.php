@@ -18,11 +18,11 @@
             </li>
             <li>
                 <a href="#">
-                    Examples
+                    Personal
                 </a>
             </li>
             <li class="active">
-                Blank page
+                Tambah Personal
             </li>
         </ol>
     </section>

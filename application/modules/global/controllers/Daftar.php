@@ -68,7 +68,4 @@ class Daftar extends MY_Controller
 		$this->mod->tambah($data);
 		redirect('global/login');
 	}
-
-	
-	
 }

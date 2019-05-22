@@ -12,6 +12,18 @@ class M_artikel extends CI_Model
         parent::__construct();
     }
     
+
+
+    public function index($data)
+    {
+        $this->db->select($data['fields'])
+            ->from($data['table_view']);
+        $data['total']  = $this->db->count_all_results(null, false);
+        $sql            = $this->db->get_compiled_select();
+        $data['result'] = $this->db->query($sql)->result_array();
+        return $data;
+    }
+
     public function fetch_data($data, $limit = null, $offset= null)
     {
        /*  $this->db->select($data['fields'])

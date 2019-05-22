@@ -44,6 +44,10 @@ class Pesan extends MY_Controller
         $data['base_class']     = 'pesan';
         $data['base_function']  = 'tambah_pesan';
         $data['title']          = 'Tambah Pesan';
+        $data['penerima']        = array(
+            'personal' => $this->mod->get_personal(),
+            'personal_selected' => '',
+            ); 
         //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_admin/template', $data);
     }
@@ -51,12 +55,14 @@ class Pesan extends MY_Controller
     public function tambah_proses()
     {
         $data = [
-            "id_pesan" => $this->input->post('id_pesan'),
-            "datetime_pesan" => $this->input->post('datetime_pesan'),
-            "nama_pesan" => $this->input->post('nama_pesan'),
-            "email_pesan" => $this->input->post('email_pesan'),
-            "judul_pesan" => $this->input->post('judul_pesan'),
-            "isi_pesan" => $this->input->post('isi_pesan'),
+            'id_pesan' => $this->input->post('id_pesan'),
+            'judul_pesan' => $this->input->post('judul_pesan'),
+            'email_pesan' => $this->input->post('email_pesan'),
+            'hp_pesan' => $this->input->post('hp_pesan'),
+            'isi_pesan' => $this->input->post('isi_pesan'),
+            'levelpengirim_pesan' => $this->input->post('levelpengirim_pesan'),
+            'status_pesan' => $this->input->post('status_pesan'),
+            'penerima_pesan' => $this->input->post('penerima_pesan')
         ];
         //print('<pre>'); print_r($data); exit();
         $this->mod->tambah_pesan($data);
@@ -80,11 +86,13 @@ class Pesan extends MY_Controller
         $aksi   = $this->input->post('aksi');
         $data   = [
             'id_pesan' => $this->input->post('id_pesan'),
-            'datetime_pesan' => $this->input->post('datetime_pesan'),
-            'nama_pesan' => $this->input->post('nama_pesan'),
-            'email_pesan' => $this->input->post('email_pesan'),
             'judul_pesan' => $this->input->post('judul_pesan'),
+            'email_pesan' => $this->input->post('email_pesan'),
+            'hp_pesan' => $this->input->post('hp_pesan'),
             'isi_pesan' => $this->input->post('isi_pesan'),
+            'levelpengirim_pesan' => $this->input->post('levelpengirim_pesan'),
+            'status_pesan' => $this->input->post('status_pesan'),
+            
         ];
         //print('<pre>'); print($data); exit();
         if ($aksi == 'simpan') {
@@ -94,11 +102,83 @@ class Pesan extends MY_Controller
             redirect(site_url('admin/pesan'));
         }
     }
+
     public function hapus()
     {
         $id = $this->uri->segment(4);
         $this->mod->hapus('pesan', $id);
         redirect(base_url('admin/pesan'));
+    }
+
+    public function pesan_masuk()
+    {
+        $temp = null;
+        $data = MY_Controller::data_session();
+
+        $data['base_level']     = $this->uri->segment(1);
+        $data['base_class']     = 'pesan';
+        $data['base_function']  = 'pesan_masuk';
+        $data['table_view']     = 'pesan';
+        $data['fields']         = [
+            'id_pesan',
+            'judul_pesan',
+            'email_pesan',
+            'hp_pesan',
+            'isi_pesan',
+            'levelpengirim_pesan',
+            'status_pesan',
+        ];
+        $data['title']          = 'Table Pesan Masuk';
+
+        $data['total']          = $this->mod->pesan_masuk($data)['total'];
+        $data['result']         = $this->mod->pesan_masuk($data)['result'];
+        foreach ($data['result'] as $records) {
+            $records['level']   = $data['base_level'];
+            $temp[]             = $records;
+        }
+        $data['result']         = $temp;
+        if ($temp != null)
+        {
+            $this->parser->parse('tpl_admin/template', $data);
+        } else {
+            $this->parser->parse('tpl_admin/pesan_kosong', $data);
+        }
+    }
+
+    public function pesan_keluar()
+    {
+       $temp = null;
+        $data = MY_Controller::data_session();
+
+        $data['base_level']     = $this->uri->segment(1);
+        $data['base_class']     = 'pesan';
+        $data['base_function']  = 'pesan_keluar';
+        $data['table_view']     = 'pesan';
+        $data['fields']         = [
+            'id_pesan',
+            'judul_pesan',
+            'email_pesan',
+            'hp_pesan',
+            'isi_pesan',
+            'levelpengirim_pesan',
+            'status_pesan',
+        ];
+        $data['title']          = 'Table Pesan Keluar';
+
+        $data['total']          = $this->mod->pesan_keluar($data)['total'];
+        $data['result']         = $this->mod->pesan_keluar($data)['result'];
+        foreach ($data['result'] as $records) {
+            $records['level']   = $data['base_level'];
+            $temp[]             = $records;
+        }
+        $data['result']         = $temp;
+        //print('<pre>'); print_r($data); exit();
+        if ($temp != null)
+        {
+            $this->parser->parse('tpl_admin/template', $data);
+        } else {
+            $this->parser->parse('tpl_admin/pesan_kosong', $data);
+        } 
     }
 }
 

@@ -55,7 +55,7 @@
               </tr>
             {/result}
             </tbody>
-          </table>
+        </table>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">

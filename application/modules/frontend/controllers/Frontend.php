@@ -714,7 +714,7 @@ class Frontend extends MY_Controller {
 		$this->parser->parse('tpl_frontend/blog-detail', $data);
 	}
 
-	public function search_shop()
+	/* public function search_shop()
 	{
 		$this->load->model('M_frontend', 'mod');
 		$data 					= self::class_data();
@@ -731,7 +731,7 @@ class Frontend extends MY_Controller {
 		//print('<pre>'); print_r($data); exit();
 		$this->parser->parse('tpl_frontend/shop', $data);
 	}
-
+ */
 	public function blog_07()
 	{
 		$this->load->helper(array('string', 'text'));

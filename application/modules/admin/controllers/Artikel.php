@@ -7,7 +7,6 @@ class Artikel extends MY_Controller
     public function __construct()
     {
         parent::__construct();
-         
         $this->load->model('M_artikel', 'mod');
     }
 
@@ -26,8 +25,8 @@ class Artikel extends MY_Controller
         $data['fields']         = ["id_artikel", "judul_artikel", "isi_artikel", "penulis_artikel", "kategori_artikel", "gambar_artikel"];
         $data['title']          = 'Table Artikel';
 
-        $data['total']          = $this->mod->fetch_data($data)['total'];
-        $data['result']         = $this->mod->fetch_data($data)['result'];
+        $data['total']          = $this->mod->index($data)['total'];
+        $data['result']         = $this->mod->index($data)['result'];
         foreach ($data['result'] as $records) {
             $records['level']   = $data['base_level'];
             $temp[]             = $records;
@@ -146,7 +145,4 @@ class Artikel extends MY_Controller
             redirect(site_url('admin/artikel'));
         }
     }
-
-    
-
 }
