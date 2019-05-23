@@ -30,6 +30,21 @@
           </ul>
         </li>
         <li><a href="{site_url({base_level}/barang)}"><i class="fa fa-suitcase"></i> <span>Barang</span></a></li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-envelope"></i><span>Pesan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{site_url({base_level}/pesan)}"><i class="fa fa-circle-o"></i>Semua Pesan</a></li>
+            <li><a href="{site_url({base_level}/pesan/pesan_masuk)}"><i class="fa fa-circle-o"></i>Pesan Masuk</a></li>
+            <li><a href="{site_url({base_level}/pesan/pesan_keluar)}"><i class="fa fa-circle-o"></i>Pesan Terkirim</a></li>
+          </ul>
+        </li>
+
       </ul>
     </section>
     <!-- /.sidebar -->

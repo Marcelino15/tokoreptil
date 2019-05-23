@@ -30,6 +30,14 @@ class Profil extends MY_Controller
         $data                  = MY_Controller::data_session() + self::class_data();
         $data['base_function'] = 'index';
         $data['title']         = 'Profil Detail';
+        $data['id_detail']      = $this->uri->segment(4);
+        $data['lokasi']		   = array(
+            'provinsi' => $this->mod->get_provinsi(),
+            'kabupaten' => $this->mod->get_kabupaten(),
+            'provinsi_selected' => '',
+            'kabupaten_selected' => '',
+            );
+        $data['personal']                   = $this->mod->fetch_data($data);
 
         $this->parser->parse('tpl_admin/template', $data);
     }
@@ -39,7 +47,7 @@ class Profil extends MY_Controller
         
         $data                   = self::class_data() + MY_Controller::data_session();
         $data['base_function']  = 'ubah_profil';
-        $data['table_view']     = 'v_personal_lokasi';
+        $data['table_view']     = 'personal';
         $data['title']          = 'Ubah Profil Admin';
         $data['id_detail']      = $this->uri->segment(4);
         $data['lokasi']         = array (

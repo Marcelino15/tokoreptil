@@ -21,15 +21,16 @@ class M_profil extends CI_Model
     
     public function fetch_data($data)
     {
+        $id_personal = $_SESSION['id_session'];
         $table = 'v_personal_lokasi';
         $this->db->select()
-            ->from($table);
-        // unset($data);
-        $data['total']  = $this->db->count_all_results(null, false);
-        $sql            = $this->db->get_compiled_select();
-        $data['result'] = $this->db->query($sql)->result_array();
-
-        return $data;
+            ->from($table)
+            ->where("id_personal", $id_personal);
+            
+        $query = $this->db->get_compiled_select();
+        $data = $this->db->query($query)->row();
+             
+        return $data;    
     }
 
     public function fetch_id($data)
@@ -43,7 +44,7 @@ class M_profil extends CI_Model
         $sql            = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($sql)->result_array();
         //dump_exit($data);
-        //print('<pre>'); print_r($sql); exit();
+        // print('<pre>'); print_r($sql); exit();
         return $data;
     }
 

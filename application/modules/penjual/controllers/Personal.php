@@ -45,7 +45,7 @@ class Personal extends MY_Controller
         $data                  = self::class_data() + MY_Controller::data_session();
         $data['base_function'] = 'ubah_personal';
         $data['table_view']    = 'personal';
-        $data['title']         = 'Detail Data Personal';
+        $data['title']         = 'Ubah Data Personal';
         $data['id_detail']      = $this->uri->segment(4);
         $data['lokasi']		   = array(
             'provinsi' => $this->mod->get_provinsi(),

@@ -29,14 +29,14 @@
         </div>
         <div class="box-body">
        {result}
-        <form action="<?php echo site_url('penjual/personal/ubah'); ?>" method="post">
+        <form action="<?php echo site_url('admin/profil/ubah'); ?>" method="post">
             <input type="hidden" name="id_personal" value="{id_personal}">
           
             <label>Nama Personal</label>
             <input type="text" name="nama_personal" value="{nama_personal}" class="form-control">     
             
             <label>Nomor Handphone</label>
-            <input type="text" name="hp_personal" value="{hp_personal}" class="form-control">
+            <input type="number" name="hp_personal" value="{hp_personal}" class="form-control">
     
             <label>Email</label>
             <input type="email" name="email_personal" value="{email_personal}" class="form-control">

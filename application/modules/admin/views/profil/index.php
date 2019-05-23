@@ -28,21 +28,19 @@
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
+                  <b>Nomor Telfon</b> <a class="pull-right">{hp_session}</a>
+                </li>
+                <li class="list-group-item">
                   <b>Email</b> <a class="pull-right">{email_session}</a>
                 </li>
+                
                 <li class="list-group-item">
-                  <b>Contac Person</b> <a class="pull-right">{hp_session}</a>
-                </li>
-                <li class="list-group-item">
-                  <b>Friends</b> <a class="pull-right">13,287</a>
+                  <b>Lokasi</b> <a class="pull-right"><?php echo $personal->nama_provinsi; ?></a>
                 </li>
               </ul>
             </div>
-            <!-- /.box-body -->
           </div>
         </div>
-        <!-- /.col -->
-        <!-- /.col -->
       </div>
       <!-- /.row -->
 

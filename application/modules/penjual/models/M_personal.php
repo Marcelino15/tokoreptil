@@ -24,7 +24,6 @@ class M_personal extends CI_Model
     public function fetch_id($data)
     {
         $table = 'v_personal_lokasi';
-
         $this->db->select()
             ->from($table)
             ->where('id_personal',$data['id_detail']);
