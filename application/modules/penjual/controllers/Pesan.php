@@ -12,20 +12,21 @@ class Pesan extends MY_Controller
 
     public function index()
     {
-        $data                   = MY_Controller::data_session();
-        $data['base_level']     = $this->uri->segment(1);
-        $data['base_class']     = 'pesen';
-        $data['base_function']  = 'index';
-        $data['table_view']     = 'pesan';
-        $data['title']          = 'Pesan';
+        $data = MY_Controller::data_session();
 
-        $data['total']          = $this->mod->fetch_data($data['table_view'])['total'];
-        $data['resutl']         = $this->mod->fetch_data($data['table_view'])['result'];
+        $data['base_level']    = $this->uri->segment(1);
+        $data['base_class']    = 'pesan';
+        $data['base_function'] = 'index';
+        $data['table_view']    = 'pesan';
+        $data['title']         = 'Pesan';
+
+        $data['total']  = $this->mod->fetch_data($data['table_view'])['total'];
+        $data['result'] = $this->mod->fetch_data($data['table_view'])['result'];
         foreach ($data['result'] as $records) {
-            $records['level']   = $data['base_level'];
-            $temp[]             = $records;
+            $records['level'] = $data['base_level'];
+            $temp[]           = $records;
         }
-        $data['result']         = $temp;
+        $data['result'] = $temp;
         //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_penjual/template',$data);
     }
@@ -37,10 +38,6 @@ class Pesan extends MY_Controller
         $data['base_class']     = 'pesan';
         $data['base_function']  = 'tambah_pesan';
         $data['title']          = 'Tambah Pesan';
-        $data['penerima']       = array(
-            'personal' => $this->mod->get_personal(),
-            'personal_selected'=> '',
-        )
         //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_penjual/template', $data);
     }
@@ -153,7 +150,7 @@ class Pesan extends MY_Controller
        {
            $this->parser->parse('tpl_penjual/template', $data);
        } else {
-           $this->parser->parse('tpl_penjual/pesan_kosong' $data);
+           $this->parser->parse('tpl_penjual/pesan_kosong', $data);
        }
    }
 }

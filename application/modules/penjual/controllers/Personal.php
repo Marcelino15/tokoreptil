@@ -32,7 +32,7 @@ class Personal extends MY_Controller
             'provinsi_selected' => '',
             'kabupaten_selected' => '',
             );
-        $data['personal']                   = $this->mod->detail_personal($data);
+        $data['personal']                   = $this->mod->tampil_personal($data);
         //$data['result'] 		= $this->mod->detail_personal($this->uri->segment(4));
         //$data                   = $this->mod->detail_personal($data);
         // print('<pre>'); print_r($data['personal']); exit();
@@ -77,6 +77,7 @@ class Personal extends MY_Controller
         'email_personal' => $this->input->post('email_personal'),
         'provinsi_personal' => $this->input->post('provinsi_personal'),
         'kabupaten_personal' => $this->input->post('kabupaten_personal'),
+        'password_personal' => $this->input->post('password_personal'),
         'level_personal' => $this->input->post('level_personal'),
     ];
     //print('<pre>'); print_r($data); print_r($aksi); exit();
@@ -91,6 +92,7 @@ class Personal extends MY_Controller
 
     public function upload()
     {
+        $data                  = self::class_data() + MY_Controller::data_session();
         $data['base_level'] = '';
         $data['base_class'] = 'personal';
         $data['base_function'] = 'upload';

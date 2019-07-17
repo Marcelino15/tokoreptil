@@ -115,7 +115,7 @@
         "visible": false
       },
       {
-        "targets": [1],
+        "targets": [1,2,3,5,7,8,9],
         "searchable": false,
         "orderable": false,
         "visible": true

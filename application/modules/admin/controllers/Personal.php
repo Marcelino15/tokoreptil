@@ -123,6 +123,7 @@ class Personal extends MY_Controller
 
     public function upload()
     {
+        $data                  = self::class_data() + MY_Controller::data_session();
         $data['base_level'] = '';
         $data['base_class'] = 'personal';
         $data['base_function'] = 'upload';

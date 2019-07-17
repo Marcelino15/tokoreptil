@@ -32,7 +32,8 @@
                 <th>User</th>
                 <th>Kategori</th>
                 <th>Status</th>
-                <th><a href="{base_url({base_level}/barang/tambah)}"><span><i class="glyphicon glyphicon-plus"></i></span></a></th>
+                <!-- <th><a href="{base_url({base_level}/barang/tambah)}"><span><i class="glyphicon glyphicon-plus"></i></span></a></th> -->
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -56,9 +57,7 @@
           </table>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
+
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

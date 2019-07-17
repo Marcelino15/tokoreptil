@@ -41,32 +41,20 @@
 
 						<ul>
 							<li class="p-t-6 p-b-8 bo6">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									Fashion
+								<a href="{base_url(frontend/blog)}" class="s-text13 p-t-5 p-b-5">
+									Semua
 								</a>
 							</li>
 
 							<li class="p-t-6 p-b-8 bo7">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									Beauty
+								<a href="{base_url(frontend/blog_peng)}" class="s-text13 p-t-5 p-b-5">
+									Pengetahuan
 								</a>
 							</li>
 
 							<li class="p-t-6 p-b-8 bo7">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									Street Style
-								</a>
-							</li>
-
-							<li class="p-t-6 p-b-8 bo7">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									Life Style
-								</a>
-							</li>
-
-							<li class="p-t-6 p-b-8 bo7">
-								<a href="#" class="s-text13 p-t-5 p-b-5">
-									DIY & Crafts
+								<a href="{base_url(frontend/blog_per)}" class="s-text13 p-t-5 p-b-5">
+									Perawatan
 								</a>
 							</li>
 						</ul>

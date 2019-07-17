@@ -3,8 +3,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Blank page
-        <small>it all starts here</small>
+        {title}
+
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -19,15 +19,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
+          <h3 class="box-title">Form Ubah Artikel</h3>
         </div>
         <div class="box-body">
         {result}
@@ -42,11 +34,16 @@
             <input type="text" name="penulis_artikel" value="{penulis_artikel}" class="form-control">
             <label>Kategori Artikel</label>
             <select name="kategori_artikel" class="form-control">
-                <option value="{kategori_artikel}">{kategori_artikel}</option>
+                <option value="{id_katar}">{nama_katar}</option>
                 <option value="">--- Pilih Kategori Artikel --</option>
-                <option value="Pengetahuan">Pengetahuan</option>
-                <option value="Perawatan">Perawatan</option>
-                <option value="Tips">Tips</option>
+                 <?php
+                foreach ($kategori['katar'] as $kat) {
+                    ?>
+                    <option <?php echo $kategori['katar_selected'] == $kat->id_katar ? 'selected="selected"' : '' ?>
+                        value="<?php echo $kat->id_katar ?>"><?php echo $kat->nama_katar ?></option>
+                    <?php
+                }
+                ?>
             </select>
             <label>Sumber</label>
             <input type="text" name="sumber_artikel" value="{sumber_artikel}" class="form-control">

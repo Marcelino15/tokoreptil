@@ -4,7 +4,6 @@
     <section class="content-header">
       <h1>
         {title}
-        <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Admin</a></li>
@@ -21,13 +20,7 @@
         <div class="box-header with-border">
           <h3 class="box-title">Data Artikel</h3>
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
+      
         </div>
         <div class="box-body">
         <table id="tabel_artikel" class="display" style="width: 100%">
@@ -47,7 +40,7 @@
                 <td>{id_artikel}</td>
                 <td>{judul_artikel}</td>
                 <td>{penulis_artikel}</td>
-                <td>{kategori_artikel}</td>
+                <td>{nama_katar}</td>
                 <td>{gambar_artikel}</td>
                 <td>
                   <a href="{base_url({level}/artikel/ubah/{id_artikel})}"><span><i class="glyphicon glyphicon-resize-full"></i></span></a>
@@ -58,9 +51,7 @@
         </table>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
+
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

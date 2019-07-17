@@ -56,9 +56,7 @@
 
             <div class="form-group">
             <label>Status Barang</label>
-              <select name="status_barang" class="form-control">
-                  <option value="1">PENDING</option>
-              </select>
+            <input type="hidden" name="status_barang" value="PENDING">
             </div>
 
             <div class="form-group">
@@ -69,7 +67,7 @@
             </div>
 
             <div class="form-group">
-            <input type="text" name="idpersonal_barang" value="{id_session}" class="form-control">            
+            <input type="hidden" name="idpersonal_barang" value="{id_session}" class="form-control">            
             </div>
 
             <button type="submit" name="aksi" value="simpan" class="btn btn-success">Simpan</button>
@@ -77,9 +75,7 @@
           </form>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
+        
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

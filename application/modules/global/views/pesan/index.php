@@ -39,7 +39,7 @@
 
       <div class="form-group">
       <label>Pengirim :</label>
-      <input type="text" name="statuspengirim_pesan" class="form-control" value="penjual" readonly>
+      <input type="text" name="levelpengirim_pesan" class="form-control" value="penjual" readonly>
       </div>
 
       <div class="form-group">

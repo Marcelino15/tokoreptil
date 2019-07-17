@@ -11,7 +11,7 @@
 			$query = $this->db->query("SELECT * FROM artikel;");
 			foreach ($query->result_array() as $row){
 		?>		
-			<div class="col-sm-10 col-md-4 p-b-30 m-l-r">
+			<div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
 					<!-- Block3 -->
 				<div class="block2">
 					<a href="<?php echo base_url('frontend/blog_detail/'.$row['id_artikel']); ?>" class="block3-img dis-block hov-img-zoom">

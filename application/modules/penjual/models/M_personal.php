@@ -71,7 +71,21 @@ class M_personal extends CI_Model
         return true;
     }
 
-    public function detail_personal($data)
+    public function detail_personal($id_personal)
+    {
+        $id_personal = $_SESSION['id_session'];
+        $table = 'v_personal_lokasi';
+        $this->db->select()
+            ->from($table)
+            ->where("id_personal", $id_personal);
+            
+        $query = $this->db->get_compiled_select();
+        $data['result'] = $this->db->query($query)->row();
+             
+        return $data;    
+    }
+
+    public function tampil_personal($data)
     {
         $id_personal = $_SESSION['id_session'];
         $table = 'v_personal_lokasi';
@@ -87,11 +101,18 @@ class M_personal extends CI_Model
 
     public function upload($data)
     {
-        $this->db->select()
+       /* $this->db->select()
             ->from($this->table)
             ->where("id_personal", $data['id_personal']);
         $query = $this->db->set($data)->get_compiled_update();
         $this->db->query($query);    
+        return true;*/
+        $this->db->select()
+            ->from($this->table)
+            ->where("id_personal", $data['id_personal']);
+        $query = $this->db->set($data)->get_compiled_update();
+        $this->db->query($query);
+        //print('<pre>'); print_r($query); exit();
         return true;
     }
 

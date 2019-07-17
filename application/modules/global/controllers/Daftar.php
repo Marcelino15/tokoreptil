@@ -65,7 +65,16 @@ class Daftar extends MY_Controller
 			"level_personal"=>$this->input->post('level_personal'),
 			"password_personal"=>$this->input->post('password_personal')
 		];
+		$email_personal = $this->input->post('email_personal');
+		$sql = $this->db->query("SELECT email_personal FROM personal where email_personal='$email_personal'");
+		$cek_email = $sql->num_rows();
+		// print('<pre>'); print_r($data); exit(); 
+		if ($cek_email > 0) {
+		$this->session->set_flashdata('error', 'email sudah digunakan');
+		redirect('global/login');
+		}else {
 		$this->mod->tambah($data);
 		redirect('global/login');
+		}
 	}
 }

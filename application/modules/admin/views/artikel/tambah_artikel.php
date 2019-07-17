@@ -21,13 +21,7 @@
         <div class="box-header with-border">
       
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
+          
         </div>
         <div class="box-body">
          <form action="<?php echo site_url('admin/artikel/tambah_proses'); ?>" method="post" enctype="multipart/form-data" >
@@ -46,9 +40,14 @@
             <label>Kategori Artikel</label>
             <select name="kategori_artikel" class="form-control">
                 <option value="">---Pilih Kategori Artikel---</option>
-                <option value="Pengetahuan">Pengetahuan</option>
-                <option value="Perawatan">Perawatan</option>
-                <option value="Tips">Tips</option>
+                <?php
+                foreach ($kategori['katar'] as $kat) {
+                    ?>
+                    <option <?php echo $kategori['katar_selected'] == $kat->id_katar ? 'selected="selected"' : '' ?>
+                        value="<?php echo $kat->id_katar ?>"><?php echo $kat->nama_katar ?></option>
+                    <?php
+                }
+                ?>
             </select>
             <div class="form-group">
             <label>Sumber</label>
@@ -63,9 +62,6 @@
          </form>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

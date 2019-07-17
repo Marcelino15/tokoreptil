@@ -63,7 +63,7 @@ class Barang extends MY_Controller
         $config['allowed_types']        = 'jpg|png|jpeg';
         $config['max_size']             = 20000;
         $config['max_width']            = 5000;
-        $config['max_height']           = 1000;
+        $config['max_height']           = 2000;
 
         $this->load->library('upload', $config);           
         $this->upload->do_upload('gambar1_barang');

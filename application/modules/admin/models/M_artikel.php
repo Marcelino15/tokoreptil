@@ -15,9 +15,11 @@ class M_artikel extends CI_Model
 
 
     public function index($data)
-    {
-        $this->db->select($data['fields'])
-            ->from($data['table_view']);
+    {   
+        // $table = 'artikel';
+        $table = 'v_artikel_katar';
+        $this->db->select()
+            ->from($table);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
         $data['result'] = $this->db->query($sql)->result_array();
@@ -96,8 +98,10 @@ class M_artikel extends CI_Model
     public function fetch_id($data)
     {
         //print('<pre>'); print_r($data); exit();
+        $table = 'v_artikel_katar';
+        // $table = 'artikel';
         $this->db->select()
-            ->from($data['table_view'])
+            ->from($table)
             ->where('id_artikel', $data['id_detail']);
         $data['total']  = $this->db->count_all_results(null, false);
         $sql            = $this->db->get_compiled_select();
@@ -181,6 +185,12 @@ class M_artikel extends CI_Model
 	
         $query = $this->db->get('artikel', $limit, $start)->result();
         return $query;
+    }
+
+    public function get_katar()
+    {
+        $this->db->order_by('nama_katar', 'asc');
+        return $this->db->get('kategori_artikel')->result();
     }
     
 }

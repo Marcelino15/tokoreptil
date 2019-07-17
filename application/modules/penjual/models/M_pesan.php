@@ -7,8 +7,12 @@ class M_pesan extends CI_Model
 
     public function fetch_data($table)
     {
+        $levelpengirim_pesan = 'admin';
+        $penerima_pesan = $_SESSION['id_session'];
         $this->db->select()
-            ->from($table);
+            ->from($table)
+            ->where("penerima_pesan", $penerima_pesan)
+            ->where("penerima_pesan", $penerima_pesan);
         $this->db->join('personal', 'personal.id_personal = penerima_pesan', 'left');
         $data['total'] = $this->db->count_all_results(null, false);
 
@@ -55,8 +59,8 @@ class M_pesan extends CI_Model
         $this->db->select()
             ->from($table)
             ->where('id_pesan', $id);
-        $query=$this->db->get_compiled_delete()    ;
-        $this->db->query($query;
+        $query=$this->db->get_compiled_delete();
+        $this->db->query($query);
         return true;
     }
 
@@ -69,9 +73,11 @@ class M_pesan extends CI_Model
     public function pesan_masuk($table)
     {
         $levelpengirim_pesan = 'admin';
+        $penerima_pesan = $_SESSION['id_session'];
         $this->db->select()
             ->from($this->table)
-            ->where("levelpengirim_pesan", $levelpengirim_pesan);
+            ->where("levelpengirim_pesan", $levelpengirim_pesan)
+            ->where("penerima_pesan", $penerima_pesan);
         $data['total']=$this->db->count_all_results(null, false);
 
         $query=$this->db->get_compiled_select();

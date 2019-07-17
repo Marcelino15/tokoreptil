@@ -23,10 +23,7 @@
 								<img src="<?php echo base_url('assets/foto_barang/'.$row['gambar1_barang']); ?>" alt="IMG-PRODUCT" width="150" height="300">
 
 								<div class="block2-overlay trans-0-4">
-									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-									</a>
+								
 
 									<div class="block2-btn-addcart w-size1 trans-0-4">
 										<!-- Button -->

@@ -40,6 +40,10 @@ class Artikel extends MY_Controller
         $data                   = self::class_data() + MY_Controller::data_session();
         $data['base_function']  = 'tambah_artikel';
         $data['title']          = 'Input Artikel';
+        $data['kategori']        = array(
+            'katar' => $this->mod->get_katar(),
+            'katar_selected' => '',
+            );
         //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_admin/template', $data);
     }
@@ -78,6 +82,10 @@ class Artikel extends MY_Controller
         $data['title']          = 'Ubah Artikel';
         $data['id_detail']      = $this->uri->segment(4);
         $data                   = $this->mod->fetch_id($data);
+        $data['kategori']       = array(
+            'katar' => $this->mod->get_katar(),
+            'katar_selected' => '',
+            );
         //print('<pre>'); print_r($data); exit();
         $this->parser->parse('tpl_admin/template', $data);
     }
@@ -137,7 +145,7 @@ class Artikel extends MY_Controller
             'id_artikel' => $this->input->post('id_artikel'),
             'gambar_artikel' => $gambar_artikel,
         ];
-        //print('<pre>'); print_r($data); exit();
+        // print('<pre>'); print_r($data); exit();
         if ($aksi == 'simpan') {
             $this->mod->upload($data);
             redirect(site_url('admin/artikel'));

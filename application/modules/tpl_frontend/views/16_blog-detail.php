@@ -9,7 +9,7 @@
 					<div class="p-r-50 p-r-0-lg">
 						<div class="p-b-40">
 							<div class="blog-detail-img wrap-pic-w">
-								<img src="{base_url(assets/foto_barang/{gambar_artikel})}" alt="IMG-BLOG">
+								<img src="{base_url(assets/foto_artikel/{gambar_artikel})}" alt="IMG-BLOG">
 							</div>
 							
 							<div class="blog-detail-txt p-t-33">

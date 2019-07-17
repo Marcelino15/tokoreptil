@@ -58,8 +58,9 @@ class M_barang extends CI_Model
 
 	public function ubah_barang($data)
 	{
+		$table = 'v_barang_personal_kategori';
 		$this->db->select()
-			->from($this->table)
+			->from($table)
 			->where("id_barang", $data['id_barang']);
 		$query = $this->db->set($data)->get_compiled_update();
 		//print('<pre>'); print_r($query); exit();

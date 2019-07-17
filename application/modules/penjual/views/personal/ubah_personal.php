@@ -19,13 +19,6 @@
         <div class="box-header with-border">
           <h3 class="box-title">Profil {nama_session}</h3>
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
         </div>
         <div class="box-body">
        {result}
@@ -72,24 +65,25 @@
                         }
                     ?>
                 </select>
-            </div>    
+            </div>
+            <div class="form-group">    
             <label>Password</label>
             <input type="password" name="password_personal" value="{password_personal}" class="form-control">
+            </div>
+            <input type="hidden" name="level_personal" value="penjual">
             <br />
             <label>Foto</label>
             <input name="foto_personal" value="{foto_personal}" class="form-control">
             <br />
-            <a href="{base_url(admin/personal/upload/{id_personal})}" class="btn btn-info">Upload Foto</a>
+            <a href="{base_url(penjual/personal/upload/{id_personal})}" class="btn btn-info">Upload Foto</a>
             <button type="submit" name="aksi" value="simpan" class="btn btn-success">Simpan</button>
             <button type="submit" value="Go Back" onclick="history.back(-1)" class="btn btn-primary">Batal</button>
-            <a href="{base_url(admin/personal/hapus/{id_personal})}" class="btn btn-danger">Hapus</a>
+           
         </form>
         {/result}
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
+        
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

@@ -19,17 +19,10 @@
         <div class="box-header with-border">
           <h3 class="box-title">Upload Foto</h3>
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
         </div>
         <div class="box-body">
           {result}
-        <form action="<?php echo site_url('admin/personal/upload_proses'); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo site_url('penjual/personal/upload_proses'); ?>" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id_personal" value="{id_personal}">
             <label>Foto Profil</label>
             <input type="file" name="foto_personal">
@@ -40,9 +33,7 @@
         {/result}
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
+        
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

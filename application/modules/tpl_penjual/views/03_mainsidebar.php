@@ -39,7 +39,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{site_url({base_level}/pesan)}"><i class="fa fa-circle-o"></i>Semua Pesan</a></li>
             <li><a href="{site_url({base_level}/pesan/pesan_masuk)}"><i class="fa fa-circle-o"></i>Pesan Masuk</a></li>
             <li><a href="{site_url({base_level}/pesan/pesan_keluar)}"><i class="fa fa-circle-o"></i>Pesan Terkirim</a></li>
           </ul>

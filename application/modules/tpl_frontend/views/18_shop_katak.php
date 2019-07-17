@@ -93,42 +93,50 @@
 							</div>
 						</div>
 
-						<span class="s-text8 p-t-5 p-b-5">
-							Showing 1–12 of 16 results
-						</span>
 					</div>
 
 					<!-- Product -->
-					<div class="row">
-						{result}
+						<div class="row">
+						<?php
+							foreach($result as $re){
+						?>			
 						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 							<!-- Block2 -->
 							<div class="block2">
-								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-									<img src="{base_url(assets/foto_barang/{gambar1_barang})}" alt="IMG-PRODUCT" width="150" height="200">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+									<img src="<?php echo base_url('assets/foto_barang/'.$re['gambar1_barang']); ?>" alt="IMG-PRODUCT" width="150" height="200">
 								</div>
 
 								<div class="block2-txt p-t-20">
-									<a href="{base_url(frontend/product_detail)}" class="block2-name dis-block s-text3 p-b-5">
-										{nama_barang}
-									</a>
-
+										<?php echo ($re['nama_barang']); ?><br/>
 									<span class="block2-price m-text6 p-r-5">
-										Rp.&nbsp;{harga_barang},00
-									</span><br>
-									<span class="block2-price m-text6 p-r-5">
-										Lokasi : {nama_provinsi}
+										<?php
+										echo "Rp. ". number_format($re['harga_barang'],  2, ",", "."). "<br>";
+										?>
 									</span>
+									<span class="block2-price m-text6 p-r-5">
+										Lokasi : <?php echo ($re['nama_provinsi']); ?>
+									</span><br/>
+									<div class="row">
+										<div class="col text-center">
+										<a href="<?php echo base_url('frontend/product_detail/'.$re['id_barang']); ?>" class="btn btn-primary">Detail</a>	
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						{/result}	
+						<?php
+							}
+						?>	
 					</div>
 
 					<!-- Pagination -->
-					<div class="pagination flex-m flex-w p-t-26">
+					<div class="row">
+        				<div class="col">
 						<?php echo $pagination; ?>
-					</div>
+						</div>
+					</div>	
+
 				</div>
 			</div>
 		</div>

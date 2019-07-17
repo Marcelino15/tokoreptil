@@ -29,7 +29,7 @@
         </div>
         <div class="box-body">
        {result}
-        <form action="<?php echo site_url('penjual/personal/ubah'); ?>" method="post">
+        <form action="<?php echo site_url('admin/personal/ubah'); ?>" method="post">
             <input type="hidden" name="id_personal" value="{id_personal}">
           
             <label>Nama Personal</label>
@@ -72,10 +72,15 @@
                         }
                     ?>
                 </select>
-            </div>    
-            <label>Password</label>
-            <input type="password" name="password_personal" value="{password_personal}" class="form-control">
-            <br />
+            </div>  
+            <div class="form-group">  
+              <label>Password</label>
+              <input type="password" name="password_personal" value="{password_personal}" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Level</label>
+              <input type="text" name="level_personal" value="{level_personal}" class="form-control">
+            </div>
             <label>Foto</label>
             <input name="foto_personal" value="{foto_personal}" class="form-control">
             <br />

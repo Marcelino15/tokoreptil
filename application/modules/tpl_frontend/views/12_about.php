@@ -17,11 +17,11 @@
 
 				<div class="col-md-8 p-b-30">
 					<h3 class="m-text26 p-t-15 p-b-16">
-						Our story
+						Cerita Pendiri
 					</h3>
 
 					<p class="p-b-28">
-						Phasellus egestas nisi nisi, lobortis ultricies risus semper nec. Vestibulum pharetra ac ante ut pellentesque. Curabitur fringilla dolor quis lorem accumsan, vitae molestie urna dapibus. Pellentesque porta est ac neque bibendum viverra. Vivamus lobortis magna ut interdum laoreet. Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula. Vivamus tristique vulputate ultricies. Sed vitae ultrices orci.
+						Nama Marcelino Tegar Yericho merupakan mahasiswa kelahiran Wonosobo, 9 September 1997 dan saat ini sedang menyelesaikan program pendidikan S1 di STMIK Akakom Yogyakarta. Pada awalnya pendiri memiliki ide untuk mendirikan aplikasi ini karena banyak probrem yang dihadapi oleh penghobby reptil dalam menjual barang koleksi karena di batasi oleh marketplace - marketplace yang ada, selain itu karena masih ada beberapa penjual yang berhasil menyelundupkan hewan - hewan langka. Oleh karena itu pendiri mencoba untuk membuat aplikasi ini yang selain merupakan tugas akhir di bangku kuliah juga aplikasi ini nantinya dapat bermanfaat untuk para penghobby yang akan menjual dan yang akan mencari reptil dengan mudah, serta dapat memfilter barang yang akan di jual pada aplikasi ini.
 					</p>
 
 					<div class="bo13 p-l-29 m-l-9 p-b-10">

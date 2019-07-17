@@ -342,7 +342,7 @@ class Frontend extends MY_Controller {
         //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
         $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
         $data['pagination'] = $this->pagination->create_links();
-		//load view mahasiswa view
+	
 
         $limit = 1;
 		$data['result']			= $this->mod->tampil_kadal($data)['result'];
@@ -408,7 +408,7 @@ class Frontend extends MY_Controller {
         //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
         $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
         $data['pagination'] = $this->pagination->create_links();
-		//load view mahasiswa view
+		
 
         $limit = 1;
 		$data['result']			= $this->mod->tampil_acc($data)['result'];
@@ -474,7 +474,7 @@ class Frontend extends MY_Controller {
         //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
         $data['data'] = $this->mod->get_barang_list($config["per_page"], $data['page']);           
         $data['pagination'] = $this->pagination->create_links();
-		//load view mahasiswa view
+	
 
         $limit = 1;
 		$data['result']			= $this->mod->tampil_ser($data)['result'];
@@ -699,7 +699,7 @@ class Frontend extends MY_Controller {
 		$data['title'] 			= 'Product Detail';
 		$data['table_view'] 	= 'v_barang_personal_kategori';
 		$data['result'] 		= $this->mod->detail_barang($id_barang);
-		//print('<pre>'); print_r($data); exit();
+		// print('<pre>'); print_r($data); exit();
 		$this->parser->parse('tpl_frontend/product-detail', $data);
 	}
 
@@ -714,24 +714,7 @@ class Frontend extends MY_Controller {
 		$this->parser->parse('tpl_frontend/blog-detail', $data);
 	}
 
-	/* public function search_shop()
-	{
-		$this->load->model('M_frontend', 'mod');
-		$data 					= self::class_data();
-		$data['title']			='Shop';
-		$data['table_view'] 	= 'barang';
-		$data['fields']			= ["id_barang", "nama_barang", "harga_barang", "keterangan_barang", "gambar1_barang", "gambar2_barang", "gambar3_barang", "idsubkategori_barang", "idpersonal_barang", "status_barang"];
-		$data['total']			= $this->mod->tampil_search_shop($data)['total'];
-		$data['result']			= $this->mod->tampil_search_shop($data)['result'];
-		foreach ($data['result'] as $records) {
-			$records['level']	= $data['base_level'];
-			$temp[]				= $records;
-		}
-		$data['result']			= $temp;
-		//print('<pre>'); print_r($data); exit();
-		$this->parser->parse('tpl_frontend/shop', $data);
-	}
- */
+	
 	public function blog_07()
 	{
 		$this->load->helper(array('string', 'text'));

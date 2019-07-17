@@ -6,8 +6,10 @@
         {title}
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{base_url({base_level}/dashboard)}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Personal</li>
+        <li><a href="{base_url({base_level}/dashboard)}"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+        <li>Barang</li>
+        <li>Ubah Barang</li>
+        <li class="active">Upload Foto</li>
       </ol>
     </section>
 
@@ -44,9 +46,7 @@
         {/result}
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
+        
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

@@ -49,7 +49,7 @@
 								</p><br />
 									posting :<h6><?php echo ($re['insert_on']); ?></h6><br><br>
 								<a href="<?php echo base_url('frontend/blog_detail/'.$re['id_artikel']); ?>" class="s-text20">
-									Continue Reading
+									Lanjutkan Membaca
 									<i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
 								</a>
 							</div>
@@ -62,7 +62,9 @@
 					<!-- Pagination -->
 					
 					<div class="pagination flex-m flex-w p-r-50">
+						<div class="col">
 						<?php echo $pagination; ?>
+						</div>
 					</div>
 				</div>
 
@@ -71,7 +73,7 @@
 						<!-- Search -->
 						<form action="" method="get">	
 						<div class="search-product pos-relative bo4 of-hidden">
-							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
+							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Cari Artikel">
 
 							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
 								<i class="fs-12 fa fa-search" aria-hidden="true"></i>

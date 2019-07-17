@@ -1,3 +1,4 @@
+
 {result}
 	<!-- Product Detail -->
 	<div class="container bgwhite p-t-35 p-b-80">
@@ -30,10 +31,12 @@
 
 			<div class="w-size14 p-t-30 respon5">
 				<h4 class="product-detail-name m-text16 p-b-13">
+					<!-- <?php echo $result['nama_barang']; ?> -->
 					{nama_barang}
 				</h4>
 
 				<span class="m-text17">
+					
 					Rp.{harga_barang},-
 				</span>
 
@@ -41,9 +44,31 @@
 					Penjual : {nama_personal}
 				</p>
 
+				<p class="s-text8 p-t-10">
+					<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"><span class="fa fa-phone"></span> Phone </button>
+				</p>
+				<div class="modal" id="myModal">
+				    <div class="modal-dialog">
+				      <div class="modal-content">
+
+				        <!-- Modal body -->
+				        <div class="modal-body">
+				          Nomor Penjual
+				          {hp_personal}
+				        </div>
+				        
+				        <!-- Modal footer -->
+				        <div class="modal-footer">
+				          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				        </div>
+				        
+				      </div>
+				    </div>
+				</div>
+
 				<!--  -->
 				<div class="p-t-33 p-b-60">
-					<div class="flex-m flex-w p-b-10">
+					<!-- <div class="flex-m flex-w p-b-10">
 						<div class="s-text15 w-size15 t-center">
 							Nomor Handphone
 						</div>
@@ -51,8 +76,19 @@
 						<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
 							{hp_personal}
 						</div>
-					</div>
+					</div> -->
 
+					<div class="flex-m flex-w">
+						
+
+						<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+							<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fas fa-thumbs-up"></i>
+							</button> -->
+							
+							
+						</div>
+					</div>
+					<br>
 					<div class="flex-m flex-w">
 						<div class="s-text15 w-size15 t-center">
 							Lokasi
@@ -66,7 +102,26 @@
 
 				<div class="p-b-45">
 					<span class="s-text8 m-r-35">Id Barang: {id_barang}</span>
-					<span class="s-text8">Kategori Barang: {nama_kategori}</span>
+					<span class="s-text8">Kategori Barang: {nama_kategori}</span>&nbsp;
+					
+					<div class="modal" id="myModal">
+					    <div class="modal-dialog">
+					      <div class="modal-content">
+
+					        <!-- Modal body -->
+					        <div class="modal-body">
+					          Nomor Penjual
+					          {hp_personal}
+					        </div>
+					        
+					        <!-- Modal footer -->
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					        </div>
+					        
+					      </div>
+					    </div>
+					</div>
 				</div>
 
 				<!--  -->

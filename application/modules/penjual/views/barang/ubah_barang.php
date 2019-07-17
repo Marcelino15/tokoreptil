@@ -3,13 +3,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Blank page
-        <small>it all starts here</small>
+        {title}
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+        <li><a href="#">Barang</a></li>
+        <li class="active">Ubah Barang</li>
       </ol>
     </section>
 
@@ -19,8 +18,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
-
+          
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                     title="Collapse">
@@ -62,17 +60,17 @@
             <div class="row">
                 <div class="col-md-4">
                   <div class="thumbnail">
-                      <img src="{base_url(assets/foto_barang/{gambar1_barang})}" alt="GambarBarang1" style="width:100%">
+                      <img src="{base_url(assets/foto_barang/{gambar1_barang})}" alt="GambarBarang1" width="400" height="500">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                      <img src="{base_url(assets/foto_barang/{gambar2_barang})}" alt="GambarBarang2" style="width:100%">
+                      <img src="{base_url(assets/foto_barang/{gambar2_barang})}" alt="GambarBarang2" width="400" height="500">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                      <img src="{base_url(assets/foto_barang/{gambar3_barang})}" alt="GambarBarang3" style="width:100%">
+                      <img src="{base_url(assets/foto_barang/{gambar3_barang})}" alt="GambarBarang3" width="400" height="500">
                   </div>
                 </div>
               </div>
@@ -87,9 +85,7 @@
           {/result}
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
+        
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

@@ -65,7 +65,7 @@
 		<!-- Header Mobile -->
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
-			<a href="index.html" class="logo-mobile">
+			<a href="{base_url(frontend/index)}" class="logo-mobile">
 				<img src="{base_url(assets/frontend/images/icons/logo-new.png)}" alt="IMG-LOGO">
 			</a>
 
@@ -93,22 +93,17 @@
 				<ul class="main-menu">
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<span class="topbar-child1">
-							Free shipping for standard order over $100
+							Cari Reptil Peliharaan Terbaik Disini
 						</span>
 					</li>
 
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<div class="topbar-child2-mobile">
 							<span class="topbar-email">
-								fashe@example.com
+								Marketplace Reptil
 							</span>
 
-							<div class="topbar-language rs1-select2">
-								<select class="selection-1" name="time">
-									<option>USD</option>
-									<option>EUR</option>
-								</select>
-							</div>
+							
 						</div>
 					</li>
 

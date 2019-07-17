@@ -3,10 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Blank page
-            <small>
-                it all starts here
-            </small>
+            Form Pendaftaran User Baru
         </h1>
         <ol class="breadcrumb">
             <li>
@@ -32,7 +29,7 @@
         <div class="box">
             <div class="box-header with-border">
                 <h3 class="box-title">
-                    Title
+                    Form Input Data User
                 </h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-toggle="tooltip" data-widget="collapse" title="Collapse" type="button">
@@ -47,8 +44,11 @@
             </div>
             <div class="box-body">
             {form_open(base_url({base_level}/personal/tambah_proses))}
+            <label for="nama">Nama Personal</label>
             {form_input(nama_personal,,class="form-control" placeholder="Nama")}
+            <label for="nama">Nomor Handphone</label>
             {form_input(hp_personal,,class="form-control" placeholder="Nomor Handphone")}
+            <label for="nama">Email Personal</label>
             {form_input(email_personal,,class="form-control" placeholder="Alamat Email")}
             <label>Lokasi :</label><br>
             <div class="form-group">
@@ -79,21 +79,31 @@
                         }
                     ?>
                 </select>
-            </div>    
-                <label>
-                    Level:
-                </label>
-            <?php
+            </div>  
+            <div class="form-group">  
+            <label>Level:</label>
+            <select class="form-control" name="level_personal" >
+                <option value="">---Masukkan Level---</option>
+                <option value="admin">Admin</option>
+                <option value="penjual">Penjual</option>
+                
+            </select>
+            <!-- <?php
             $tes=[
               'admin'=>'admin',
               'user'=>'user'
             ];
             print form_dropdown('level_personal',$tes,'user')
-            ?>
+            ?> -->
+            </div>
             {form_password(password_personal,,class="form-control" placeholder="Password")}
             <br />
+            <div class="form-group">
+            <label>Foto Profil</label>
+            <input type="file" name="foto_personal" class="form-control">
+            </div>
             {form_submit(kirim,Kirim,class="btn btn-success")}
-            {form_submit(kirim,Batal,value="Go Back" onclick="history.back(-1)" class="btn btn-danger")}
+            <a href="{base_url(admin/personal)}" class="btn btn-primary">Kembali</a>
             {form_close()}
             </div>
             <!-- /.box-body -->

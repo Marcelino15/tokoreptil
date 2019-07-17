@@ -45,6 +45,7 @@ class M_frontend extends CI_Model
 		if($data['search'] != null){
 			$this->db->select();
 			$this->db->from($table);
+			$this->db->where("status_barang", $status_barang);
 			$this->db->like('nama_barang', $data['search']);
 			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
@@ -86,6 +87,7 @@ class M_frontend extends CI_Model
 			$this->db->select();
 			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
+			$this->db->where("status_barang", $status_barang);
 			$this->db->like('nama_barang', $data['search']);
 			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
@@ -114,7 +116,9 @@ class M_frontend extends CI_Model
 		} 
 		
 		$this->db->limit($data['per_page'], $data['page']);
-		$data['total']	= $this->db->count_all_results(null, false);
+		$data['total']	= $this->db->where("status_barang", $status_barang)
+								->where("idkategori_barang", $idkategori_barang)
+								->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
 
@@ -130,6 +134,7 @@ class M_frontend extends CI_Model
 			$this->db->select();
 			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
+			$this->db->where("status_barang", $status_barang);
 			$this->db->like('nama_barang', $data['search']);
 			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
@@ -174,6 +179,7 @@ class M_frontend extends CI_Model
 			$this->db->select();
 			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
+			$this->db->where("status_barang", $status_barang);
 			$this->db->like('nama_barang', $data['search']);
 			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
@@ -218,6 +224,7 @@ class M_frontend extends CI_Model
 			$this->db->select();
 			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
+			$this->db->where("status_barang", $status_barang);
 			$this->db->like('nama_barang', $data['search']);
 			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
@@ -262,6 +269,7 @@ class M_frontend extends CI_Model
 			$this->db->select();
 			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
+			$this->db->where("status_barang", $status_barang);
 			$this->db->like('nama_barang', $data['search']);
 			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
@@ -306,8 +314,9 @@ class M_frontend extends CI_Model
 			$this->db->select();
 			$this->db->from($table);
 			$this->db->where("idkategori_barang", $idkategori_barang);
+			$this->db->where("status_barang", $status_barang);
 			$this->db->like('nama_barang', $data['search']);
-			$this->db->like('nama_provinsi', $data['search']);
+			$this->db->or_like('nama_provinsi', $data['search']);
 		}else if($data['sorting'] == 0){
 			$this->db->select()
             ->from($table)
@@ -337,7 +346,7 @@ class M_frontend extends CI_Model
 		$data['total']	= $this->db->count_all_results(null, false);
 		$sql			= $this->db->get_compiled_select();
 		$data['result']	= $this->db->query($sql)->result_array();
-		//print('<pre>'); print_r($sql); exit();
+
 		return $data;	
     }
     
@@ -345,13 +354,14 @@ class M_frontend extends CI_Model
 	{
 		$table = 'v_barang_personal_kategori';
 		$field_select = ["id_barang","nama_barang","harga_barang","keterangan_barang","gambar1_barang","gambar2_barang","gambar3_barang","idkategori_barang","idpersonal_barang","id_personal","nama_personal","hp_personal","lokasi_personal","id_kategori","nama_kategori"];
-		$this->db->select()
+		$this->db->select('hp_personal, nama_personal, gambar1_barang, gambar2_barang, gambar3_barang, nama_barang, FORMAT(harga_barang,0) as harga_barang, id_barang, nama_kategori, nama_kabupaten, keterangan_barang')
 			->from($table)
 			->where("id_barang", $id_barang);
 		$query = $this->db->get_compiled_select();
 		//print_r('<pre>'); print_r($query); exit();	
 		$data['result'] = $this->db->query($query)->row();
 		return $data;
+		//SUBSTRING(hp_personal,1,8) as 
 	}
 
 	public function tambah_barang($data)
@@ -394,6 +404,16 @@ class M_frontend extends CI_Model
 	
         $query = $this->db->get('barang', $limit, $start)->result();
         return $query;
+    }
+
+    function get_barang_list_ular($limit, $start)
+    {
+    	$idkategori_barang = '1';
+    	$status_barang = 'ok';
+    	$query = $this->db->where("status_barang", $status_barang)
+    					->where("idkategori_barang", $idkategori_barang)
+    					->get('barang', $limit, $start)->result();
+        return $query;	
     }
 
 }

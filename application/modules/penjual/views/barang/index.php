@@ -4,7 +4,6 @@
     <section class="content-header">
       <h1>
         {title}
-        <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -60,9 +59,7 @@
           </table>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
+       
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->
